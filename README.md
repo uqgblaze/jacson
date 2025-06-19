@@ -73,3 +73,5 @@ This project is provided under the [MIT License](LICENSE).
 ---
 
 Made with 🧠 by the UQ Business School Learning Design Team.
+Thank you to Bee Hughes and Geoffrey Blazer for the development of the tool.
+Special thank you to Carrie Finn for letting us cook.
