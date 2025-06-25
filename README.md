@@ -8,8 +8,8 @@
 
 ## Quick Links
 
-- View on [Github: https://github.com/uqgblaze/jacson(https://github.com/uqgblaze/jacson)]
-- Live version: [https://uqgblaze.github.io/jacson/(https://uqgblaze.github.io/jacson/)]
+- View on Github: https://github.com/uqgblaze/jacson(https://github.com/uqgblaze/jacson)
+- Live version: https://uqgblaze.github.io/jacson/(https://uqgblaze.github.io/jacson/)
 
 ## Overview
 
