@@ -3,6 +3,7 @@ import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
+# Spreadsheet configuration
 SPREADSHEET_ID = "1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs"
 RANGE_NAME = "Sheet1!A4:F"
 STATUS_SUCCESS = "Success!"
@@ -21,13 +22,16 @@ def update_results(sheet_service):
     rows = sheet.get("values", [])
     updates = []
 
-    for idx, row in enumerate(rows, start=4):
+    for idx, row in enumerate(rows, start=4):  # Start from row 4 in Google Sheets
         course_code = row[0].strip() if len(row) > 0 else ""
-        scheduled = (len(row) > 3 and row[3].strip() == "Scheduled")
-        if not course_code or not scheduled:
+        status = row[2].strip() if len(row) > 2 else ""
+
+        # Only process rows marked as "Scheduled"
+        if not course_code or status != "Scheduled":
             continue
 
         try:
+            # Check if the output JSON file exists anywhere in the project
             found = False
             for root, dirs, files in os.walk("."):
                 if f"{course_code}.json" in files:
@@ -57,12 +61,13 @@ def update_results(sheet_service):
                 "notes": str(e)
             })
 
+    # Prepare and send batch update
     data = []
     for u in updates:
         row = u["row"]
-        data.append({"range": f"Sheet1!B{row}", "values": [[u["jacson_request"]]]})
-        data.append({"range": f"Sheet1!D{row}", "values": [[u["status"]]]})
-        data.append({"range": f"Sheet1!F{row}", "values": [[u["notes"]]]})
+        data.append({"range": f"Sheet1!B{row}", "values": [[u["jacson_request"]]]})  # Clear JacSON Request
+        data.append({"range": f"Sheet1!C{row}", "values": [[u["status"]]]})          # Update Status
+        data.append({"range": f"Sheet1!F{row}", "values": [[u["notes"]]]})           # Update Notes
 
     body = {"valueInputOption": "RAW", "data": data}
     sheet_service.values().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=body).execute()
