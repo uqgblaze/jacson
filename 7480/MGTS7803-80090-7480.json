@@ -1,0 +1,98 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/MGTS7803-80090-7480",
+    "full_course_code": "MGTS7803-80090-7480",
+    "course_code": "MGTS7803",
+    "class_code": "80090",
+    "semester_code": "7480",
+    "semester_details": "Summer Semester, 2024 (18/11/2024 - 21/12/2024)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Identify key strategic challenges for business management."
+        },
+        {
+            "number": "LO2.",
+            "description": "Critically analyse current strategic management theories and concepts."
+        },
+        {
+            "number": "LO3.",
+            "description": "Deploy appropriate tools to determine industry structure and competitive dynamics."
+        },
+        {
+            "number": "LO4.",
+            "description": "Identify and assess an organisation's competitive strategy."
+        },
+        {
+            "number": "LO5.",
+            "description": "Provide valuable input to a team-based approach to formulate strategy at business and corporate levels."
+        },
+        {
+            "number": "LO6.",
+            "description": "Rigorously defend your strategic analysis and recommendations."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Team written report and team oral presentation",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "50% (30% Written Report, 20% Presentation)",
+            "due_date": "Written Report - Due Prior to Presentation 20/11/2024 9:00 amPresentation - During Class 20/11/2024Team reports to submitted prior to presentations commence, no later than the start of class. Presentations will be held during class time.",
+            "learning_objectives": "L01, L02, L03, L04, L05, L06",
+            "mode": "Oral, Written",
+            "category": "Paper/ Report/ Annotation, Presentation",
+            "task_description": "In this activity your team will analyse the strategy of two organisations of your choice and provide your recommendations for each of them for dealing with their strategic challenges in the future. The analysis should be summarised in a written report, maximum of 2,000 words (plus exhibits) and your team will also deliver an oral ppt presentation to the class, following the guidelines for this activity. Each student teams will be scheduled to present during one of the seminars.For full details please refer to the course Blackboard site.Peer Review:Group members are expected to contribute equally, fulfilling the tasks agreed on. If there are disagreements in relation to team members' contributions that cannot be resolved, students must bring the problem to the attention of the lecturer as early as possible. Students can elect to undertake a Peer Review process, which can influence the marks of those who do not contribute to group work.This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Please Note:The presentation will be recorded for marking purposes per UQ Policy.Read full task descriptionHide full task description",
+            "submission_guidelines": "Please upload to Blackboard only one report/presentation per team.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Individual Case Simulation Reflection Report",
+            "special_indicators": [],
+            "weighting": "50%",
+            "due_date": "28/11/2024 1:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L06",
+            "mode": "Written",
+            "category": "Reflection",
+            "task_description": "The reflection report is based on your performance of a live business case (online simulation), which will be run during a seminar.You will be assessed on your reflection in response to three guiding reflective tasks, i.e., setting a strategy and objectives, reflections on your strategy execution and performance in relation to the objectives, and proposed changes to the strategy/objectives and/or execution.The document should have a maximum length of 2,000 words, but you have the option to attach figures, tables or slides that may be necessary to support your analysis.Refer to the course Blackboard site for full details.This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Please submit through Turnitin in the Blackboard Assessment section.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "General contact hours",
+            "topic": "Day 1 - Friday 15/11/2024Session 1 - What is Strategy?Course Introduction & Basic concepts in strategySession 2 - Internal Analysis.Employing strategic resources to create and sustain a competitive advantageLearning outcomes:L01, L02, L04",
+            "topic_title": "Day 1 - Friday 15/11/2024",
+            "topic_description": "Session 1 - What is Strategy? Course Introduction & Basic concepts in strategy\nSession 2 - Internal Analysis. Employing strategic resources to create and sustain a competitive advantage",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "General contact hours",
+            "topic": "Day 4 - Wednesday 20/11/2024Session 1 - Presentations.In class presentations - see Assessment Details.Session 2 - Global Strategy.Process of internationalisation and globalisationLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Day 4 - Wednesday 20/11/2024",
+            "topic_description": "Session 1 - Presentations. In class presentations - see Assessment Details.\nSession 2 - Global Strategy. Process of internationalisation and globalisation",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        }
+    ]
+}

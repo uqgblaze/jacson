@@ -1,2 +1,9 @@
 # Ignore secrets folder
 secrets/
+# Output
+logs/
+# Python junk
+__pycache__/
+*.pyc
+#Ignore .github
+.github/
