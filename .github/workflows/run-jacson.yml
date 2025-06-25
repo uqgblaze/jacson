@@ -1,0 +1,35 @@
+name: Run JacSON Scraper
+
+on:
+  schedule:
+    - cron: '0 17 * * *'  # 3:00 AM AEST (UTC+10 → UTC = 17:00)
+  workflow_dispatch:      # Allows manual runs from the GitHub UI
+
+jobs:
+  run-jacson:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run course list generator
+        run: python scripts/generate_course_list.py
+
+      - name: Run JacSON scraper
+        run: python jacson_v7.py
+
+      - name: Update spreadsheet with success or failure
+        run: python scripts/update_status.py
