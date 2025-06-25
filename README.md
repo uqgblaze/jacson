@@ -6,6 +6,11 @@
 
 **JacSON** (Jac Scraper Output for Navigation) is a Python-based utility designed to scrape course profiles from the University of Queensland's JAC system and export structured JSON data suitable for integration into Blackboard Ultra.
 
+## Quick Links
+
+- View on [Github: https://github.com/uqgblaze/jacson(https://github.com/uqgblaze/jacson)]
+- Live version: [https://uqgblaze.github.io/jacson/(https://uqgblaze.github.io/jacson/)]
+
 ## Overview
 
 JacSON automates the retrieval of learning outcomes, assessment details, and weekly learning activities from the current (non-archived) version of the UQ course profiles website. These outputs can then be used to pre-populate components in Blackboard Ultra using JavaScript, enabling a more efficient course build process for teaching teams and learning designers.
