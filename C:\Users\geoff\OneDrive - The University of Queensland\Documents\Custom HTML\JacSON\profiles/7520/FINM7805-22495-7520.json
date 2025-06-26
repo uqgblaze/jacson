@@ -1,0 +1,230 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/FINM7805-22495-7520",
+    "full_course_code": "FINM7805-22495-7520",
+    "course_code": "FINM7805",
+    "class_code": "22495",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Demonstrate an understanding of the key global influences and trends shaping the investment management industry."
+        },
+        {
+            "number": "LO2.",
+            "description": "Analyse problems to formulate and defend solutions, to achieve financial goals and objectives."
+        },
+        {
+            "number": "LO3.",
+            "description": "Apply core financial principles and investment management techniques to real world examples and experience."
+        },
+        {
+            "number": "LO4.",
+            "description": "Comprehend the principles of risk within the realm of finance to evaluate and recommend different strategies for mitigating these risks."
+        },
+        {
+            "number": "LO5.",
+            "description": "In teams, complete a portfolio analysis based on available financial data."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "A1: Oral Presentation",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "31/03/2025During Class",
+            "learning_objectives": null,
+            "mode": "Oral, Written",
+            "category": "Presentation",
+            "task_description": "The oral presentation consists of a 5 minute presentation followed by 5 minutes of Q&A, which will be held in class.You will be assessed on your: (i) written memorandum (i.e., a summary of your financial analysis), (ii) ability to present your key findings, and (iii) ability to answer questions from the audiences.If you are unable to attend the oral presentation, you must apply for an extension. Otherwise, penalties will be applied accordingly.Further details about oral presentation will be discussed in class and posted to our course Blackboard site.In-person assessment not permitting use of AI:This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Please Note:The presentation will be recorded for marking purposes per UQ PolicyRead full task descriptionHide full task description",
+            "submission_guidelines": "You cannot defer or apply for an extension for this assessment.",
+            "deferral_or_extension": "You cannot defer or apply for an extension for this assessment.",
+            "late_submission": "Late submissions are not accepted for in-class presentations. Failure to present at the scheduled time will result in a mark of zero.",
+            "additional_info": "You cannot defer or apply for an extension for this assessment."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "A2: Financial Evaluation",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "19/05/2025 5:30 pm",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Project",
+            "task_description": "For this project, you will be in a team of 4 or 5 members.Your task will be to undertake security valuation and portfolio analysis.Full details, and relevant materials will be provided on the course Blackboard site and discussed in class.Peer Review: Group members are expected to contribute equally, fulfilling the tasks agreed on. If there are disagreements in relation to team members' contributions that cannot be resolved, students must bring the problem to the attention of their Course Coordinator as early as possible. Students can elect to undertake a Peer Review process, which can influence the marks of those who do not contribute to group work.AI STATEMENTArtificial Intelligence (AI) provides emerging tools that may support students in completing this assessment task. Students may appropriately use AI in completing this assessment task.. Students must clearly reference any use of AI in each instance. A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "A3: Real-World Financial Problem Report",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "9/06/2025 5:00 pm",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "In this assessment, students are required to identify a real-world financial problem that pertains to the prescribed topic(s) as indicated on the task description page on Blackboard. The selected financial problem should be current, relevant, and associated with a specific firm, industry, or market. The task involves analysing the problem using financial theories and models covered in-class and providing practical recommendations for resolving the issue.You will be assessed on the accuracy and clarity of answers.More details will be provided on Blackboard prior to the assessment release date.AI STATEMENTThis assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 1 grade for each 24 hour period from time submission is due will apply for up to 7 days. After 7 days you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "O-week",
+            "activity_type": "Seminar",
+            "topic": "Pre-course maths workshop",
+            "topic_title": "Pre-course maths workshop",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "The Time Value of MoneyLearning outcomes:L01, L02",
+            "topic_title": "The Time Value of Money",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Seminar",
+            "topic": "Bond Valuation and Credit RatingsLearning outcomes:L01, L02",
+            "topic_title": "Bond Valuation and Credit Ratings",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "Stock ValuationLearning outcomes:L01, L02",
+            "topic_title": "Stock Valuation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Seminar",
+            "topic": "New Project Evaluation",
+            "topic_title": "New Project Evaluation",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Seminar",
+            "topic": "ESG and Finance",
+            "topic_title": "ESG and Finance",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Seminar",
+            "topic": "Oral Presentation",
+            "topic_title": "Oral Presentation",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Seminar",
+            "topic": "Portfolio DiversificationLearning outcomes:L04",
+            "topic_title": "Portfolio Diversification",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Seminar",
+            "topic": "Capital Asset Pricing Model & Weighted Average Cost of Capital",
+            "topic_title": "Capital Asset Pricing Model & Weighted Average Cost of Capital",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester breakLearning outcomes:L01",
+            "topic_title": "In-Semester break",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Seminar",
+            "topic": "Capital StructureLearning outcomes:L02, L04",
+            "topic_title": "Capital Structure",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Seminar",
+            "topic": "Group Assignment",
+            "topic_title": "Group Assignment",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Seminar",
+            "topic": "Derivatives and Risk Management I",
+            "topic_title": "Derivatives and Risk Management I",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Seminar",
+            "topic": "Derivatives and Risk Management II",
+            "topic_title": "Derivatives and Risk Management II",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Seminar",
+            "topic": "Course Review",
+            "topic_title": "Course Review",
+            "topic_description": "",
+            "learning_outcomes": []
+        }
+    ]
+}
