@@ -190,23 +190,40 @@ def process_course_profile(url):
         print(f"Error processing course profile {url}: {e}")
         return None
 
+import os
+import json
+
 def save_course_data(course_data, base_directory="."):
-    if not course_data or not course_data.get('full_course_code'):
+    """
+    Save course_data as JSON under:
+      {base_directory}/profiles/{semester_code}/{full_course_code}.json
+
+    Returns True on success, False otherwise.
+    """
+    if not course_data or not course_data.get("full_course_code"):
         return False
-    full_course_code = course_data['full_course_code']
-    semester_code = course_data.get('semester_code', '')
-    semester_folder = os.path.join(base_directory, semester_code)
-    os.makedirs(semester_folder, exist_ok=True)
+
+    full_course_code = course_data["full_course_code"]
+    semester_code    = course_data.get("semester_code", "").strip()
+
+    # build: ./profiles/{semester_code}
+    profiles_root = os.path.join(base_directory, "profiles")
+    semester_dir  = os.path.join(profiles_root, semester_code)
+    os.makedirs(semester_dir, exist_ok=True)
+
     filename = f"{full_course_code}.json"
-    filepath = os.path.join(semester_folder, filename)
+    filepath = os.path.join(semester_dir, filename)
+
     try:
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, "w", encoding="utf-8") as f:
             json.dump(course_data, f, ensure_ascii=False, indent=4)
         print(f"Saved data to {filepath}")
         return True
+
     except Exception as e:
         print(f"Error saving data to {filepath}: {e}")
         return False
+
 
 def load_course_list(csv_filename="course-list.csv"):
     included_courses = []

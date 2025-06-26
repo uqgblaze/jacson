@@ -59,7 +59,7 @@ def push_to_github():
 
     try:
         subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
-        subprocess.run(["git", "add", "*"], check=True)
+        subprocess.run(["git", "add", "profiles"], check=True)
         subprocess.run(["git", "commit", "-m", f"Auto scrape update {datetime.now().isoformat()}"], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
         logging.info("Push to GitHub successful.")
