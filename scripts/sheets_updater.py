@@ -4,6 +4,7 @@ import csv
 import logging
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 # Google Sheets settings
 SPREADSHEET_ID = '1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs'
@@ -80,7 +81,7 @@ def update_status_sheet(scrape_results):
     for row in values:
         course_code = row[0].strip() if len(row) > 0 else ''
         if course_code in scrape_results:
-            status = 'Complete' if scrape_results[course_code]['success'] else 'Error'
+            status = 'Success!' if scrape_results[course_code]['success'] else 'Error'
             notes = scrape_results[course_code].get('note', '')
             updates.append([status, notes])
         else:
