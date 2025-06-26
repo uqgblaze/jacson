@@ -1,15 +1,13 @@
 import os
-import sys
 import time
 import logging
 import subprocess
 from datetime import datetime
 
-# Import your scraper
-import jacson_v7
-
-# Import your Google Sheets utility (placeholder)
-# from sheets_updater import fetch_course_list, update_status_sheet
+# Import your scraper module
+import jacson
+# Import Google Sheets utility
+from scripts import sheets_updater
 
 def setup_logging():
     logs_dir = os.path.join(os.getcwd(), "logs")
@@ -21,21 +19,21 @@ def setup_logging():
         format='%(asctime)s [%(levelname)s]: %(message)s',
         level=logging.INFO
     )
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+    logging.getLogger().addHandler(logging.StreamHandler())
     logging.info("Logging setup complete.")
 
 
 def update_course_list_from_google_sheets():
     logging.info("Updating course-list.csv from Google Sheets...")
-    # Placeholder: insert Google Sheets logic
-    # fetch_course_list("course-list.csv")
+    sheets_updater.fetch_course_list("course-list.csv")
     logging.info("course-list.csv updated.")
 
 
 def run_scraper():
     logging.info("Starting JacSON scraper...")
-    jacson_v7.main()
+    scrape_results = jacson.main()
     logging.info("JacSON scraper completed.")
+    return scrape_results
 
 
 def get_github_token():
@@ -69,19 +67,18 @@ def push_to_github():
         logging.error(f"Git push failed: {e}")
 
 
-def update_status_on_sheets():
+def update_status_on_sheets(scrape_results):
     logging.info("Updating status on Google Sheets...")
-    # Placeholder: insert update logic
-    # update_status_sheet()
+    sheets_updater.update_status_sheet(scrape_results)
     logging.info("Google Sheets status update complete.")
 
 
 def main():
     setup_logging()
     update_course_list_from_google_sheets()
-    run_scraper()
+    scrape_results = run_scraper()
     push_to_github()
-    update_status_on_sheets()
+    update_status_on_sheets(scrape_results)
     logging.info("All tasks completed. Script finished.")
 
 

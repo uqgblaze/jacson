@@ -1,88 +1,98 @@
+# sheets_updater.py
 import os
-import sys
-import time
+import csv
 import logging
-import subprocess
-from datetime import datetime
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
 
-# Import your scraper
-import jacson
+# Google Sheets settings
+SPREADSHEET_ID = '1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs'
+RANGE_NAME = 'Sheet1!A2:F'
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+CREDENTIALS_FILE = os.path.join('secrets', 'credentials.json')
 
-# Import Google Sheets utility
-from scripts import sheets_updater
 
-def setup_logging():
-    logs_dir = os.path.join(os.getcwd(), "logs")
-    os.makedirs(logs_dir, exist_ok=True)
-    log_file = os.path.join(logs_dir, f"scrape_{datetime.now().strftime('%Y-%m-%d')}.log")
-    logging.basicConfig(
-        filename=log_file,
-        filemode='a',
-        format='%(asctime)s [%(levelname)s]: %(message)s',
-        level=logging.INFO
+def get_service():
+    """
+    Creates and returns a Google Sheets API service instance.
+    """
+    creds = service_account.Credentials.from_service_account_file(
+        CREDENTIALS_FILE,
+        scopes=SCOPES
     )
-    logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
-    logging.info("Logging setup complete.")
+    service = build('sheets', 'v4', credentials=creds)
+    return service
 
 
-def update_course_list_from_google_sheets():
-    logging.info("Updating course-list.csv from Google Sheets...")
-    sheets_updater.fetch_course_list("course-list.csv")
-    logging.info("course-list.csv updated.")
+def fetch_course_list(csv_output='course-list.csv'):
+    """
+    Fetches course codes from Google Sheet and writes to a CSV file with
+    'included' and 'excluded' columns based on Auto (B) and Manual (D) flags.
+    """
+    service = get_service()
+    sheet = service.spreadsheets()
+    result = sheet.values().get(
+        spreadsheetId=SPREADSHEET_ID,
+        range=RANGE_NAME
+    ).execute()
+    values = result.get('values', [])
+
+    included = []
+    excluded = []
+
+    for row in values:
+        course_code = row[0].strip() if len(row) > 0 else ''
+        auto_flag = row[1].strip().lower() if len(row) > 1 else ''
+        manual_flag = row[3].strip().lower() if len(row) > 3 else ''
+
+        if auto_flag == 'true':
+            included.append(course_code)
+        elif manual_flag == 'true':
+            excluded.append(course_code)
+
+    # Write to CSV
+    with open(csv_output, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['included', 'excluded'])
+        for i in range(max(len(included), len(excluded))):
+            writer.writerow([
+                included[i] if i < len(included) else '',
+                excluded[i] if i < len(excluded) else ''
+            ])
+
+    logging.info(f"Fetched {len(included)} included and {len(excluded)} excluded courses from Sheets.")
 
 
-def run_scraper():
-    logging.info("Starting JacSON scraper...")
-    scrape_results = jacson.main()
-    logging.info("JacSON scraper completed.")
-    return scrape_results
+def update_status_sheet(scrape_results):
+    """
+    Updates the Google Sheet Columns C (Status) and D (Notes) based on scrape results.
+    scrape_results is a dict: {course_code: {'success': bool, 'note': str}}
+    """
+    service = get_service()
+    sheet = service.spreadsheets()
+    result = sheet.values().get(
+        spreadsheetId=SPREADSHEET_ID,
+        range=RANGE_NAME
+    ).execute()
+    values = result.get('values', [])
 
+    updates = []
+    for row in values:
+        course_code = row[0].strip() if len(row) > 0 else ''
+        if course_code in scrape_results:
+            status = 'Complete' if scrape_results[course_code]['success'] else 'Error'
+            notes = scrape_results[course_code].get('note', '')
+            updates.append([status, notes])
+        else:
+            updates.append(['', ''])
 
-def get_github_token():
-    token_path = os.path.join("secrets", "github_token.txt")
-    try:
-        with open(token_path, 'r') as f:
-            return f.read().strip()
-    except Exception as e:
-        logging.error(f"Failed to read GitHub token from {token_path}: {e}")
-        return None
+    update_range = f'Sheet1!C2:D{len(updates)+1}'
+    body = {'values': updates}
+    sheet.values().update(
+        spreadsheetId=SPREADSHEET_ID,
+        range=update_range,
+        valueInputOption='RAW',
+        body=body
+    ).execute()
 
-
-def push_to_github():
-    logging.info("Pushing JSON files to GitHub...")
-    token = get_github_token()
-    if not token:
-        logging.error("GitHub token missing. Skipping push.")
-        return
-
-    github_user = "uqgblaze"
-    repo = "jacson"
-    remote_url = f"https://{github_user}:{token}@github.com/{github_user}/{repo}.git"
-
-    try:
-        subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
-        subprocess.run(["git", "add", "*"], check=True)
-        subprocess.run(["git", "commit", "-m", f"Auto scrape update {datetime.now().isoformat()}"], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        logging.info("Push to GitHub successful.")
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Git push failed: {e}")
-
-
-def update_status_on_sheets(scrape_results):
-    logging.info("Updating status on Google Sheets...")
-    sheets_updater.update_status_sheet(scrape_results)
-    logging.info("Google Sheets status update complete.")
-
-
-def main():
-    setup_logging()
-    update_course_list_from_google_sheets()
-    scrape_results = run_scraper()
-    push_to_github()
-    update_status_on_sheets(scrape_results)
-    logging.info("All tasks completed. Script finished.")
-
-
-if __name__ == "__main__":
-    main()
+    logging.info("Updated status and notes in Google Sheets.")
