@@ -1,0 +1,256 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/ACCT1102-20244-7520",
+    "full_course_code": "ACCT1102-20244-7520",
+    "course_code": "ACCT1102",
+    "class_code": "20244",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Understand the roles of management and cost accounting"
+        },
+        {
+            "number": "LO2.",
+            "description": "Apply costing processes and undertake cost-volume-profit analysis"
+        },
+        {
+            "number": "LO3.",
+            "description": "Work in a group to prepare and professionally communicate a draft budget"
+        },
+        {
+            "number": "LO4.",
+            "description": "Apply a basic understanding of performance measurement and balanced scorecards"
+        },
+        {
+            "number": "LO5.",
+            "description": "Critically evaluate ethics cases in management accounting"
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Saturday Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "In-semester Saturday29/03/2025 - 12/04/2025Centrally timetabled exam",
+            "learning_objectives": "L01, L02",
+            "mode": "Activity/ Performance",
+            "category": "Examination",
+            "task_description": "This exam is a closed book, on-campus exam.The date and time will be advised to you directly by UQ Exams.Topics 1 - 5 will be included.There will be a mixture of multiple-choice questions and calculative problems.Practice exams and solutions will be availableand students are strongly encouraged to use these materials.AI StatementThis assessment task is to be completed in-person with pen/pencil and UQ approved calculator. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Group Assignment",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "Week 4 Thu - Week 13 Fri",
+            "learning_objectives": "L03",
+            "mode": "Oral, Written",
+            "category": "Paper/ Report/ Annotation, Presentation, Project",
+            "task_description": "You will work in a group to submit aDraft Budgetwith anExcel modelandPowerPoint presentation.Groupsmust have 4 students(no more, no less) from the same tutorial class. Students must arrange themselves into groups. If you need help joining or forming a group please contact your tutor.There will be a Registration Sheet on Blackboard for students to arrange themselves into groups.Aformative feedbackprovides time for each group to submit their draft assignment once for feedback for actioning prior to thefinal submission date.Apeer assessment taskmust also be completed for this group assignment - each student will complete a form in which they provide their perception of the relative contribution of each of their group members (whether equal or unequal).Groups will makein-class presentations during tutorials.See Topic 7 - Group Assignmentand the Assessment folder onBlackboardfor specific assignment informationPlease Note:The presentation will be recorded for marking purposes per UQ Policy.AI Statement:This task has been designed to be challenging, authentic and complex. Whilst students may use AI technologies, successful completion of assessment in this course will require students to critically engage in specific contexts and tasks for which artificial intelligence will provide only limited support and guidance. A failure to reference AI use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "See Topic 7 - Group Assignment and Assessment folder on Blackboard for the submission requirements.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "50%",
+            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "learning_objectives": "L01, L02, L04, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The format will be provided on Blackboard.Practice final exams and solutions will be available and students are strongly encouraged to use these materials.These practice exams have the same format and level of difficulty as the actual exam. Included areTopics 6, 8, 9, 10, 11, 12. All earlier other topics are relevant prerequisites.Only Casio FX82 or University approved/labelled calculatorswill be allowed.AI Statement:This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "1. Management and Cost AccountingLearning outcomes:L01",
+            "topic_title": "1. Management and Cost Accounting",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Management and Cost AccountingLearning outcomes:L01",
+            "topic_title": "Management and Cost Accounting",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "Overhead and Job CostingLearning outcomes:L01, L02",
+            "topic_title": "Overhead and Job Costing",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "Cost-Volume-Profit (CVP) AnalysisLearning outcomes:L01, L02",
+            "topic_title": "Cost-Volume-Profit (CVP) Analysis",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Tutorial",
+            "topic": "Introduction  to Budgets & Responsibility AccountingLearning outcomes:L01, L02, L03",
+            "topic_title": "Introduction  to Budgets & Responsibility Accounting",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Tutorial",
+            "topic": "Budgets: Operating BudgetsLearning outcomes:L01, L02, L03",
+            "topic_title": "Budgets: Operating Budgets",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "Budgets: Financial Statements and CashLearning outcomes:L01, L02, L03",
+            "topic_title": "Budgets: Financial Statements and Cash",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Tutorial",
+            "topic": "Budgets: Group AssignmentGood Friday public holidayis on 18th April. If your are in a Friday tutorial, please attend any other tutorial during this week, or watch the special tutorial recording on Blackboard.Learning outcomes:L03",
+            "topic_title": "Budgets: Group Assignment",
+            "topic_description": "Good Friday public holiday is on 18th April. If your are in a Friday tutorial, please attend any other tutorial during this week, or watch the special tutorial recording on Blackboard.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester break",
+            "topic_title": "In-Semester break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Tutorial",
+            "topic": "Traditional Overhead AllocationLearning outcomes:L01, L02",
+            "topic_title": "Traditional Overhead Allocation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "Variance AnalysisLabour Day public holiday - Monday 5th May. If you are in a Monday tutorial, please watch the special tutorial recording on Blackboard.Learning outcomes:L01, L02",
+            "topic_title": "Variance Analysis",
+            "topic_description": "Labour Day public holiday - Monday 5th May. If you are in a Monday tutorial, please watch the special tutorial recording on Blackboard.",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "Performance Measurement & CompensationLearning outcomes:L01, L04",
+            "topic_title": "Performance Measurement & Compensation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "Strategy, Balanced Scorecard & SustainabilityLearning outcomes:L01, L04",
+            "topic_title": "Strategy, Balanced Scorecard & Sustainability",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "Group assignment In-class PresentationsGroups will present their powerpoint slide presentations in their respective tutorial classes. There is no tutorial on the final \"Ethics\" topic, please study this topic as a self-study exercise from the solutions posted to blackboard.Learning outcomes:L03",
+            "topic_title": "Group assignment In-class Presentations",
+            "topic_description": "Groups will present their powerpoint slide presentations in their respective tutorial classes. There is no tutorial on the final \"Ethics\" topic, please study this topic as a self-study exercise from the solutions posted to blackboard.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        }
+    ]
+}
