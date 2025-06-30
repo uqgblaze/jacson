@@ -1,6 +1,6 @@
 // Hello, Human! Geoffrey Blazer here, it's so nice of you to find this file to learn more about it!
 // This file uses the Blackboard URL of the HTML file that has been included into a course.
-// As each HTML file containerised, it creates a unique file for all custom HTML, and uses the full course code to determine which files go to which course on Blackboard.
+// As each HTML file containerised, BB Ultra creates a unique file for all custom HTML to be uploaded onto Blackboard CDN, and uses the full course code to determine which files go to which course on Blackboard.
 // This is leveraged and reversed engineered to extract this information from Jac Course Profiles to be inserted into documents.
 // The file below uses this filepath to find the course it is in and populates information that was extracted and uploaded using JacSON.
 
