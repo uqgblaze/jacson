@@ -8,8 +8,10 @@ on:
 jobs:
   run-jacson:
     runs-on: ubuntu-latest
+
     env:
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+      MY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -25,11 +27,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run course list generator
-        run: python scripts/generate_course_list.py
-
-      - name: Run JacSON scraper
-        run: python jacson_v7.py
-
-      - name: Update spreadsheet with success or failure
-        run: python scripts/update_status.py
+      - name: Run JacSON full scraper (auto mode)
+        run: python scripts/scraper_runner-GithubAuto.py
