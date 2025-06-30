@@ -53,7 +53,7 @@
       fallbackLink.textContent = fallbackURL;
     }
     if (courseCode && classCode && semesterCode && profileLink) {
-      profileLink.href = `https://course-profiles.uq.edu.au/course-profiles/${courseCode}-${semesterCode}-${classCode}`;
+      profileLink.href = `https://course-profiles.uq.edu.au/course-profiles/${courseCode}-${classCode}-${semesterCode}`;
     } else if (profileLink) {
       profileLink.href = fallbackURL;
     }
