@@ -5,6 +5,8 @@ import logging
 import subprocess
 import base64
 import json
+import csv
+import requests
 from datetime import datetime
 
 import jacson
@@ -69,7 +71,7 @@ def fetch_course_list(service):
 
 def upload_profiles():
     from pathlib import Path
-    token = os.environ.get("GITHUB_TOKEN")
+    token = os.environ.get("MY_GITHUB_TOKEN")
     if not token:
         logging.warning("No GitHub token provided!")
         return
@@ -151,6 +153,4 @@ def main():
 
 
 if __name__ == "__main__":
-    import csv
-    import requests
     main()
