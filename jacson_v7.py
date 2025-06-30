@@ -1,3 +1,6 @@
+## DEPRECATED - DO NOT USE THIS VERION
+## USE LATEST VERSION OF JACSON.PY!
+
 import requests
 from bs4 import BeautifulSoup
 import re
