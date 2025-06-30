@@ -1,8 +1,8 @@
 name: Run JacSON Scraper
 
 on:
-  schedule:
-    - cron: '0 17 * * *'  # 3:00 AM AEST (UTC+10 → UTC = 17:00)
+  # DISABLED schedule: 
+  # DISABLED  - cron: '0 17 * * *'  # 3:00 AM AEST (UTC+10 → UTC = 17:00)
   workflow_dispatch:      # Allows manual runs from the GitHub UI
 
 jobs:
@@ -12,6 +12,7 @@ jobs:
     env:
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
       MY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
