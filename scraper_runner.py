@@ -1,3 +1,6 @@
+# scrape_runner.py
+# This version does not do git pull/push - just uploads the JSON files directly to the Github.
+# Each run will override the JSON files that are in the folders!
 import os
 import time
 import logging
@@ -8,6 +11,7 @@ from datetime import datetime
 import jacson
 # Import Google Sheets utility
 from scripts import sheets_updater
+
 
 def setup_logging():
     logs_dir = os.path.join(os.getcwd(), "logs")
@@ -36,35 +40,15 @@ def run_scraper():
     return scrape_results
 
 
-def get_github_token():
-    token_path = os.path.join("secrets", "github_token.txt")
+def upload_profiles():
+    logging.info("Uploading profiles via upload_profiles.py...")
+    script_path = os.path.join(os.getcwd(), "scripts", "upload_profiles.py")
     try:
-        with open(token_path, 'r') as f:
-            return f.read().strip()
-    except Exception as e:
-        logging.error(f"Failed to read GitHub token from {token_path}: {e}")
-        return None
-
-
-def push_to_github():
-    logging.info("Pushing JSON files to GitHub...")
-    token = get_github_token()
-    if not token:
-        logging.error("GitHub token missing. Skipping push.")
-        return
-
-    github_user = "uqgblaze"
-    repo = "jacson"
-    remote_url = f"https://{github_user}:{token}@github.com/{github_user}/{repo}.git"
-
-    try:
-        subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
-        subprocess.run(["git", "add", "profiles"], check=True)
-        subprocess.run(["git", "commit", "-m", f"Auto scrape update {datetime.now().isoformat()}"], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        logging.info("Push to GitHub successful.")
+        subprocess.run(["python", script_path], check=True)
+        logging.info("Profiles uploaded successfully.")
     except subprocess.CalledProcessError as e:
-        logging.error(f"Git push failed: {e}")
+        logging.error(f"upload_profiles.py failed: {e}")
+        # If desired, you can adjust scrape_results here to reflect upload failures
 
 
 def update_status_on_sheets(scrape_results):
@@ -77,7 +61,7 @@ def main():
     setup_logging()
     update_course_list_from_google_sheets()
     scrape_results = run_scraper()
-    push_to_github()
+    upload_profiles()
     update_status_on_sheets(scrape_results)
     logging.info("All tasks completed. Script finished.")
 
