@@ -1,0 +1,266 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/ACCT2110-20247-7520",
+    "full_course_code": "ACCT2110-20247-7520",
+    "course_code": "ACCT2110",
+    "class_code": "20247",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Identify national and international influences on the regulation of financial reporting by listed companies."
+        },
+        {
+            "number": "LO2.",
+            "description": "Describe and analyse the practical and conceptual issues affecting accounting for a range of topics including revenue recognition, liabilities, property plant and equipment, intangible assets, asset impairment, leases, employee benefits, financial instruments, performance reporting and sustainability reporting."
+        },
+        {
+            "number": "LO3.",
+            "description": "Implement and evaluate the requirements of accounting standards and other regulations that govern the accounting practice."
+        },
+        {
+            "number": "LO4.",
+            "description": "Critically evaluate and review case study based situations to identify and report on applicable accounting regulations and financial statement consequences."
+        },
+        {
+            "number": "LO5.",
+            "description": "Identify and discuss the capital market issues facing accountants in organisations regarding recognition, selection of different measurement attributes and disclosure."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Online In-semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "17/04/2025 8:00 amDuring Class Time",
+            "learning_objectives": "L01, L02, L03, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The In-Semester examination in ACCT2110 will cover topics 1, 2, 3, and 4.The format of the examination will be advised with the relevant information placed on ACCT2110 Blackboard site. You will have 90 minutes to complete the exam.You will be assessed on the adequacy of your answer in relation to your demonstrated knowledge of accounting procedures and statutory requirements.Short answer, practical and problem solving questions containing accounting items are marked according to the accurate recognition, numerical measurement and calculation of accounting information. In journal-related practical questions and numerical calculations, you will not be penalised for consequential errors; however, marking penalties will apply in journal-related practical questions for the inclusion of additional journals.If students experience interruptions to their examinations, they are required to collect suitable evidence, e.g. screenshots, photos, or emails from AskUs and advise the course coordinator.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) or Machine Translation (MT). Students are advised that the use of AI or MT technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Access the In-Semester exam via the course Blackboard site.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Exams submitted after the end of the submission time will incur alate penalty.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Case study",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "6/05/2025 4:00 pm",
+            "learning_objectives": "L03, L04, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "You are required toindividually preparea report on a financial reporting case.This report will assess your research skills, writing skills, and general accounting knowledge and the ability to critically evaluate case scenarios.Full details of the case will be provided in class and via our ACCT2110 Blackboard site.Your work will be reviewed for plagiarism and independent content.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "The case analysis report is to be submitted online using the assessment link provided on the ACCT2110 Blackboard site.Submission details will be provided prior to the due date.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "End of Semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "50%",
+            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "learning_objectives": "L01, L02, L03, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The focus of the final examination in ACCT2110 will be on topics not examined in the in-semester exam or case assignment. However, understanding of other topics during the semester may be required.This exam is aclosed book, on-campus, paper-based invigilated examas required by UQ and Professional Accounting organisations.The final examination will be held at the end of the semester exam period to be advised by UQ central examinations.Multiple choice questions marks accrue by selecting the correct multiple choice answer. Short answer, practical and problem solving questions containing accounting items are marked according to the accurate recognition, numerical measurement and calculation of accounting information. In journal-related practical questions and numerical calculations, you will not be penalised for consequential errors; however, marking penalties will apply in journal-related practical questions for the inclusion of additional journals. Short answer theory and short essay questions are marked according to the correct application of accounting framework, accounting standards and generally accepted accounting principles to source information.Further details of the final assessment and mark allocation will be provided in the course review lecture held at the end of the semester. Details will also be posted on our ACCT2110 Blackboard site.AI Statement:This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Lecture 1: PPE Revaluation and ImpairmentLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 1: PPE Revaluation and Impairment",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "Lecture 2: Accounting for Leases (Lessee)Learning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 2: Accounting for Leases (Lessee)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "Lecture 3: Accounting for Leases (Lessor)Learning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 3: Accounting for Leases (Lessor)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "Lecture 4: Provisions and ContingenciesLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 4: Provisions and Contingencies",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Lecture 5: Revenue Recognition and Case AssignmentLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 5: Revenue Recognition and Case Assignment",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "Lecture 6: Extractive IndustriesLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 6: Extractive Industries",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "Prepare for In-semester ExamThere will be no tutorials this week to assist with revision for the In-Semester exam. Consultation sessions will be provided this week.",
+            "topic_title": "Prepare for In-semester Exam",
+            "topic_description": "There will be no tutorials this week to assist with revision for the In-Semester exam. Consultation sessions will be provided this week.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "In-Semester Exam During Class TimeWe will have an online In-Semester exam on 17 April, Thursday during the lecture time. There will be no lecture and no tutorials this week to assist with revision for the In-Semester Exam.",
+            "topic_title": "In-Semester Exam During Class Time",
+            "topic_description": "We will have an online In-Semester exam on 17 April, Thursday during the lecture time. There will be no lecture and no tutorials this week to assist with revision for the In-Semester Exam.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester BreakThere will be no seminars / workshops or consultations this week (21-25 April).",
+            "topic_title": "In-Semester Break",
+            "topic_description": "There will be no seminars / workshops or consultations this week (21-25 April).",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Lecture 7: Intangible AssetsLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 7: Intangible Assets",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Lecture 8: Employee BenefitsLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 8: Employee Benefits",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Lecture 9: Financial InstrumentsLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 9: Financial Instruments",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Lecture 10: Foreign Currency TransactionsLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Lecture 10: Foreign Currency Transactions",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Lecture 11: Course ReviewCourse Review and Final Exam InformationLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Lecture 11: Course Review",
+            "topic_description": "Course Review and Final Exam Information",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        }
+    ]
+}
