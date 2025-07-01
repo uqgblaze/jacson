@@ -1,0 +1,246 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/ADVT7507-20263-7520",
+    "full_course_code": "ADVT7507-20263-7520",
+    "course_code": "ADVT7507",
+    "class_code": "20263",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Understand the how and why of digital marketing communications for multiple goals within a larger marketing and/or media strategy."
+        },
+        {
+            "number": "LO2.",
+            "description": "Remember the structure and function of the digital advertising environment."
+        },
+        {
+            "number": "LO3.",
+            "description": "Collaborate with others to develop, evaluate, and complete a comprehensive digital marketing communications strategy and plan."
+        },
+        {
+            "number": "LO4.",
+            "description": "Apply effective writing skills appropriate to the digital advertising discipline."
+        },
+        {
+            "number": "LO5.",
+            "description": "Learn to utilise modern digital advertising technologies."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "25%",
+            "due_date": "2/05/2025 10:00 amDuring Lecture",
+            "learning_objectives": "L01, L02",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "This In-Semester Exam will be conducted via Blackboard.It will be held in Week 9 during officially scheduled lecture time.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Google Ads Certification and Ethical Reflection",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "35%",
+            "due_date": "16/05/2025 3:00 pm",
+            "learning_objectives": "L02, L04, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "This assessment involves the completion of specified Google Ads Certification modules and a reflection on your engagement with this experience.There are two components to the assessment:The completion of specified Google Ads online learning modules and accompanying certification exams (details to be provided on the course Learn.UQ website).A reflection paper synthesising your experience of the certification process with a discussion of the ethics of digital advertising (further details will be provided on the course Learn.UQ website).NOTE:It is acourse requirementthat the certifications be completed prior to writing the paper.Evidenceof completion must be provided. It is highly advisable that this assessment piece be completed progressively throughout the semester. Although some time may be allocated in the workshop sessions to complete module components and discuss any issues, questions or concerns, it will not be nearly enough. Therefore, it is strongly recommended you commence this learning material early in the semester and it will be assumed by teaching staff that you have done so. The assessment has considerable \"career value\" and is also directly applicable to the major project assessment item in this course.You MUST be able to access Google Skillshop to complete this assessment.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "The reflection paper, including screenshots and links to accreditation completion, should be submitted electronically via Turnitin by the due date.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Digital Advertising Plan",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "30/05/2025 3:00 pm",
+            "learning_objectives": "L01, L03, L04, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation, Project",
+            "task_description": "The major assignment will involve the development of a digital advertising campaign to be undertaken as part of a team of four to five persons.Advertising campaigns are frequently created by teams at both smaller and larger agencies/consultancies (or in-house marketing departments).This project will require the submission of a written plan, replicating the process used in the advertising business.The document is to be submitted in electronic form via the course Learn.UQ (Blackboard) website.Only one student per team is required to upload the file.A full description of this major assessment item, including detailed supporting documentation and comprehensive submission guidelines will be provided by the course coordinator via Learn.UQ.A compulsory online peer assessment is required for all students in order to receive a grade for this assessment item.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit in electronic form via the course Blackboard assessment link. Only one student required to upload per team.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Introduction to Digital AdvertisingLearning outcomes:L01, L03",
+            "topic_title": "Introduction to Digital Advertising",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Intro and Assessment OverviewIntroduction to tutorial class and assessment overviewLearning outcomes:L01, L03",
+            "topic_title": "Intro and Assessment Overview",
+            "topic_description": "Introduction to tutorial class and assessment overview",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "Key Concepts in AdvertisingLearning outcomes:L01, L03",
+            "topic_title": "Key Concepts in Advertising",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "Role of Search in Advertising StrategyLearning outcomes:L01, L03",
+            "topic_title": "Role of Search in Advertising Strategy",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Tutorial",
+            "topic": "Digital Ad Choices (Part I)Learning outcomes:L01, L03",
+            "topic_title": "Digital Ad Choices (Part I)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Tutorial",
+            "topic": "Digital Ad Choices (Part II)Learning outcomes:L01, L03",
+            "topic_title": "Digital Ad Choices (Part II)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "Digital Advertising EnvironmentLearning outcomes:L01, L02, L03",
+            "topic_title": "Digital Advertising Environment",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Tutorial",
+            "topic": "Mechanics of Ad PlacementGood Friday Public Holiday - Friday 18 April 2025- Check Blackboard for announcements about affected classes.Learning outcomes:L01, L03",
+            "topic_title": "Mechanics of Ad Placement",
+            "topic_description": "Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Tutorial",
+            "topic": "Digital Advertising Planning & MeasurementLearning outcomes:L01, L03",
+            "topic_title": "Digital Advertising Planning & Measurement",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "Advertising and Social MediaLabour Day Public Holiday - Monday 5 May 2025- Check Blackboard for announcements about affected classes.Learning outcomes:L01, L03",
+            "topic_title": "Advertising and Social Media",
+            "topic_description": "Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "Out-of-Home: Beyond Personal ScreensLearning outcomes:L01, L03",
+            "topic_title": "Out-of-Home: Beyond Personal Screens",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "Regulations in Digital AdvertisingLegal and Regulatory Issues in Digital AdvertisingLearning outcomes:L01, L03",
+            "topic_title": "Regulations in Digital Advertising",
+            "topic_description": "Legal and Regulatory Issues in Digital Advertising",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "Course WrapLearning outcomes:L01, L02",
+            "topic_title": "Course Wrap",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        }
+    ]
+}
