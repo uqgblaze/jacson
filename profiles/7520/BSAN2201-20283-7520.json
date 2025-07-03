@@ -1,0 +1,253 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/BSAN2201-20283-7520",
+    "full_course_code": "BSAN2201-20283-7520",
+    "course_code": "BSAN2201",
+    "class_code": "20283",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Recognise and explain the importance of business analytics to managerial decision making"
+        },
+        {
+            "number": "LO2.",
+            "description": "Explain the basic concepts used in business analytics and their applications to managerial decision making"
+        },
+        {
+            "number": "LO3.",
+            "description": "Identify and apply the appropriate methods of business analytics for solving a range of business problems"
+        },
+        {
+            "number": "LO4.",
+            "description": "Compare and critically evaluate the various approaches to business analytics, and"
+        },
+        {
+            "number": "LO5.",
+            "description": "Evaluate the value of business analytics for improving managerial and strategic decision making."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Assignment 1 (A1)",
+            "special_indicators": [],
+            "weighting": "30%",
+            "due_date": "11/04/2025 5:00 pm",
+            "learning_objectives": "L01, L02",
+            "mode": "Written",
+            "category": "Essay/ Critique",
+            "task_description": "A review of articles on business analytics. More details about the format, style, etc. will be discussed in class and provided on Blackboard.AI Statement:Artificial Intelligence (AI) provides emerging tools that may support students in completing this assessment task. Students may appropriately use AI in completing this assessment task; however, students must clearly reference any use of AI in each instance. A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Assignment 2 (A2)",
+            "special_indicators": [],
+            "weighting": "60%",
+            "due_date": "30/05/2025 5:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Product/ Artefact/ Multimedia, Written",
+            "category": "Paper/ Report/ Annotation, Presentation",
+            "task_description": "Development of a written industry case study, to be submitted as a presentation, on an application of business analytics. More details about the format, style, etc. will be discussed in class and provided on Blackboard.AI Statement:Artificial Intelligence (AI) provides emerging tools that may support students in completing this assessment task. Students may appropriately use AI in completing this assessment task; however, students must clearly reference any use of AI in each instance.A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Assignment 3 (A3)",
+            "special_indicators": [],
+            "weighting": "10%",
+            "due_date": "13/06/2025 5:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Product/ Artefact/ Multimedia",
+            "category": "Presentation, Reflection",
+            "task_description": "A reflective assessment where students are are asked to record a video of themselves briefly presenting on their key learnings from the course and on how these learnings differ from their previous perspectives and experiences. Note the reflective assessment is scheduled during the examination period.More details regarding the reflective assessment will be discussed later in the semester and provided on Blackboard.AI Statement:Artificial Intelligence (AI) provides emerging tools that may support students in completing this assessment task. Students may appropriately use AI in completing this assessment task; however, students must clearly reference any use of AI in each instance.A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1(24 Feb - 02 Mar)",
+            "activity_type": "Lecture",
+            "topic": "Introduction and A1 OverviewLearning outcomes:L01",
+            "topic_title": "Introduction and A1 Overview",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2(03 Mar - 09 Mar)",
+            "activity_type": "Lecture",
+            "topic": "What is Business AnalyticsLearning outcomes:L01, L02",
+            "topic_title": "What is Business Analytics",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "The Analytics AdvantageLearning outcomes:L01, L02",
+            "topic_title": "The Analytics Advantage",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "Competing on Analytics (Internal Applications)Learning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Competing on Analytics (Internal Applications)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Competing on Analytics (External Applications)Learning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Competing on Analytics (External Applications)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "Developing Analytics CapabilityLearning outcomes:L03, L04, L05",
+            "topic_title": "Developing Analytics Capability",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "The Business Analytics ProcessLearning outcomes:L03, L04, L05",
+            "topic_title": "The Business Analytics Process",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "Methods and Technologies of Business Analytics and A2 OverviewLearning outcomes:L03, L04, L05",
+            "topic_title": "Methods and Technologies of Business Analytics and A2 Overview",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "Mid-Semester Break",
+            "topic_title": "Mid-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Data for Business AnalyticsLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Data for Business Analytics",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Artificial Intelligence and Machine LearningLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Artificial Intelligence and Machine Learning",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Deep Learning and BeyondLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Deep Learning and Beyond",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Professional PracticeLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Professional Practice",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Revision and A3 PreparationLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Revision and A3 Preparation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        }
+    ]
+}
