@@ -100,33 +100,33 @@
         {
             "learning_period": "Week 1(12 Aug - 18 Aug)",
             "activity_type": "Seminar",
-            "topic": "Contemporary Marketing Thinking and PracticeWeek 1 - Tuesday 13/08/2024Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.Learning outcomes:L01, L02, L03, L04, L05, L06, L07, L08",
-            "topic_title": "Contemporary Marketing Thinking and Practice",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Contemporary Marketing Thinking and Practice</strong><br/><p><strong>Week 1 - Tuesday 13/08/2024</strong> Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Contemporary Marketing Thinking and Practice</strong>",
             "topic_description": "Week 1 - Tuesday 13/08/2024 Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.",
             "learning_outcomes": [
-                "L01",
+                "</strong> L01",
                 "L02",
                 "L03",
                 "L04",
                 "L05",
                 "L06",
                 "L07",
-                "L08"
+                "L08</p></div></td>"
             ]
         },
         {
             "learning_period": "Week 2(19 Aug - 25 Aug)",
             "activity_type": "Seminar",
-            "topic": "Value Creation, Innovation and Revenue ManagementWeek 2 - Monday 19/08/2024Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.Learning outcomes:L01, L03, L04, L05, L07, L08",
-            "topic_title": "Value Creation, Innovation and Revenue Management",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Value Creation, Innovation and Revenue Management</strong><br/><p><strong>Week 2 - Monday 19/08/2024</strong> Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L07, L08</p></div></td>",
+            "topic_title": "<strong>Value Creation, Innovation and Revenue Management</strong>",
             "topic_description": "Week 2 - Monday 19/08/2024 Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.",
             "learning_outcomes": [
-                "L01",
+                "</strong> L01",
                 "L03",
                 "L04",
                 "L05",
                 "L07",
-                "L08"
+                "L08</p></div></td>"
             ]
         }
     ]
