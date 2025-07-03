@@ -1,0 +1,242 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/FINM1416-20291-7520",
+    "full_course_code": "FINM1416-20291-7520",
+    "course_code": "FINM1416",
+    "class_code": "20291",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Explain different theories on the role of business and finance, and analyse financial decisions in the context of global challenges."
+        },
+        {
+            "number": "LO2.",
+            "description": "Apply the concept of time-value of money to a wide range of valuation problems and financial instruments (shares, bonds), and describe how financial markets work."
+        },
+        {
+            "number": "LO3.",
+            "description": "Make project investment decisions based on an understanding of capital budgeting techniques and critically evaluate the resulting analysis."
+        },
+        {
+            "number": "LO4.",
+            "description": "Evaluate the risk, return, and cost of capital of an investment based on an understanding of the relationship between risk, return and the Capital Asset Pricing Model (CAPM)."
+        },
+        {
+            "number": "LO5.",
+            "description": "Interact effectively with a team to discuss ideas and work towards a common outcome."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Assignments",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "Time value of money 1:00pm - Week 6 - Week 8 FriValuation 1:00pm - Week 9 - Week 11 Fri",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Product/ Artefact/ Multimedia",
+            "category": "Participation/ Student contribution, Project",
+            "task_description": "There are 2 assignments during the semester. Both are group assignments with a team of 4 to 5 students.The assignments will be posted at least 1 week before the workshop week. You will be allocated to a team during the workshop. During the workshop, we will work through examples and some parts of the assignment. You need to come to the workshop prepared by going through the assignment materials beforehand. You will then work on the assignment during and after the workshop. The assignment is to be submitted at 1:00pm exactly two weeks following your actual workshop session. The components for submission may include short videos, Excel spreadsheets, or reports. The assignment each is worth 15% of your final grade for this course.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit via the Assessment folder on Blackboard.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "In-semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "In-semester Saturday29/03/2025 - 12/04/2025",
+            "learning_objectives": "L01, L02",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The in-semester exam will be held on one of the Saturdays scheduled by the university. It is a 90 minutes exam and covers Module 1 to Module 6.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "learning_objectives": "L01, L02, L03, L04",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The final exam will consist of problem-solving, short-answer, and essay questions, and covers all topics in the course.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Not Timetabled",
+            "topic": "Module 1 - What is Financial Management?Learning outcomes:L01",
+            "topic_title": "Module 1 - What is Financial Management?",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 1 - What is financial managementLearning outcomes:L01",
+            "topic_title": "Tutorial 1 - What is financial management",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 2 - The five principles of FinanceLearning outcomes:L02, L03, L04",
+            "topic_title": "Tutorial 2 - The five principles of Finance",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 3 - Time value of money (Part 1)Learning outcomes:L02",
+            "topic_title": "Tutorial 3 - Time value of money (Part 1)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 4 - Time value of money (Part 2)Learning outcomes:L02",
+            "topic_title": "Tutorial 4 - Time value of money (Part 2)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 5 - Valuing debtLearning outcomes:L02",
+            "topic_title": "Tutorial 5 - Valuing debt",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 6 - Valuing sharesLearning outcomes:L02",
+            "topic_title": "Tutorial 6 - Valuing shares",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 7: Capital budgeting methodsGood Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L03",
+            "topic_title": "Tutorial 7: Capital budgeting methods",
+            "topic_description": "Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Workshop",
+            "topic": "Workshop 2Learning outcomes:L05",
+            "topic_title": "Workshop 2",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 9: NPV - Modelling and analysisLabour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L03",
+            "topic_title": "Tutorial 9: NPV - Modelling and analysis",
+            "topic_description": "Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Not Timetabled",
+            "topic": "Module 10: Risk and Return (Part 2)Learning outcomes:L04",
+            "topic_title": "Module 10: Risk and Return (Part 2)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 11: Risk and Return (Part 2)Learning outcomes:L04",
+            "topic_title": "Tutorial 11: Risk and Return (Part 2)",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 12: Cost of capitalLearning outcomes:L04",
+            "topic_title": "Tutorial 12: Cost of capital",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L04"
+            ]
+        }
+    ]
+}
