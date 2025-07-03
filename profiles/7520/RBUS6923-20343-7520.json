@@ -1,0 +1,253 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/RBUS6923-20343-7520",
+    "full_course_code": "RBUS6923-20343-7520",
+    "course_code": "RBUS6923",
+    "class_code": "20343",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Critically evaluate the quality of research conducted in a variety of academic disciplines."
+        },
+        {
+            "number": "LO2.",
+            "description": "Understand statistical techniques for research."
+        },
+        {
+            "number": "LO3.",
+            "description": "Identify interesting research problems."
+        },
+        {
+            "number": "LO4.",
+            "description": "Conduct your own research."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Workshop Mastery & Manuscript Critiques",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "45%",
+            "due_date": "Week 2 - Week 13These reports are due by 9:00 AM on the day of the seminar workshop, to be submitted before the beginning of class.You must also submit a revised or updated version of 3 \"referee's\" reports by 12 noon on the Monday following the workshop. The revised report should incorporate the issues raised by both the presenter and the workshop participants, and the responses of the presenter.",
+            "learning_objectives": "L01, L02, L03, L04",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "The workshop is an integral part of the course. You are expected to \"attend\" the research workshops during the semester and demonstrate an appreciation of the merit of the workshop papers from a scientific method perspective. This mastery will be demonstrated by preparing a series of critiques of selected workshop papers presented during the semester.The workshop schedule will be distributed as soon as it becomes available and updated on a regular basis.Please note, the schedule is always \"flexible\" and last minute changes are possible.You are required to complete an independent \"referee's report\" (approximately1,500 words) on 5 workshop papers that you nominate from the workshop program; at least one report relating to an accounting paper and one to a finance paper - the remaining three reports can be either accounting or finance (students whose major is neither accounting nor finance will alternatively consider workshop papers from within their own discipline).The workshop schedule will be distributed as soon as it becomes available andupdated on a regular basis. The eligible workshops will be identified in advance (not all workshops will necessarily be deemed \"eligible\" for critique).Again, please note, the schedule is always \"flexible\" and last minute changes are possible. You are, therefore, well advised to identify the workshop papers that interest you the most in advance, and also to have a contingency plan in mind if one of those papers is withdrawn.Finally, while students are strongly encouraged to discuss issues that arise in this course together, the written work you submit must be entirely your own. Similarly, you must not help another student to cheat by lending assignments (present or past). The submission of work or ideas which are not your own and for which you claim credit is called plagiarism. This is a form of cheating.AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Assessment will be submitted via Blackboardand also directly to the instructor as an e-mail attachment.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Data Analysis Assignment",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "10%",
+            "due_date": "16/05/2025 2:00 pm",
+            "learning_objectives": "L01, L02, L04",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "The data analysis project provides you with a “hands-on” opportunity to work with real data and statistical programs/packages.Students are strongly encouraged to discuss issues that arise in this course together, however, the written work you submit must be entirely your own. Similarly, you must not help another student to cheat by lending assignments (present or past). The submission of work or ideas which are not your own and for which you claim credit is called plagiarism. This is a form of cheating.AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Assessment will be submitted via Blackboardand also directly to the instructor as an e-mail attachment. Note, the submission should be a single document that can be directly printed.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Assignment",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "45%",
+            "due_date": "18/06/2025 1:00 pm",
+            "learning_objectives": "L01, L02, L03, L04",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "The final piece of assessment will be an assignment that will cover the lecture material from the course and as well, include two cases requiring applications of the material.Students are encouraged to discuss issues that arise in this course together, however, the written work you submit must be entirely your own. Similarly, you must not help another student to cheat by lending assessment material (present or past). The submission of work or ideas which are not your own and for which you claim credit is called plagiarism. This is a form of cheating.AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Assessment will be submitted via Blackboardand also directly to the instructor as an e-mail attachment",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "IntroductionIntroduction to Scientific Method and ResearchLearning outcomes:L01, L03, L04",
+            "topic_title": "Introduction",
+            "topic_description": "Introduction to Scientific Method and Research",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Seminar",
+            "topic": "Scientific Inference; StatisticsLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Scientific Inference; Statistics",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "Regression Analysis IIntroduction to Regression - correlation; linear regression; fixed effects; clustered standard errorsLearning outcomes:L01, L03, L04",
+            "topic_title": "Regression Analysis I",
+            "topic_description": "Introduction to Regression - correlation; linear regression; fixed effects; clustered standard errors",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Seminar",
+            "topic": "Regression Analysis II'dummy' variable modelsLearning outcomes:L01, L02, L04",
+            "topic_title": "Regression Analysis II",
+            "topic_description": "'dummy' variable models",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Seminar",
+            "topic": "Experimental Designpseudo, quasi & true experimental designs; case study researchLearning outcomes:L01, L02, L04",
+            "topic_title": "Experimental Design",
+            "topic_description": "pseudo, quasi & true experimental designs; case study research",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Seminar",
+            "topic": "Regression Analysis IIIform of econometric modelLearning outcomes:L01, L02, L04",
+            "topic_title": "Regression Analysis III",
+            "topic_description": "form of econometric model",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Seminar",
+            "topic": "Regression Analysis IVform of econometric model; directionality; level of analysisLearning outcomes:L01, L02, L04",
+            "topic_title": "Regression Analysis IV",
+            "topic_description": "form of econometric model; directionality; level of analysis",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "No Seminar this Week Due to Public HolidayGood Friday Public Holiday - Friday 18 April 2025- Check Blackboard for announcements about affected classes.",
+            "topic_title": "No Seminar this Week Due to Public Holiday",
+            "topic_description": "Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Seminar",
+            "topic": "Regression Analysis Vself-selection bias; endogeneityLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Regression Analysis V",
+            "topic_description": "self-selection bias; endogeneity",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Workshop",
+            "topic": "Data Analysis Assignmentworkshop forum for advancing / completing data analysis assignmentLearning outcomes:L01, L02, L04",
+            "topic_title": "Data Analysis Assignment",
+            "topic_description": "workshop forum for advancing / completing data analysis assignment",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Seminar",
+            "topic": "Advanced Econometric IssuesLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Advanced Econometric Issues",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Seminar",
+            "topic": "Ethics of ResearchLearning outcomes:L01, L04",
+            "topic_title": "Ethics of Research",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Seminar",
+            "topic": "Summary ReviewLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Summary Review",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        }
+    ]
+}
