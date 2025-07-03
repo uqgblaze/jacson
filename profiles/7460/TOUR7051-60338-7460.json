@@ -1,0 +1,160 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/TOUR7051-60338-7460",
+    "full_course_code": "TOUR7051-60338-7460",
+    "course_code": "TOUR7051",
+    "class_code": "60338",
+    "semester_code": "7460",
+    "semester_details": "Semester 2, 2024 (22/07/2024 - 18/11/2024)",
+    "learning_outcomes": [],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Destination Market Analysis",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "50% 4,000 words",
+            "due_date": "20/09/2024 1:10 pm",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "In pairs you are to conduct a case study analysis of a destination of your choice. Assume that you are an external consultant and are presenting the case study findings for the destination to the DMO and the associated stakeholders.A Case Study analysis is an incredibly important technique that DMOs are required to consistently complete. This is a necessary component when marketing a destination to domestic and international tourists. It is also required when evaluating competitors and the internal and external environment. A case study will guide future marketing strategies. It also offers a current snapshot of where the DMO, destination and current stakeholders sit in relation to tourism development. More information on conducting a destination case study analysis will be explained in Week 6.The DMOYour DMO needs to responsible for marketing a specific city (e.g. Melbourne, Shanghai), region (e.g. Fraser Coast, Tropical North Queensland), state/county (e.g. Queensland, Yorkshire, California) or country (e.g. New Zealand, Bangladesh). Do not choose an amusement park or a specific activity (e.g. tour).On considering your destination, make sure you have the necessary data and information to complete your task.Please do not focus on international regions (e.g. Australasia, Europe or South America) as these relationships can be extremely tricky to evaluate and analyse (e.g. the Brexit [in England] has complicated Europe’s management and marketing for tourism).Criteria & Marking:UQ Students: Please access the profile fromLearn.UQormySI-netto access marking criteria held in this profile.AI StatementThis assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) or Machine Translation (MT). Students are advised that the use of AI or MT technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "This assignment is to be submitted through Turnitin on Blackboard.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "IMC Plan",
+            "special_indicators": [],
+            "weighting": "50% 8 pages + 5 minutes",
+            "due_date": "6/11/2024 1:00 pm",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "Individually, you are to conduct an Integrated Marketing Communications Plan using digital marketing technology for aDestination Marketing Organisation (DMO)of your choice. This IMC plan is a response to a current tourism issue of your choice. Assume that you are an external consultant and are presenting the findings for the DMO and the associated stakeholders. You are also to provide a 5 minute video highlighting your tourism issue and why your DMO will choose you and your organisation to address this issue.The DMOYour DMO needs to be responsible for marketing a specific city (e.g. Melbourne, Shanghai), region (e.g. Fraser Coast, Tropical North Queensland), state/county (e.g. Queensland, Yorkshire, California) or country (e.g. New Zealand, Bangladesh). Do not choose an amusement park or a specific activity (e.g. tour).On considering your destination, make sure you have the necessary data and information to complete your task.Please do not focus on international regions (e.g. Australasia, EuropeorSouth America)as these relationships can be extremely tricky to evaluate and analyse (e.g. the Brexit [in England] has complicated Europe’s management and marketing for tourism).Areas to coverThe material covered within this IMC plan will assess materials covered from Seminars 7 to 12. Materials from Seminars 1 to 6 are useful for clarification purposes but will not be assessed.AI StatementThis assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) or Machine Translation (MT). Students are advised that the use of AI or MT technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Assignment to be submitted via turnitin.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "Destination Management & Marketing IntroDiscusses the elements of destination management/marketing",
+            "topic_title": "Destination Management & Marketing Intro",
+            "topic_description": "Discusses the elements of destination management/marketing",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Seminar",
+            "topic": "Destination lifecycles and planning issuesExplains destination lifecycles and issues of planning for destination management/marketing",
+            "topic_title": "Destination lifecycles and planning issues",
+            "topic_description": "Explains destination lifecycles and issues of planning for destination management/marketing",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "Destination Marketing PlanningIntroduces market research and environmental analysis",
+            "topic_title": "Destination Marketing Planning",
+            "topic_description": "Introduces market research and environmental analysis",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Seminar",
+            "topic": "Destination Product DevelopmentDiscusses development/experience design principles",
+            "topic_title": "Destination Product Development",
+            "topic_description": "Discusses development/experience design principles",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Seminar",
+            "topic": "Governance & Stakeholder ManagementOverviews governance and stakeholder management issues",
+            "topic_title": "Governance & Stakeholder Management",
+            "topic_description": "Overviews governance and stakeholder management issues",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Seminar",
+            "topic": "Destination Markets (#1)Explains destination market segmentation",
+            "topic_title": "Destination Markets (#1)",
+            "topic_description": "Explains destination market segmentation",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Seminar",
+            "topic": "Destination Markets (#2)Analyses target markets & experiences",
+            "topic_title": "Destination Markets (#2)",
+            "topic_description": "Analyses target markets & experiences",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Seminar",
+            "topic": "Crisis Recovery & Visitor ManagementExamines how major crises and disasters affect destinations and how DMOs plan and respond to these catastrophes",
+            "topic_title": "Crisis Recovery & Visitor Management",
+            "topic_description": "Examines how major crises and disasters affect destinations and how DMOs plan and respond to these catastrophes",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Seminar",
+            "topic": "Destination Positioning & Branding",
+            "topic_title": "Destination Positioning & Branding",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Mid Sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "No seminar - In-semester Break",
+            "topic_title": "No seminar - In-semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Seminar",
+            "topic": "IMC for DestinationsAnalyses IMC using various communication elements",
+            "topic_title": "IMC for Destinations",
+            "topic_description": "Analyses IMC using various communication elements",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "No class (King's Birthday)King's Birthday Public Holiday - Monday 7 Oct 2024 - Check Blackboard for announcements about affected classes.",
+            "topic_title": "No class (King's Birthday)",
+            "topic_description": "King's Birthday Public Holiday - Monday 7 Oct 2024 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Seminar",
+            "topic": "Technology & Destination ManagementInvestigates technology and emerging issues for destination management/marketing",
+            "topic_title": "Technology & Destination Management",
+            "topic_description": "Investigates technology and emerging issues for destination management/marketing",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Seminar",
+            "topic": "Emerging Issues and DiscussionProvides a discussion on emerging issues in destination management/marketing",
+            "topic_title": "Emerging Issues and Discussion",
+            "topic_description": "Provides a discussion on emerging issues in destination management/marketing",
+            "learning_outcomes": []
+        }
+    ]
+}
