@@ -1,0 +1,248 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/BISM7206-20277-7520",
+    "full_course_code": "BISM7206-20277-7520",
+    "course_code": "BISM7206",
+    "class_code": "20277",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Understand and apply popular data modelling techniques and develop appropriate data structures for particular business environments."
+        },
+        {
+            "number": "LO2.",
+            "description": "Understand and apply Structured Query Language (SQL) to extract data from relational information systems."
+        },
+        {
+            "number": "LO3.",
+            "description": "Develop and apply data quality assurance procedures to improve data quality."
+        },
+        {
+            "number": "LO4.",
+            "description": "Understand current Information Systems issues and identify how to exploit available data for corporate advantage."
+        },
+        {
+            "number": "LO5.",
+            "description": "Develop and apply teamwork skills and written communication skills necessary to effectively collaborate and contribute to information systems development projects."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "Week 6During Lecture Time",
+            "learning_objectives": "L01, L02, L03",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The exam will be undertaken individually via the link on Blackboard. Once you have started the exam, you will have the full duration to complete the questions and then submit your answers electronically. This assessment task covers learning materials presented in lectures, tutorials and the relevant textbook chapters from week 1 to week 5 inclusive. Further information about the exam will be presented during lectures.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of Artificial Intelligence (AI).Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Exams submitted after the end of the submission time will incur alate penalty.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Team Project",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "23/05/2025 4:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Product/ Artefact/ Multimedia, Written",
+            "category": "Paper/ Report/ Annotation, Practical/ Demonstration, Product/ Design, Project",
+            "task_description": "This assessment task provides students with the opportunity to demonstrate:effective collaboration and teamwork skills;demonstrate their understanding of database concepts; andtheir ability to design, develop and implement a well-structured relational database that effectively supports the given case study business requirementsStudents will also be required to demonstrate their knowledge and ability to use SQL. While it is anticipated that the fundamental knowledge and skills will be developed through lecture and tutorial materials, students will be required to undertake additional research to further develop the skills required to successfully complete this assessment task.Students are required to submit a professional business report including professional modelling diagrams, supporting documentation and SQL scripts using app.diagrams.net for drawing models (freely available on the Web). SQL scripts are to be created using MySQL Workbench software which is available on UQ's \"Digital Workspace\" or Virtual Machine and in the BEL labs.Teamwork:Ideally, Assessment Task 2 will be undertaken in teams of 4 students. Team members must be enrolled in the same tutorial class to allow some teamwork to be conducted during tutorials (this is a mandatory requirement and will not be open to negotiation). Students are reminded that a key Learning Objective of this course is the ability to work in teams, and this assessment task directly addresses that Learning Objective. Accordingly, students are required to work in teams unless prior, special arrangements are in place with the course coordinator. Zero marks will apply if this requirement is not addressed.Peer assessment:Students must submit confidential self and peer evaluations to enable assessment of team member contributions. The evaluation process assists the teaching team to understand how each student contributed and the findings are confidential. The peer evaluation can affect each student's mark for this assignment.Assessment guidelines along with team requirements, the case study description, marking rubric and specifications will be available under the Assessment link on Blackboard.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "The assignment should be submitted as one Word document (docx) including modelling diagrams and a copy of the SQL scripts. Your assignment is to be submitted through Turnitin (via the Assessment link on Blackboard).",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Assessment Task 3 - Final Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "learning_objectives": "L01, L02, L03, L04",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The Final Examination will consist of multiple choice, short answer and problem-solving questions based on learning materials presented in lectures, tutorials and the relevant chapters of the textbook from week 1 to week 13 inclusive.Further details about the exam will be discussed in lectures and posted to the Blackboard course site.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of Artificial Intelligence (AI).Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Course Overview and Intro to DBMSIntroduction to database management including traditional file-based systems, the database management system and fundamental database concepts.Learning outcomes:L01, L04",
+            "topic_title": "Course Overview and Intro to DBMS",
+            "topic_description": "Introduction to database management including traditional file-based systems, the database management system and fundamental database concepts.",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "Entity Relationship ModellingEntity relationship modelling is explored in terms of a data driven approach using entity-relationship diagrams including design elements such as entities, relationships, attributes, keys and multiplicity.Learning outcomes:L01",
+            "topic_title": "Entity Relationship Modelling",
+            "topic_description": "Entity relationship modelling is explored in terms of a data driven approach using entity-relationship diagrams including design elements such as entities, relationships, attributes, keys and multiplicity.",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "Relational ModelRelational model concepts are discussed including specific terminology, keys, views and integrity constraints.Learning outcomes:L01, L03",
+            "topic_title": "Relational Model",
+            "topic_description": "Relational model concepts are discussed including specific terminology, keys, views and integrity constraints.",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "Structured Query Language (I)Introduction to basic SQL DDL and DML statements.Learning outcomes:L02, L03",
+            "topic_title": "Structured Query Language (I)",
+            "topic_description": "Introduction to basic SQL DDL and DML statements.",
+            "learning_outcomes": [
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Structured Query Language (II)Exploring aggregation and grouping, and relational operations to enable search conditions and order/grouping of results.Learning outcomes:L02, L03",
+            "topic_title": "Structured Query Language (II)",
+            "topic_description": "Exploring aggregation and grouping, and relational operations to enable search conditions and order/grouping of results.",
+            "learning_outcomes": [
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "In-Class ExamIn-Semester Examwill also take place during this lecture.",
+            "topic_title": "In-Class Exam",
+            "topic_description": "In-Semester Exam will also take place during this lecture.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "NormalisationExplore how normalisation supports database design and how concepts such as partial, transitive, and functional dependencies enable the logical database design to transition and conform to particular normal forms.Learning outcomes:L01, L03, L04",
+            "topic_title": "Normalisation",
+            "topic_description": "Explore how normalisation supports database design and how concepts such as partial, transitive, and functional dependencies enable the logical database design to transition and conform to particular normal forms.",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "Good Friday Public Holiday (more info on BB)We focus on some important functions that a DBMS should provide including transaction management, concurrency control and recovery control.",
+            "topic_title": "Good Friday Public Holiday (more info on BB)",
+            "topic_description": "We focus on some important functions that a DBMS should provide including transaction management, concurrency control and recovery control.",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Transaction ManagementWe expand our knowledge of database applications with an introduction to data warehousing and data integration.Learning outcomes:L01, L04",
+            "topic_title": "Transaction Management",
+            "topic_description": "We expand our knowledge of database applications with an introduction to data warehousing and data integration.",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Data WarehousingSecurity issues and how they might be addressed are considered in relation to the DBMS and its environment.Learning outcomes:L01, L04",
+            "topic_title": "Data Warehousing",
+            "topic_description": "Security issues and how they might be addressed are considered in relation to the DBMS and its environment.",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Database SecurityData is a valuable resource and access to accurate, current and informative data is critical to business success. Therefore, data needs to be managed and organised like other business assets.Learning outcomes:L01, L03, L04",
+            "topic_title": "Database Security",
+            "topic_description": "Data is a valuable resource and access to accurate, current and informative data is critical to business success. Therefore, data needs to be managed and organised like other business assets.",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Distributed Database Management SystemsWe examine distributed DBMSs including concepts, problems, technologies and protocols.Learning outcomes:L01, L04",
+            "topic_title": "Distributed Database Management Systems",
+            "topic_description": "We examine distributed DBMSs including concepts, problems, technologies and protocols.",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Overview and Big Data & TechnologiesExploring why data management technologies and approaches have expanded beyond relational databases and data warehousing.Learning outcomes:L01, L04",
+            "topic_title": "Overview and Big Data & Technologies",
+            "topic_description": "Exploring why data management technologies and approaches have expanded beyond relational databases and data warehousing.",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        }
+    ]
+}
