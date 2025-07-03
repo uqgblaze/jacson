@@ -93,9 +93,37 @@
         {
             "learning_period": "Week 1",
             "activity_type": "Seminar",
-            "topic": "Friday 27th JuneSession 1 - Marketing Paradigms and Course Overview:Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.Session 2 - Contemporary Marketing Practice:Marketing capabilities and structures to succeed in a global digital environment.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Friday 27th June",
-            "topic_description": "Session 1 - Marketing Paradigms and Course Overview: Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.\nSession 2 - Contemporary Marketing Practice: Marketing capabilities and structures to succeed in a global digital environment.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Friday 27th June</strong><br/><p><strong>Session 1 - Marketing Paradigms and Course Overview:</strong> Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.</p>\n<p><strong>Session 2 - Contemporary Marketing Practice: </strong>Marketing capabilities and structures to succeed in a global digital environment. </p>\n<p><br/></p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Friday 27th June</strong>",
+            "topic_description": "Friday 27th June Session 1 - Marketing Paradigms and Course Overview: Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment. Session 2 - Contemporary Marketing Practice: Marketing capabilities and structures to succeed in a global digital environment.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Saturday 28th June</strong><br><p><strong>Session 3 - Marketing Strategy Making: </strong>Strategic approaches, terms and concepts used in marketing strategy decision-making.</p>\n<p><strong>Session 4 - Customer Insight: </strong>Understanding customers and gaining insights to segment and influence behaviour.</p></br></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Saturday 28th June</strong>",
+            "topic_description": "Saturday 28th June Session 3 - Marketing Strategy Making: Strategic approaches, terms and concepts used in marketing strategy decision-making. Session 4 - Customer Insight: Understanding customers and gaining insights to segment and influence behaviour.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Sunday 29th June</strong><br/><p><strong>Session 5 - Value innovation:</strong> Creating and innovating value for customers and collaborators.</p>\n<p><strong>Session 6 - The market offering: </strong>Using customer insight and value innovation to introduce and improve market offerings  </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Sunday 29th June</strong>",
+            "topic_description": "Sunday 29th June Session 5 - Value innovation: Creating and innovating value for customers and collaborators. Session 6 - The market offering: Using customer insight and value innovation to introduce and improve market offerings",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -107,9 +135,37 @@
         {
             "learning_period": "Week 3",
             "activity_type": "Seminar",
-            "topic": "Friday 11th JulySession 7 - Branding:The role of brands in shaping consumer behaviour, and key branding decisions.Session 8 - Customer experience:Translating brand strategy into customer experiences across different customer journeys.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Friday 11th July",
-            "topic_description": "Session 7 - Branding: The role of brands in shaping consumer behaviour, and key branding decisions.\nSession 8 - Customer experience: Translating brand strategy into customer experiences across different customer journeys.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Friday 11th July</strong><br/><p><strong>Session 7 - Branding: </strong>The role of brands in shaping consumer behaviour, and key branding decisions.</p>\n<p><strong>Session 8 - Customer experience:</strong> Translating brand strategy into customer experiences across different customer journeys.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Friday 11th July</strong>",
+            "topic_description": "Friday 11th July Session 7 - Branding: The role of brands in shaping consumer behaviour, and key branding decisions. Session 8 - Customer experience: Translating brand strategy into customer experiences across different customer journeys.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Saturday 12th July</strong><br/><p><strong>Session 9 - Omnichannel marketing: </strong>Integrating content, media, technology, channels and touchpoints across customer lifecycles.</p>\n<p><strong>Session 10 - Internal marketing: </strong>Aligning people, culture and practices with brand strategy and customer experience.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Saturday 12th July</strong>",
+            "topic_description": "Saturday 12th July Session 9 - Omnichannel marketing: Integrating content, media, technology, channels and touchpoints across customer lifecycles. Session 10 - Internal marketing: Aligning people, culture and practices with brand strategy and customer experience.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Sunday 13th July</strong><br/><p><strong>Session 11 - Leveraging marketing technology:</strong> Understanding MarTech and its strategic applications</p>\n<p><strong>Session 12 - Business and social transformation through marketing:</strong> How businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice.</p>\n<p><strong>Session 13 - The future of transformational marketing:</strong> How marketing can continue to evolve as a tool for positive change. </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Sunday 13th July</strong>",
+            "topic_description": "Sunday 13th July Session 11 - Leveraging marketing technology: Understanding MarTech and its strategic applications Session 12 - Business and social transformation through marketing: How businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice. Session 13 - The future of transformational marketing: How marketing can continue to evolve as a tool for positive change.",
             "learning_outcomes": [
                 "L01",
                 "L02",
