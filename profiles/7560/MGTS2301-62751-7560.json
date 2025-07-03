@@ -1,0 +1,140 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/MGTS2301-62751-7560",
+    "full_course_code": "MGTS2301-62751-7560",
+    "course_code": "MGTS2301",
+    "class_code": "62751",
+    "semester_code": "7560",
+    "semester_details": "Semester 2, 2025 (30/06/2025 - 23/08/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Demonstrate an understanding of essential strategy concepts and processes required to design and evaluate a business strategy delivering value for multiple stakeholders."
+        },
+        {
+            "number": "LO2.",
+            "description": "Demonstrate an understanding of and apply appropriate strategy concepts and tools to analyse factors affecting an organisations’ internal and external environment."
+        },
+        {
+            "number": "LO3.",
+            "description": "Work collaboratively to prepare and execute a strategy."
+        },
+        {
+            "number": "LO4.",
+            "description": "Reflect on the choices and outcomes of strategic decisions, demonstrated structured problem-solving and critical thinking."
+        },
+        {
+            "number": "LO5.",
+            "description": "Demonstrate understanding of organisational design as foundation to execute a strategy."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Assessment 1: In-Semester Examination",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "11/07/2025During Class",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "Format: Exam (2-hours in class)Mode: IndividualTask: You are required to analyse a business case, applying strategy theory.This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) or Machine Translation (MT) tools will not be permitted. Any attempted use of AI or MT may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Please refer to the Learn.UQ site for a detailed assessment task sheet and submission instructions.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Assessment 2: Strategic Simulation and Audit Presentation",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "1/08/2025 5:00 pm",
+            "learning_objectives": null,
+            "mode": "Oral, Product/ Artefact/ Multimedia, Written",
+            "category": "Paper/ Report/ Annotation, Presentation, Role play/ Simulation",
+            "task_description": "Materials will be available the day before - 31 July 2025.Format: complete group report (written) and deliver presentation of report, including Q&AFormative: students develop a brief strategic plan for their simulation company to guide their decision-making. Plan won’t be marked separately, but will be part of final audit. Submission: by module 8 (2nd session of students playing the simulation)Peer assessment: assignment involves peer assessment to moderate group marks.Rationale: simulation provide students a WIL experience that lays the foundation for their degree. The focus of the assessment will be on their plan, actions, and recommendations in front of an industry audience.Artificial Intelligence (AI) and Machine Translation (MT) are emerging tools that may support students in completing this assessment task. Students may appropriately use AI and/or MT in completing this assessment task. Students must clearly reference any use of AI or MT in each instance.A failure to reference generative AI or MT use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Please refer to the Learn.UQ site for a detailed assessment task sheet and submission instructions.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Assessment 3: Reflection Report",
+            "special_indicators": [],
+            "weighting": "30%",
+            "due_date": "8/08/2025 5:00 pm",
+            "learning_objectives": null,
+            "mode": "Written",
+            "category": "Reflection",
+            "task_description": "Format: Students will reflect on their learnings and on expanding on the simulation experience by connecting it to relevant course content introduced in Modules 8 to 12Rationale:students become reflective learners, asked to reflect on their own biases designing and implement the plan; connecting with relevant strategic concepts.Artificial Intelligence (AI) and Machine Translation (MT) are emerging tools that may support students in completing this assessment task. Students may appropriately use AI and/or MT in completing this assessment task. Students must clearly reference any use of AI or MT in each instance.A failure to reference generative AI or MT use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Please refer to the Learn.UQ site for a detailed assessment task sheet and submission instructions.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Seminar",
+            "topic": "1 July - Module 1: What is strategy?Day 1 Tuesday 1 July 2025:  Morning (09:00 – 12:00)Outline of contentCourse overviewIntroducing foundations of strategyStrategy process",
+            "topic_title": "1 July - Module 1: What is strategy?",
+            "topic_description": "Day 1 Tuesday 1 July 2025:  Morning (09:00 – 12:00)\nOutline of content\n\nCourse overview\nIntroducing foundations of strategy \nStrategy process",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Seminar",
+            "topic": "7 July - Module 5: Business level strategyDay 3 Monday July 7 2025 - Morning (9:00 - 12:00)Outline of contentStrategy: considering scale and scopeDesign an appropriate business model to capture valueLearning outcomes:L02, L04",
+            "topic_title": "7 July - Module 5: Business level strategy",
+            "topic_description": "Day 3 Monday July 7 2025 - Morning (9:00 - 12:00)\nOutline of content\n\nStrategy: considering scale and scope \nDesign an appropriate business model to capture value",
+            "learning_outcomes": [
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Seminar",
+            "topic": "15 July - Module 8: Innovative Growth strategiesDay 5 Tuesday 15 July 2025 - Morning (09:00 - 12:00)Outline of contentFirst-mover advantagesProduct and process innovation (also useful for Hubro Simulation)Disruption / innovators dilemmaEntrepreneurial life cycleBusiness model",
+            "topic_title": "15 July - Module 8: Innovative Growth strategies",
+            "topic_description": "Day 5 Tuesday 15 July 2025 - Morning (09:00 - 12:00)\nOutline of content\n\nFirst-mover advantages\nProduct and process innovation (also useful for Hubro Simulation) \nDisruption / innovators dilemma \nEntrepreneurial life cycle \nBusiness model",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Seminar",
+            "topic": "21 July - Module 11: Structure and ImplementationDay 8 Monday 21 July 2025 - Morning (09:00 - 12:00)Outline of contentDifferent organisational structures / hierarchy: functional, matrixStrategic controlsLearning outcomes:L02, L03, L05",
+            "topic_title": "21 July - Module 11: Structure and Implementation",
+            "topic_description": "Day 8 Monday 21 July 2025 - Morning (09:00 - 12:00)\nOutline of content\n\nDifferent organisational structures / hierarchy: functional, matrix \nStrategic controls",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Seminar",
+            "topic": "1 August  - Module 13: Strategy Audit and ReflectionDay 10 Friday 1 August 2025 - Morning (08:00 – 12:00)Presentation",
+            "topic_title": "1 August  - Module 13: Strategy Audit and Reflection",
+            "topic_description": "Day 10 Friday 1 August 2025 - Morning (08:00 – 12:00)\nPresentation",
+            "learning_outcomes": []
+        }
+    ]
+}
