@@ -1,0 +1,283 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/TRVT2003-60340-7460",
+    "full_course_code": "TRVT2003-60340-7460",
+    "course_code": "TRVT2003",
+    "class_code": "60340",
+    "semester_code": "7460",
+    "semester_details": "Semester 2, 2024 (22/07/2024 - 18/11/2024)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Discuss the theoretical and practical components of project planning and operations"
+        },
+        {
+            "number": "LO2.",
+            "description": "Use international case studies to demonstrate comprehensive knowledge of event design principles"
+        },
+        {
+            "number": "LO3.",
+            "description": "Develop operational plans to strategically facilitate effective and efficient planning and management of events and tourism-related projects"
+        },
+        {
+            "number": "LO4.",
+            "description": "Critically engage with issues of risk management, workforce, and logistics"
+        },
+        {
+            "number": "LO5.",
+            "description": "Work effectively in teams to identify and propose solutions for real-world tourism and events operational issues"
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Review Quizzes",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "30% 3 quizzes at 10% each",
+            "due_date": "20/08/2024 8:00 pm17/09/2024 8:00 pm15/10/2024 8:00 pm",
+            "learning_objectives": "L01, L02, L04",
+            "mode": "Activity/ Performance",
+            "category": "Quiz",
+            "task_description": "Three non-cumulative review quizzes (10% each) will be administered throughout the semester that will cover the course lecture material, readings, and the tutorial activities.60 minutes will be allowed to complete each quiz between8am and 8pm on Tuesday of the scheduled week.Each quiz will consist of 10 questions consisting of an array of question types.The questions will primarily require you toindividuallycomplete the problem based learning activities from our weekly tutorials.Questions types will include open submission, drawing figures, constructing charts, multiple choice, true/false and/or short answer questions drawn from the class content from the preceding weeks of content.All quizzes will be completedfully online via Inspera Assessment.Inspera Assessment provides additional functionality to complement the existing suite of digital learning tools at UQ with a greater range of question types, accessibility provisions, and non-English languages.A formative practice quiz to allow students to gain familiarity with the types of questions to be asked will be available from the start of the course.This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Inspera accessed through Blackboard",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Elevator Pitch",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "26/08/2024Due live in your week 6 tutorial",
+            "learning_objectives": "L01, L02, L03",
+            "mode": "Oral",
+            "category": "Presentation",
+            "task_description": "Students work individually to pitch their ideas in response to the client’s event tourism briefs as a scaffolding assessment for the client proposal.The pitch will be delivered live in class individually in week 6 of the term.From the pitch, feedback will be provided by the class and teaching team to help refine and improve their ideas for the proposal.The elevator pitch will be 2-3 minutes maximum (strictly enforced).You are required to attend all pitches and provide feedback to your peers (just as they will be providing feedback for you).The results of the elevator pitch and feedback provided will help groups shape and refine their ideas for the Group Event Pitch due during exam week.A detailed presentation schedule will be provided to the class via Blackboard.Please Note:The pitch will be recorded for marking purposes.This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submission in class via Blackboard.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Client Event Proposal Personal Reflection",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "10%",
+            "due_date": "4/11/2024 - 15/11/2024Due at November 15th at 5pm via Blackboard.",
+            "learning_objectives": "L03",
+            "mode": "Written",
+            "category": "Reflection",
+            "task_description": "This assessment task requires you to individually write a 1,000 to 1,500 reflection essay on your experience working on the Client Event Proposal Assessment from receiving the client brief to delivering the final proposal.This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submission via Blackboard, will be subject to plagarism, orginality and AI review.",
+            "deferral_or_extension": "You cannot defer or apply for an extension for this assessment.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You cannot defer or apply for an extension for this assessment."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-3",
+            "assessment_title": "Client Event Tourism Proposal",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "11/11/2024 - 15/11/2024Due during exam week 2, TBA",
+            "learning_objectives": "L02, L03, L04, L05",
+            "mode": "Activity/ Performance, Oral, Written",
+            "category": "Presentation, Project",
+            "task_description": "Students work in teams of 4-6 students all term to develop an event tourism plan for a real client from the Brisbane business community.During week 2 of the term, the client provides event tourism briefs directly to the class. From these briefs, the groups develop event tourism proposals directly in response to the client’s real world problems and objectives. The proposals will cover all topics in the course including scoping, site selection, site layout, staffing and volunteer requirements, staging and logistics, risk management, and financing and budgets.Students use the project management tools they have developed throughout the term including Gantt charts, run sheets, work break down structure, and site maps to support their proposal. The project will be conducted in partnership with EventsAir, the industry leading project management software program, to provide students with software training in developing their proposal. The presentation and report will be delivered directly to the client at the end of the term.Teams will be created by the students with assistance from the teaching staff in week 1. Students will work in these groups all semester.No hard copy reportis required but supplementary materials such as site plans, timelines etc. are allowed as handouts with a limit of 10 single sided pages maximum.Your mark will be based on your individual contribution to the assessment task. Thus, you will be required to complete a peer evaluation at mid-semester and the end of the semester. Individual grades will be calculated as the group score (self-rated score included) weighted by the peer evaluation score.The pitch will be presented to the client and teaching staff at the end of the semester and will be12 minutesin duration maximum.Complete details regarding the assessment task will be provided on Blackboard.The my.uq website for Study Skills->Group Workhttps://my.uq.edu.au/information-and-services/student-support/study-skills/group-workUQ’s edX course - Working in Teams: A Practical Guidehttps://www.edx.org/course/working-in-teams-a-practical-guideThis assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Through a live presentation and supplementary materials.",
+            "deferral_or_extension": "You cannot defer or apply for an extension for this assessment.",
+            "late_submission": "You will receive a mark of 0 if this assessment issubmitted late.",
+            "additional_info": "You cannot defer or apply for an extension for this assessment."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Intro to Event & Tourism Project MgmtIntroduction to Problem Based Learning (PBL); Intro to the project management for events and tourism; group formation; tutorials begin this week.Learning outcomes:L01",
+            "topic_title": "Intro to Event & Tourism Project Mgmt",
+            "topic_description": "Introduction to Problem Based Learning (PBL); Intro to the project management for events and tourism; group formation; tutorials begin this week.",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "Creativity and designDeveloping an event tourism concept; Designing events/projects; tutorial PBL activitiesLearning outcomes:L01, L02",
+            "topic_title": "Creativity and design",
+            "topic_description": "Developing an event tourism concept; Designing events/projects; tutorial PBL activities",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "Proposals and biddingDeveloping and responding to project proposal; tutorial PBL activities; client meeting (mandatory online lecture attendance)Learning outcomes:L01, L02",
+            "topic_title": "Proposals and bidding",
+            "topic_description": "Developing and responding to project proposal; tutorial PBL activities; client meeting (mandatory online lecture attendance)",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Information technology session",
+            "topic": "Events Air Training; no tutorialsNo Class, Ekka Public Holiday(Public Holiday): Events Air TrainingLearning outcomes:L01",
+            "topic_title": "Events Air Training; no tutorials",
+            "topic_description": "No Class, Ekka Public Holiday(Public Holiday): Events Air Training",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Stakeholders and feasibilityFeasibility screening for events internal v external stakeholders, stakeholder management, stakeholder maps; tutorial PBL activities; Quiz #1Learning outcomes:L01, L02",
+            "topic_title": "Stakeholders and feasibility",
+            "topic_description": "Feasibility screening for events internal v external stakeholders, stakeholder management, stakeholder maps; tutorial PBL activities; Quiz #1",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Symposium",
+            "topic": "Elevator PitchesElevator pitches presented live;Learning outcomes:L01, L02, L03, L05",
+            "topic_title": "Elevator Pitches",
+            "topic_description": "Elevator pitches presented live;",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "LogisticsLogistics for customers, products and facilities; site plans; tutorial PBL activitiesLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Logistics",
+            "topic_description": "Logistics for customers, products and facilities; site plans; tutorial PBL activities",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "Project Management ToolsGantt charts; critical path analysis; work breakdown structures and more; tutorial PBL activities;Learning outcomes:L01, L02, L03",
+            "topic_title": "Project Management Tools",
+            "topic_description": "Gantt charts; critical path analysis; work breakdown structures and more; tutorial PBL activities;",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Project WorkforceMotivating, recruiting, and managing staff and volunteers; tutorial PBL activities; Quiz #2Learning outcomes:L01, L02, L03, L04",
+            "topic_title": "Project Workforce",
+            "topic_description": "Motivating, recruiting, and managing staff and volunteers; tutorial PBL activities; Quiz #2",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Mid Sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Project financingForecasting; budgeting; cash-flow; tutorial PBL activitiesLearning outcomes:L01, L02, L03",
+            "topic_title": "Project financing",
+            "topic_description": "Forecasting; budgeting; cash-flow; tutorial PBL activities",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Risk managementContingency planning, risk identification and analysis, risk management procedures;security protocols, contracts, legislation; tutorial PBL activitiesLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Risk management",
+            "topic_description": "Contingency planning, risk identification and analysis, risk management procedures;security protocols, contracts, legislation; tutorial PBL activities",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Team Based Learning",
+            "topic": "Proposal ConsultationQuiz #3;Learning outcomes:L01, L02, L05",
+            "topic_title": "Proposal Consultation",
+            "topic_description": "Quiz #3;",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Team Based Learning",
+            "topic": "Proposal ConsultationConsultation for the Client Event Tourism Proposal;Learning outcomes:L03, L04, L05",
+            "topic_title": "Proposal Consultation",
+            "topic_description": "Consultation for the Client Event Tourism Proposal;",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        }
+    ]
+}
