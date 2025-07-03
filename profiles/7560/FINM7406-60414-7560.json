@@ -1,0 +1,251 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/FINM7406-60414-7560",
+    "full_course_code": "FINM7406-60414-7560",
+    "course_code": "FINM7406",
+    "class_code": "60414",
+    "semester_code": "7560",
+    "semester_details": "Semester 2, 2025 (28/07/2025 - 22/11/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Demonstrate a knowledge of the international monetary system and an ability to calculate and interpret values to various exchange rate problems."
+        },
+        {
+            "number": "LO2.",
+            "description": "Outline and apply theories of international finance which are used by firms to forecast exchange rates."
+        },
+        {
+            "number": "LO3.",
+            "description": "Explain foreign exchange exposure and compare instruments and techniques available to manage it."
+        },
+        {
+            "number": "LO4.",
+            "description": "Apply theories of international finance to case studies so as to analyse and evaluate and then articulate solutions to real world problems."
+        },
+        {
+            "number": "LO5.",
+            "description": "Compare costs and sources of capital of international and domestic firms."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "In-semester Saturday6/09/2025 - 20/09/2025",
+            "learning_objectives": "L01, L02",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The closed book exam will comprisemultiple-choicequestions, short answers, and problem solving questions.AI StatementThis assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) or Machine Translation (MT) tools will not be permitted. Any attempted use of AI or MT may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Individual Project",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "16/10/2025 4:00 pm",
+            "learning_objectives": "L01, L02, L03, L04",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation, Project",
+            "task_description": "This is an individual assignment.The project requires students to make a variety of international financial decisions. These may include calculations involving foreign exchange rates and discussions on contemporary issues related to the international monetary system, such as cryptocurrencies, exchange rate regimes, inflation, and other relevant topics.Submission Guidelines:Please ensure that yourfull name and student number appear on every pageof your assignment by inserting a header.Your document must be submitted inPDF format, typed inTimes New Roman,font size 12, anddouble-spacedwith2.54 cm marginson all sides.Each question should begin on a new page.References must be placed at the end of each question, not at the end of the document. Ensure proper and consistent referencing for each response.Use eitherAPA or Harvard referencing style.As a guide for word count, use amaximum of 150 words per mark. For example, for a 2-mark question, the maximum is 300 words.AI Statement:Artificial Intelligence (AI) and Machine Translation (MT) are emerging tools that may support students in completing this assessment task. Students may appropriately use AI and/or MT in completing this assessment task. Students must clearly reference any use of AI or MT in each instance.A failure to reference generative AI or MT use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able toapply for an extension.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "50%",
+            "due_date": "End of Semester Exam Period8/11/2025 - 22/11/2025",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The Final Exam consists ofMultiple-choice questions,Short-answer questions,Problem-solving questions,Essay questions.Further details will be discussed in class.AI Statement:This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Topic 1: Course Intro and The Intl Monetary SystemGlobalisation; four major types of exchange rate mechanisms; digital currenciesLearning outcomes:L01",
+            "topic_title": "Topic 1: Course Intro and The Intl Monetary System",
+            "topic_description": "Globalisation; four major types of exchange rate mechanisms; digital currencies",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Course Introduction and The Intl MonetaryLearning outcomes:L01",
+            "topic_title": "Course Introduction and The Intl Monetary",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "The Foreign Exchange (Forex) MarketEKKA Public Holiday - Wednesday 13 August 2025- Check Blackboard for announcements about affected classes.Learning outcomes:L01",
+            "topic_title": "The Foreign Exchange (Forex) Market",
+            "topic_description": "EKKA Public Holiday - Wednesday 13 August 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "International Parity ConditionsLearning outcomes:L01, L02",
+            "topic_title": "International Parity Conditions",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Tutorial",
+            "topic": "Balance of PaymentsLearning outcomes:L01, L02",
+            "topic_title": "Balance of Payments",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "No LectureThere will be no lecture in Teaching Week 6 to allow students time to prepare for the in-person in-semester exam, which will be held on one of the following Saturdays: 6, 13, or 20 September 2025.Learning outcomes:L01, L03, L04",
+            "topic_title": "No Lecture",
+            "topic_description": "There will be no lecture in Teaching Week 6 to allow students time to prepare for the in-person in-semester exam, which will be held on one of the following Saturdays: 6, 13, or 20 September 2025.",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "Foreign Currency DerivativesLearning outcomes:L01, L03",
+            "topic_title": "Foreign Currency Derivatives",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Tutorial",
+            "topic": "Foreign Exchange Exposure 1Learning outcomes:L01, L03",
+            "topic_title": "Foreign Exchange Exposure 1",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Tutorial",
+            "topic": "Foreign Exchange Exposure IILearning outcomes:L03, L04",
+            "topic_title": "Foreign Exchange Exposure II",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Mid Sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "Intl Portfolio Theory and DiversificationKings Birthday Public Holiday - Monday 6 October 2025- Check Blackboard for announcements about affected classes.Learning outcomes:L05",
+            "topic_title": "Intl Portfolio Theory and Diversification",
+            "topic_description": "Kings Birthday Public Holiday - Monday 6 October 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "Sourcing Global Capital & Political RiskLearning outcomes:L05",
+            "topic_title": "Sourcing Global Capital & Political Risk",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "International Capital BudgetingLearning outcomes:L05",
+            "topic_title": "International Capital Budgeting",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "Revision TutorialsThis week’s tutorials will focus on final exam practice questions. Weekly consultation times will remain unchanged unless otherwise advised.Learning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Revision Tutorials",
+            "topic_description": "This week’s tutorials will focus on final exam practice questions. Weekly consultation times will remain unchanged unless otherwise advised.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        }
+    ]
+}
