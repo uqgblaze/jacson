@@ -1,0 +1,274 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/MGTS7301-60439-7560",
+    "full_course_code": "MGTS7301-60439-7560",
+    "course_code": "MGTS7301",
+    "class_code": "60439",
+    "semester_code": "7560",
+    "semester_details": "Semester 2, 2025 (28/07/2025 - 22/11/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Apply commonly used rational analytical tools to real-world business problems."
+        },
+        {
+            "number": "LO2.",
+            "description": "Apply commonly used business studio design tools to real-world business problems."
+        },
+        {
+            "number": "LO3.",
+            "description": "Synthesise and evaluate complex findings in an effective way."
+        },
+        {
+            "number": "LO4.",
+            "description": "Examine a complicated business environment as part of a team."
+        },
+        {
+            "number": "LO5.",
+            "description": "Describe and discuss the ethical context of business decisions and situation analysis."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Strategic analysis",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "8/09/2025 1:00 pm",
+            "learning_objectives": "L01, L03, L04",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "During workshops, students will have the chance to discuss a case using specific strategic analytical tools covered each week. Students will need to read the case, actively participate in discussions, and deliberate how these tools and techniques can be practically applied. Students must then submit an individual assignment that provides senior management with their strategic insights for the company in question, using the relevant strategy tools and techniques.AI StatementArtificial Intelligence (AI) and Machine Translation (MT) are emerging tools that may support students in completing this assessment task. Students may appropriately use AI and/or MT in completing this assessment task. Students must clearly reference any use of AI or MT in each instance.A failure to reference generative AI or MT use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Business Tools For Making Decisions",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle icon-text--small",
+                    "special_indicator_text": "Team or group-based"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "14/10/2025 1:00 pm",
+            "learning_objectives": "L02, L03, L04, L05",
+            "mode": "Activity/ Performance, Product/ Artefact/ Multimedia, Written",
+            "category": "Paper/ Report/ Annotation, Practical/ Demonstration",
+            "task_description": "Students will be asked to form teams of six (6) to present a critical analysis and a strategic recommendation to a company. This 15-minute group meeting must be recorded as a Teams or Zoom meeting with each member's camera on. The group is expected to draw upon three (3) tools and techniques from the available five (5) tools- GE Matrix, VRIN, BCG, Balanced Scorecard, and Strategy Diamond and justify why these tools and techniques have been chosen as the most relevant for the case study company in question.At the end of the assessment task, all team members will be required to complete a peer assessment of each other's performance and contribution to the assessment. Instructions for how to do this will be provided in class.AI StatementStudents are advised that the use of AI technologies to develop responses is a good starting point to help generate insights about the use of tools and techniques to their particular case. Artificial Intelligence (AI) and Machine Translation (MT) are emerging tools that may support students in completing this assessment task. Students may appropriately use AI and/or MT in completing this assessment task. Students must clearly reference any use of AI or MT in each instance.A failure to reference generative AI or MT use may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Examination",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "End of Semester Exam Period8/11/2025 - 22/11/2025",
+            "learning_objectives": "L01, L02, L03, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The final assessment will be an invigilated, in-person exam where students will be asked to develop and justify a 'best practices' strategic response using tools and techniques introduced in the course. The examination requires students to familiarise themselves with the facts of a business case that will be made available seven (7) days before the exam and answer a number of questions relating to this case study. Students will be given more information about how to analyse the business case and to develop answers to the examination questions towards the end of the semester.AI StatementThis assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) or Machine Translation (MT) tools will not be permitted. Any attempted use of AI or MT may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Course OverviewLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "Course Overview",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "External analysis- PESTLE & SWOTLearning outcomes:L01, L03, L05",
+            "topic_title": "External analysis- PESTLE & SWOT",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "No lectureLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "No lecture",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "External analysis - Porters 5 ForcesLearning outcomes:L01, L03, L04",
+            "topic_title": "External analysis - Porters 5 Forces",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "External analysis - Stakeholder analysis frameworkLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "External analysis - Stakeholder analysis framework",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "Internal analysis- VRINLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "Internal analysis- VRIN",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "Internal analysis- Strategy Diamond and The Balanced ScorecardLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Internal analysis- Strategy Diamond and The Balanced Scorecard",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "Internal analysis- BCG Matrix, GE Matrix, and 3 HorizonsLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Internal analysis- BCG Matrix, GE Matrix, and 3 Horizons",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "No lectureLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "No lecture",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Mid Sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester break",
+            "topic_title": "In-Semester break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Internal analysis – Strategy ImplementationLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Internal analysis – Strategy Implementation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Business Crisis- Turnaround AnalysisLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "Business Crisis- Turnaround Analysis",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Business Crisis- Business Model Innovation & Scenario PlanningLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Business Crisis- Business Model Innovation & Scenario Planning",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Course summary and exam guidanceLearning outcomes:L01, L03, L04, L05",
+            "topic_title": "Course summary and exam guidance",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        }
+    ]
+}
