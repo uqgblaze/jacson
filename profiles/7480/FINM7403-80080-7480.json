@@ -1,0 +1,129 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/FINM7403-80080-7480",
+    "full_course_code": "FINM7403-80080-7480",
+    "course_code": "FINM7403",
+    "class_code": "80080",
+    "semester_code": "7480",
+    "semester_details": "Summer Semester, 2024 (06/01/2025 - 01/02/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Analyse and evaluate accounting, financial and non-financial information relevant to the task of asset allocation and security selection."
+        },
+        {
+            "number": "LO2.",
+            "description": "Assess the value of a financial asset using a variety of accepted methods."
+        },
+        {
+            "number": "LO3.",
+            "description": "Explain and evaluate the risks associated with investments on portfolio and security levels."
+        },
+        {
+            "number": "LO4.",
+            "description": "Evaluate the performance of a portfolio and portfolio manager."
+        },
+        {
+            "number": "LO5.",
+            "description": "Apply theory to the analysis of real world cases when working as part of a team, and employ databases and softwares commonly used in the industry."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "30%",
+            "due_date": "20/01/2025 11:50 amDuring Lecture, from 10:10 AM to 11:50 AM",
+            "learning_objectives": "L01, L02, L03",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The In-Semester exam is an open-book and online exam during class.The exam consists of multiple choice and short answer questions. Solving some of these problems will involve calculation.More details will be provided on the course Blackboard site.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) or Machine Translation (MT). Students are advised that the use of AI or MT technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Exams submitted after the end of the submission time will incur alate penalty.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Research Report--individual submissions",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "25%",
+            "due_date": "24/01/2025 5:00 pm",
+            "learning_objectives": "L01, L03, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "The tasks involve security analysis, computations, and decision-making with the aid of theories, financial data, and software (Excel).The tasks help you apply theories learned to solving real-world problems.You are expected to work individually and produce a report that reflects the work undertaken to complete these tasks.Detailed guidelines for this assignment are provided on our course BB site.WORD LIMIT: 1600 words (excluding references and appendices).NOTE:Artificial Intelligence (AI) or Machine Translation (MT) uses:You may use AI to complete a specified part of this assignment, which will be indicated in the report task sheet. The use of AI must be acknowledged and referenced. Not referencing or acknowledging AI use may constitute student misconduct under the (PPL 3.60.01)Student Code of Conduct. While for other parts of the assignment, the use of AI is prohibited. Machine Translation is prohibited in all parts of the assignment.Read full task descriptionHide full task description",
+            "submission_guidelines": "The project must be submitted for grading via the Blackboard Assignment submission link. It is also required that students submit the project to Turnitin for an integrity check.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "45%",
+            "due_date": "End of Semester Exam Period1/02/2025 - 8/02/2025",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "The final assessment consists ofShort-answer questions,Essay questions.Further details will be discussed in class.AI Statement:This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) tools will not be permitted. Any attempted use of Generative AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": null,
+            "additional_info": "You may be able to\ndefer this exam\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Monday 6/01/2025 - The Investment EnvironmentThis topic develops understanding of risk and return, investor's preferences, and capital allocation to risky assets.Learning outcomes:L02, L05",
+            "topic_title": "Monday 6/01/2025 - The Investment Environment",
+            "topic_description": "This topic develops understanding of risk and return, investor's preferences, and capital allocation to risky assets.",
+            "learning_outcomes": [
+                "L02",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Monday 13/01/2025 - Equity Valuation IIILearning outcomes:L01, L03, L05",
+            "topic_title": "Monday 13/01/2025 - Equity Valuation III",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "Monday 20/01/2025 - No Tutorial",
+            "topic_title": "Monday 20/01/2025 - No Tutorial",
+            "topic_description": "",
+            "learning_outcomes": []
+        }
+    ]
+}
