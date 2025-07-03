@@ -1,0 +1,261 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/BISM7233-20281-7520",
+    "full_course_code": "BISM7233-20281-7520",
+    "course_code": "BISM7233",
+    "class_code": "20281",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Demonstrate knowledge of Data Analytics for decision-making"
+        },
+        {
+            "number": "LO2.",
+            "description": "Apply the principles of data management to model and integrate organisational data"
+        },
+        {
+            "number": "LO3.",
+            "description": "Apply data analytics techniques individually to solve business problems"
+        },
+        {
+            "number": "LO4.",
+            "description": "Apply data visualisation principles and techniques to represent insights from data"
+        },
+        {
+            "number": "LO5.",
+            "description": "Demonstrate knowledge of managerial and societal issues related to data"
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Data Integration Using SSIS",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "20%",
+            "due_date": "29/04/2025 2:00 pm",
+            "learning_objectives": "L01, L02",
+            "mode": "Product/ Artefact/ Multimedia, Written",
+            "category": "Computer Code, Essay/ Critique, Practical/ Demonstration, Project",
+            "task_description": "You will be asked to design a Dimensional model and create a Data warehouse for the case company. You will also run a few analytical queries to generate business insights. You will write a short report (1000 words explaining, the rationale, process, and results of your analysis).AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Report and other outputs to be submitted electronically via TurnItIn and BlackBoard.",
+            "deferral_or_extension": "You cannot defer or apply for an extension for this assessment.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You cannot defer or apply for an extension for this assessment."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Business Analytics Case Study",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "26/05/2025 2:00 pm",
+            "learning_objectives": "L01, L02, L03, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "You will complete an essay that requires you to undertake research in order to prepare a report (minimum 1500 words and strictly no more than 1600 words).You will be presented with a business analytics case with diverse stakeholder requests. You are tasked with developing recommendations for business analytics cases, where you will apply your knowledge and skill to develop an analytical model for business decision-making.A detailed rubric for the project will be accessible via Blackboard.Full details of the requirements for the written report will be provided with the release of the Project assessment document.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "Report and other outputs to be submitted electronically via TurnItIn and BlackBoard.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Final Course Exam",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
+                    "special_indicator_text": "Identity Verified"
+                },
+                {
+                    "special_indicators_class": "icon--how-youll-learn--multiple-circle-1 icon-text--small",
+                    "special_indicator_text": "In-person"
+                }
+            ],
+            "weighting": "40%",
+            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "learning_objectives": "L01, L03, L04, L05",
+            "mode": "Written",
+            "category": "Examination",
+            "task_description": "End of Course exam with a mix of multiple choice questions, conceptual short questions, and/or scenario-based analysis questions.Read full task descriptionHide full task description",
+            "submission_guidelines": "You cannot defer or apply for an extension for this assessment.",
+            "deferral_or_extension": "You cannot defer or apply for an extension for this assessment.",
+            "late_submission": null,
+            "additional_info": "You cannot defer or apply for an extension for this assessment."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Lecture 1: Course Overview and Business Analytics Framework.Learning outcomes:L01, L05",
+            "topic_title": "Lecture 1: Course Overview and Business Analytics Framework.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "Tute 1: Introduction to Business Analytics.Learning outcomes:L01",
+            "topic_title": "Tute 1: Introduction to Business Analytics.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "Tute 2: ER Modelling and SQL.Learning outcomes:L01, L02",
+            "topic_title": "Tute 2: ER Modelling and SQL.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "Tute 3: Dimensional Modelling and ETL Introduction.Learning outcomes:L01, L02",
+            "topic_title": "Tute 3: Dimensional Modelling and ETL Introduction.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Tutorial",
+            "topic": "Tute 4: ETL: Data Integration I.Learning outcomes:L01, L04",
+            "topic_title": "Tute 4: ETL: Data Integration I.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Tutorial",
+            "topic": "Tute 5: ETL Data Integration II.Learning outcomes:L03, L04",
+            "topic_title": "Tute 5: ETL Data Integration II.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "Tute 6: Microsoft Power BI: I.Learning outcomes:L01, L02, L04",
+            "topic_title": "Tute 6: Microsoft Power BI: I.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Tutorial",
+            "topic": "Tute 7: Microsoft Power BI: II.Friday 18th April - Public Holiday - Classes falling on a public holiday may be rescheduled or the recording of the lecture will be provided.Learning outcomes:L01, L02",
+            "topic_title": "Tute 7: Microsoft Power BI: II.",
+            "topic_description": "Friday 18th April - Public Holiday - Classes falling on a public holiday may be rescheduled or the recording of the lecture will be provided.",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break.",
+            "topic_title": "In-Semester Break.",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Tutorial",
+            "topic": "Tute 8: Rapid Minner: Supervised Models.Learning outcomes:L03",
+            "topic_title": "Tute 8: Rapid Minner: Supervised Models.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "Tute 9: Rapid Minder: Supervised and Unsupervised Models.Labour Day Public Holiday - Monday 5 May 2025- Check Blackboard for announcements about affected classes.Learning outcomes:L01, L02, L03, L04",
+            "topic_title": "Tute 9: Rapid Minder: Supervised and Unsupervised Models.",
+            "topic_description": "Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "Tute 10: Unsupervised Models and Intro to Data Challenge.Learning outcomes:L01, L02, L03, L04",
+            "topic_title": "Tute 10: Unsupervised Models and Intro to Data Challenge.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "Tutorial 11: Data Challenge (Bring Your Data).Learning outcomes:L01, L02, L03",
+            "topic_title": "Tutorial 11: Data Challenge (Bring Your Data).",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "No Tutorial.Learning outcomes:L01, L03",
+            "topic_title": "No Tutorial.",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L03"
+            ]
+        }
+    ]
+}
