@@ -1,0 +1,229 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/TRVT3003-60221-7460",
+    "full_course_code": "TRVT3003-60221-7460",
+    "course_code": "TRVT3003",
+    "class_code": "60221",
+    "semester_code": "7460",
+    "semester_details": "Semester 2, 2024 (22/07/2024 - 18/11/2024)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Critically examine the challenges for the tourism and events industry in a range of developmental, environmental and societal contexts."
+        },
+        {
+            "number": "LO2.",
+            "description": "Collaboratively evaluate the needs, responsibilities and ethical behaviour of tourism and events stakeholders, at both local and global levels."
+        },
+        {
+            "number": "LO3.",
+            "description": "Formulate resilient business strategies to pre-empt and recover from emerging issues in the tourism and events industries."
+        },
+        {
+            "number": "LO4.",
+            "description": "Respond and adapt to crises and disasters to effectively manage tourism and event capabilities and social responsibilities."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "In-Semester Exam During Class",
+            "special_indicators": [
+                {
+                    "special_indicators_class": "icon--engineering-and-computing--laptop icon-text--small",
+                    "special_indicator_text": "Online"
+                }
+            ],
+            "weighting": "35% Individual; 1,000 Words",
+            "due_date": "6/09/2024 10:00 amDuring Tutorial Class 10:00 AM to 12:00PM",
+            "learning_objectives": "L01",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation, Examination",
+            "task_description": "You will be given 1 out of a possible 3 scenarios focusing on different issues and industries and must write an essay under exam conditions on the underlying cause of the issue, its effect on the tourism and events industry, identify ethical issues and provide management options.Your essay should be a maximum of 1,000 words.The exam will take place online via Blackboard during the scheduled lecture time for this class.The use of Artificial Intelligence (AI) tools in this assessment will not be permitted. Any attempted use of AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able todefer this exam.",
+            "deferral_or_extension": "You may be able todefer this exam.",
+            "late_submission": "Exams submitted after the end of the submission time will incur alate penalty.",
+            "additional_info": "You may be able to\ndefer this exam\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Case study report",
+            "special_indicators": [],
+            "weighting": "40% 3,500 words; Group; Peer Assessment",
+            "due_date": "8/10/2024 5:00 pm",
+            "learning_objectives": "L01, L02, L03",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "In a group of 4, students will be required toprepare a detailed case study report on current/emerging ethical issues and challenges facing a particular tourism and events industry sub-sector (of their choice, e.g., cruise tourism industry, sports events etc; to be approved by Course Coordinator in advance)propose strategies for responding effectively to the identified challenges.The report should be a maximum of 3,500 words and is to be submitted via Blackboard.Your mark will be based on your individual contribution to the assessment task. Thus, you will be required to complete a peer evaluation. Individual grades will be calculated as the group score weighted by the peer evaluation score.This task has been designed to be challenging, authentic and complex.  Whilst students may use AI technologies, successful completion of assessment in this course will require students to critically engage in specific contexts and tasks for which artificial intelligence will provide only limited support and guidance.A failure to reference AI use may constitute student misconduct under the Student Code of Conduct.To pass this assessment, students will be required to demonstrate detailed comprehension of their written submission independent of AI tools.Read full task descriptionHide full task description",
+            "submission_guidelines": "Online via Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-2",
+            "assessment_title": "Oral Exam",
+            "special_indicators": [],
+            "weighting": "25% Individual; 5 minutes",
+            "due_date": "25/10/2024 10:00 amDuring Tutorial Class",
+            "learning_objectives": "L01, L03, L04",
+            "mode": "Oral",
+            "category": "Examination",
+            "task_description": "In the final week of semester (during tutorial time) each student will have a discussion with a facilitator, in which a crisis is presented to them to respond to.The students will use their group assessment case study as a foundation to adapt to and recover from the crisis.Probing questions will be asked to evaluate the effectiveness of their response and how it will establish resilience for future issues and crises.The oral exam will be individual and will last 5 minutes. It will be held during the scheduled tutorial time in Week 13.Please Note:The presentation will be recorded for marking purposes.This assessment task is to be completed in-person. The use of Artificial Intelligence (AI) tools will not be permitted. Any attempted use of AI may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
+            "submission_guidelines": "You may be able toapply for an extension.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "You will receive a mark of 0 if this assessment issubmitted late.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Introduction to Environmental and Social IssuesTopics include: climate change; overtourism; United Nations sustainable development goals.Learning outcomes:L01",
+            "topic_title": "Introduction to Environmental and Social Issues",
+            "topic_description": "Topics include: climate change; overtourism; United Nations sustainable development goals.",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "Responsible Tourism and EventsTopics include: ecotourism; responsible eventsLearning outcomes:L01, L02",
+            "topic_title": "Responsible Tourism and Events",
+            "topic_description": "Topics include: ecotourism; responsible events",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "Understanding ResilienceTopics include: foundations of systems thinking; adaptation and mitigation for tourism systemsLearning outcomes:L03",
+            "topic_title": "Understanding Resilience",
+            "topic_description": "Topics include: foundations of systems thinking; adaptation and mitigation for tourism systems",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "Building ResilienceTopics include: individual, organisational and destination resilience.Learning outcomes:L03",
+            "topic_title": "Building Resilience",
+            "topic_description": "Topics include: individual, organisational and destination resilience.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Introduction to EthicsTopics include: foundations of ethics; the Global Code of Ethics for Tourism; ethical issues for eventsLearning outcomes:L01, L02",
+            "topic_title": "Introduction to Ethics",
+            "topic_description": "Topics include: foundations of ethics; the Global Code of Ethics for Tourism; ethical issues for events",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "Environmental EthicsTopics include: corporate social responsibility; consumer demand for ethical products and servicesLearning outcomes:L01, L02",
+            "topic_title": "Environmental Ethics",
+            "topic_description": "Topics include: corporate social responsibility; consumer demand for ethical products and services",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "Assignment 1 (online exam) to be held during lecture timeLearning outcomes:L01",
+            "topic_title": "Assignment 1 (online exam) to be held during lecture time",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "Indigenous and First Nations TourismOnline case study. Topics include: Indigenous tourism products and services; demand for Indigenous tourism; Indigenous worldviews and tourismLearning outcomes:L01, L02",
+            "topic_title": "Indigenous and First Nations Tourism",
+            "topic_description": "Online case study. Topics include: Indigenous tourism products and services; demand for Indigenous tourism; Indigenous worldviews and tourism",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Business EthicsTopics include: Corporate Social Responsibility; consumer demand for ethical products and servicesLearning outcomes:L01, L02",
+            "topic_title": "Business Ethics",
+            "topic_description": "Topics include: Corporate Social Responsibility; consumer demand for ethical products and services",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Mid Sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Introduction to Crises and DisastersTopics include: definitions; impacts of crises and disasters on tourism and eventsLearning outcomes:L01, L04",
+            "topic_title": "Introduction to Crises and Disasters",
+            "topic_description": "Topics include: definitions; impacts of crises and disasters on tourism and events",
+            "learning_outcomes": [
+                "L01",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Crisis ManagementTopics include: risk and crisis planningLearning outcomes:L03, L04",
+            "topic_title": "Crisis Management",
+            "topic_description": "Topics include: risk and crisis planning",
+            "learning_outcomes": [
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Post-disaster recoveryTopics include: media and crisis communication; post-disaster recovery marketingLearning outcomes:L03, L04",
+            "topic_title": "Post-disaster recovery",
+            "topic_description": "Topics include: media and crisis communication; post-disaster recovery marketing",
+            "learning_outcomes": [
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Course reviewLearning outcomes:L01, L02, L03, L04",
+            "topic_title": "Course review",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04"
+            ]
+        }
+    ]
+}
