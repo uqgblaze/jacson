@@ -1,0 +1,230 @@
+{
+    "url": "https://course-profiles.uq.edu.au/course-profiles/BSAN2204-20284-7520",
+    "full_course_code": "BSAN2204-20284-7520",
+    "course_code": "BSAN2204",
+    "class_code": "20284",
+    "semester_code": "7520",
+    "semester_details": "Semester 1, 2025 (24/02/2025 - 21/06/2025)",
+    "learning_outcomes": [
+        {
+            "number": "LO1.",
+            "description": "Recognise and explain the role of R for business analytics."
+        },
+        {
+            "number": "LO2.",
+            "description": "Explain the basic concepts used in R for managing and manipulating data."
+        },
+        {
+            "number": "LO3.",
+            "description": "Apply R for basic business analytics tasks, including data visualisation and predictive analytics/forecasting."
+        },
+        {
+            "number": "LO4.",
+            "description": "Compare and critically evaluate competing methods of business analytics."
+        },
+        {
+            "number": "LO5.",
+            "description": "Demonstrate how business analytics can inform and improve managerial decision making."
+        }
+    ],
+    "assessments": [
+        {
+            "assessment_detail_section_id": "assessment-detail-0",
+            "assessment_title": "Project Report 1",
+            "special_indicators": [],
+            "weighting": "50%",
+            "due_date": "11/04/2025 4:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Written",
+            "category": "Paper/ Report/ Annotation",
+            "task_description": "Project 1 will provide an initial analysis of the MSD (the \"Million Song Dataset\") using R. The project must begin by introducing the dataset by using descriptive analytics of the full dataset (i.e., describing all rows and columns of the dataset). Students must then select and provide a rationale for a specific subset of observations (rows) and variables (columns) of the MSD to be used for further analysis. Students must then provide descriptive statistics for all the variables in their chosen subset, a curated selection of data visualisations (univariate and bivariate displays) and one linear regression model. Throughout the project report, students must provide brief descriptions of the R functions used to generate their outputs.It is expected that Project 1 will be written using standard word processing software (e.g., Microsoft Word).AI StatementThis task has been designed to be challenging, authentic and complex. Whilst students may use AI technologies, successful completion of assessment in this course will require students to critically engage in specific contexts and tasks for which artificial intelligence will provide only limited support and guidance. A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct. To pass this assessment, students will be required to demonstrate detailed comprehension of their written submission independent of AI tools.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit via submission link on Blackboard",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        },
+        {
+            "assessment_detail_section_id": "assessment-detail-1",
+            "assessment_title": "Project Report 2",
+            "special_indicators": [],
+            "weighting": "50%",
+            "due_date": "23/05/2025 4:00 pm",
+            "learning_objectives": "L01, L02, L03, L04, L05",
+            "mode": "Written",
+            "category": "Computer Code, Paper/ Report/ Annotation, Project",
+            "task_description": "Project 2 will complete an extended analysis of the MSD, building upon the analysis presented in Project 1 written as an R Markdown file (.Rmd). Project 2 must include a re-writing of the initial analysis (corrected where necessary based on feedback), followed by applications of one or more techniques of model validation and dealing with missing data in their chosen subset of the MSD (the \"Million Song Dataset\"). Throughout Project 2, students must provide brief descriptions as plain text of the R functions used to generate their outputs, as well including the R syntax as R Markdown code chunks which generates the outputs included in the rendered report (.pdf).For Project 2, students must separately submit both the R Markdown file (.Rmd) and the report file (.pdf) it generates.AI StatementThis task has been designed to be challenging, authentic and complex. Whilst students may use AI technologies, successful completion of assessment in this course will require students to critically engage in specific contexts and tasks for which artificial intelligence will provide only limited support and guidance. A failure to reference generative AI use may constitute student misconduct under the Student Code of Conduct. To pass this assessment, students will be required to demonstrate detailed comprehension of their written submission independent of AI tools.Read full task descriptionHide full task description",
+            "submission_guidelines": "Submit via submission link via Blackboard.",
+            "deferral_or_extension": "You may be able toapply for an extension.",
+            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
+            "additional_info": "You may be able to\napply for an extension\n."
+        }
+    ],
+    "learning_activities": [
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "Course IntroductionLearning outcomes:L01, L02, L03, L05",
+            "topic_title": "Course Introduction",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "Lecture",
+            "topic": "Introduction to the Million Song DatasetLearning outcomes:L01, L02",
+            "topic_title": "Introduction to the Million Song Dataset",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "Descriptive AnalyticsLearning outcomes:L02, L03, L04",
+            "topic_title": "Descriptive Analytics",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Lecture",
+            "topic": "Data VisualisationLearning outcomes:L02, L03, L04",
+            "topic_title": "Data Visualisation",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "Linear RegressionLearning outcomes:L02, L03, L04",
+            "topic_title": "Linear Regression",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Lecture",
+            "topic": "Week 1 - 5 RecapLearning outcomes:L03, L04, L05",
+            "topic_title": "Week 1 - 5 Recap",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "Introduction to R MarkdownLearning outcomes:L01, L02, L05",
+            "topic_title": "Introduction to R Markdown",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Lecture",
+            "topic": "Model ValidationGood Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L02, L03, L04",
+            "topic_title": "Model Validation",
+            "topic_description": "Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Mid-sem break",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "In-Semester Break",
+            "topic_title": "In-Semester Break",
+            "topic_description": "",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "Dealing with Missing DataLearning outcomes:L02, L03, L04, L05",
+            "topic_title": "Dealing with Missing Data",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "Using Models for PredictionLabour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L03, L04, L05",
+            "topic_title": "Using Models for Prediction",
+            "topic_description": "Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "Week 7 - 10 RecapLearning outcomes:L01, L02, L03, L04, L05",
+            "topic_title": "Week 7 - 10 Recap",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Lecture",
+            "topic": "Project 2 Lecture WorkshopLearning outcomes:L03, L04, L05",
+            "topic_title": "Project 2 Lecture Workshop",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "Course ReviewLearning outcomes:L01, L05",
+            "topic_title": "Course Review",
+            "topic_description": "",
+            "learning_outcomes": [
+                "L01",
+                "L05"
+            ]
+        }
+    ]
+}
