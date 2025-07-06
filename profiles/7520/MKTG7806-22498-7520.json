@@ -1,4 +1,8 @@
 {
+    "course_title": "Transformational Marketing",
+    "study_period": "Sem 1 2025",
+    "location": "Brisbane City",
+    "attendance": "In Person",
     "url": "https://course-profiles.uq.edu.au/course-profiles/MKTG7806-22498-7520",
     "full_course_code": "MKTG7806-22498-7520",
     "course_code": "MKTG7806",
@@ -93,9 +97,9 @@
         {
             "learning_period": "Week 1",
             "activity_type": "Seminar",
-            "topic": "Session 1: Marketing Paradigms and Course OverviewMarketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Session 1: Marketing Paradigms and Course Overview",
-            "topic_description": "Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 1: Marketing Paradigms and Course Overview </strong><br/><p>Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Session 1: Marketing Paradigms and Course Overview </strong>",
+            "topic_description": "Session 1: Marketing Paradigms and Course Overview Marketing paradigms and their impact on marketing practices, followed by an overview of the course and assessment.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -107,9 +111,9 @@
         {
             "learning_period": "Week 2",
             "activity_type": "Seminar",
-            "topic": "Session 2: Contemporary Marketing PracticeMarketing capabilities and structures to succeed in a global digital environment.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Session 2: Contemporary Marketing Practice",
-            "topic_description": "Marketing capabilities and structures to succeed in a global digital environment.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 2: Contemporary Marketing Practice </strong><br/><p> Marketing capabilities and structures to succeed in a global digital environment. </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Session 2: Contemporary Marketing Practice </strong>",
+            "topic_description": "Session 2: Contemporary Marketing Practice Marketing capabilities and structures to succeed in a global digital environment.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -121,9 +125,23 @@
         {
             "learning_period": "Week 4",
             "activity_type": "Seminar",
-            "topic": "Session 3: Marketing Strategy MakingStrategic approaches, terms and concepts used in marketing strategy decision-making.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Session 3: Marketing Strategy Making",
-            "topic_description": "Strategic approaches, terms and concepts used in marketing strategy decision-making.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 3: Marketing Strategy Making </strong><br/><p> Strategic approaches, terms and concepts used in marketing strategy decision-making. </p>\n<p><br/></p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Session 3: Marketing Strategy Making </strong>",
+            "topic_description": "Session 3: Marketing Strategy Making Strategic approaches, terms and concepts used in marketing strategy decision-making.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong> Session 4: Customer Insight </strong><br><p> Understanding customers and gaining insights to segment and influence behaviour.</p></br></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong> Session 4: Customer Insight </strong>",
+            "topic_description": "Session 4: Customer Insight Understanding customers and gaining insights to segment and influence behaviour.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -135,9 +153,9 @@
         {
             "learning_period": "Week 5",
             "activity_type": "Seminar",
-            "topic": "Session 5: Value innovationCreating and innovating value for customers and collaborators.Learning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Session 5: Value innovation",
-            "topic_description": "Creating and innovating value for customers and collaborators.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 5: Value innovation</strong><br/><p> Creating and innovating value for customers and collaborators. </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Session 5: Value innovation</strong>",
+            "topic_description": "Session 5: Value innovation Creating and innovating value for customers and collaborators.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -149,9 +167,9 @@
         {
             "learning_period": "Week 6",
             "activity_type": "Seminar",
-            "topic": "Session 6: The market offeringUsing customer insight and value innovation to introduce and improve market offeringsLearning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Session 6: The market offering",
-            "topic_description": "Using customer insight and value innovation to introduce and improve market offerings",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 6: The market offering </strong><br/><p>Using customer insight and value innovation to introduce and improve market offerings  </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Session 6: The market offering </strong>",
+            "topic_description": "Session 6: The market offering Using customer insight and value innovation to introduce and improve market offerings",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -163,9 +181,9 @@
         {
             "learning_period": "Week 7",
             "activity_type": "Seminar",
-            "topic": "Session 7: BrandingThe role of brands in shaping consumer behaviour, and key branding decisions.Learning outcomes:L01, L02, L03, L04",
-            "topic_title": "Session 7: Branding",
-            "topic_description": "The role of brands in shaping consumer behaviour, and key branding decisions.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 7: Branding </strong><br/><p>The role of brands in shaping consumer behaviour, and key branding decisions.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Session 7: Branding </strong>",
+            "topic_description": "Session 7: Branding The role of brands in shaping consumer behaviour, and key branding decisions.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -176,9 +194,9 @@
         {
             "learning_period": "Week 8",
             "activity_type": "Seminar",
-            "topic": "Session 8: Customer experienceTranslating brand strategy into customer experiences across different customer journeys.Learning outcomes:L01, L02, L03, L04",
-            "topic_title": "Session 8: Customer experience",
-            "topic_description": "Translating brand strategy into customer experiences across different customer journeys.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 8: Customer experience </strong><br/><p> Translating brand strategy into customer experiences across different customer journeys.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Session 8: Customer experience </strong>",
+            "topic_description": "Session 8: Customer experience Translating brand strategy into customer experiences across different customer journeys.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -189,17 +207,17 @@
         {
             "learning_period": "Mid-sem break",
             "activity_type": "No student involvement (Breaks, information)",
-            "topic": "In-Semester Break",
-            "topic_title": "In-Semester Break",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>In-Semester Break</strong><br/></p></div></td>",
+            "topic_title": "<strong>In-Semester Break</strong>",
+            "topic_description": "In-Semester Break",
             "learning_outcomes": []
         },
         {
             "learning_period": "Week 9",
             "activity_type": "Seminar",
-            "topic": "Session 9: Omnichannel marketing communicationsIntegrating content, media, technology, channels and touchpoints across customer lifecycles.Learning outcomes:L01, L02, L03, L04",
-            "topic_title": "Session 9: Omnichannel marketing communications",
-            "topic_description": "Integrating content, media, technology, channels and touchpoints across customer lifecycles.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 9: Omnichannel marketing communications </strong><br/><p>Integrating content, media, technology, channels and touchpoints across customer lifecycles.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Session 9: Omnichannel marketing communications </strong>",
+            "topic_description": "Session 9: Omnichannel marketing communications Integrating content, media, technology, channels and touchpoints across customer lifecycles.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -210,9 +228,9 @@
         {
             "learning_period": "Week 10",
             "activity_type": "Seminar",
-            "topic": "Session 10: Internal marketingAligning people, culture and practices with brand strategy and customer experience.Learning outcomes:L01, L02, L03, L05",
-            "topic_title": "Session 10: Internal marketing",
-            "topic_description": "Aligning people, culture and practices with brand strategy and customer experience.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 10: Internal marketing</strong><br/><p> Aligning people, culture and practices with brand strategy and customer experience.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Session 10: Internal marketing</strong>",
+            "topic_description": "Session 10: Internal marketing Aligning people, culture and practices with brand strategy and customer experience.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -223,9 +241,9 @@
         {
             "learning_period": "Week 11",
             "activity_type": "Seminar",
-            "topic": "Session 11: Leveraging marketing technologyUnderstanding MarTech and its strategic applicationsLearning outcomes:L01, L02, L03, L05",
-            "topic_title": "Session 11: Leveraging marketing technology",
-            "topic_description": "Understanding MarTech and its strategic applications",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 11: Leveraging marketing technology </strong><br/><p>Understanding MarTech and its strategic applications</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Session 11: Leveraging marketing technology </strong>",
+            "topic_description": "Session 11: Leveraging marketing technology Understanding MarTech and its strategic applications",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -236,9 +254,9 @@
         {
             "learning_period": "Week 12",
             "activity_type": "Seminar",
-            "topic": "Session 12: Business and social transformation through marketingHow businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice.Learning outcomes:L01, L02, L03, L05",
-            "topic_title": "Session 12: Business and social transformation through marketing",
-            "topic_description": "How businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 12: Business and social transformation through marketing</strong><br/><p>How businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Session 12: Business and social transformation through marketing</strong>",
+            "topic_description": "Session 12: Business and social transformation through marketing How businesses and government can use marketing to transform perceptions, norms, policies and practices in areas of sustainability, diversity, equity, inclusion, social responsibility and social justice.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -249,9 +267,9 @@
         {
             "learning_period": "Week 13",
             "activity_type": "Seminar",
-            "topic": "Session 13: The future of transformational marketingHow marketing can continue to evolve as a tool for positive change.Learning outcomes:L01, L02, L03, L05",
-            "topic_title": "Session 13: The future of transformational marketing",
-            "topic_description": "How marketing can continue to evolve as a tool for positive change.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Session 13: The future of transformational marketing</strong><br/><p> How marketing can continue to evolve as a tool for positive change. </p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Session 13: The future of transformational marketing</strong>",
+            "topic_description": "Session 13: The future of transformational marketing How marketing can continue to evolve as a tool for positive change.",
             "learning_outcomes": [
                 "L01",
                 "L02",
