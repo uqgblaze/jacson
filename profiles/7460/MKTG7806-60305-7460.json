@@ -1,4 +1,8 @@
 {
+    "course_title": "Marketing Management",
+    "study_period": "Sem 2 2024",
+    "location": "Brisbane City",
+    "attendance": "Intensive",
     "url": "https://course-profiles.uq.edu.au/course-profiles/MKTG7806-60305-7460",
     "full_course_code": "MKTG7806-60305-7460",
     "course_code": "MKTG7806",
@@ -102,16 +106,46 @@
             "activity_type": "Seminar",
             "topic": "<td data-title=\"Topic\"><div><p><strong>Contemporary Marketing Thinking and Practice</strong><br/><p><strong>Week 1 - Tuesday 13/08/2024</strong> Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L06, L07, L08</p></div></td>",
             "topic_title": "<strong>Contemporary Marketing Thinking and Practice</strong>",
-            "topic_description": "Week 1 - Tuesday 13/08/2024 Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.",
+            "topic_description": "Contemporary Marketing Thinking and Practice Week 1 - Tuesday 13/08/2024 Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.",
             "learning_outcomes": [
-                "</strong> L01",
+                "L01",
                 "L02",
                 "L03",
                 "L04",
                 "L05",
                 "L06",
                 "L07",
-                "L08</p></div></td>"
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 1(12 Aug - 18 Aug)",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Consumer Behaviour, Brand and Customer Experience</strong><br/><p><strong>Week 1 - Thursday 15/08/2024</strong> Understanding and predicting consumer behaviour; the role of brands in shaping consumer behaviour, and key branding decisions; translating brand strategy into customer experiences.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L07, L08</p></div></td>",
+            "topic_title": "<strong>Consumer Behaviour, Brand and Customer Experience</strong>",
+            "topic_description": "Consumer Behaviour, Brand and Customer Experience Week 1 - Thursday 15/08/2024 Understanding and predicting consumer behaviour; the role of brands in shaping consumer behaviour, and key branding decisions; translating brand strategy into customer experiences.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05",
+                "L07",
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 1(12 Aug - 18 Aug)",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Marcoms, Omnichannel Marketing and Martech</strong><br/><p><strong>Week 1 - Friday 16/08/2024</strong> Integrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.</p></p><p><strong>Learning outcomes:</strong> L03, L04, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Marcoms, Omnichannel Marketing and Martech</strong>",
+            "topic_description": "Marcoms, Omnichannel Marketing and Martech Week 1 - Friday 16/08/2024 Integrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L06",
+                "L07",
+                "L08"
             ]
         },
         {
@@ -119,14 +153,43 @@
             "activity_type": "Seminar",
             "topic": "<td data-title=\"Topic\"><div><p><strong>Value Creation, Innovation and Revenue Management</strong><br/><p><strong>Week 2 - Monday 19/08/2024</strong> Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L07, L08</p></div></td>",
             "topic_title": "<strong>Value Creation, Innovation and Revenue Management</strong>",
-            "topic_description": "Week 2 - Monday 19/08/2024 Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.",
+            "topic_description": "Value Creation, Innovation and Revenue Management Week 2 - Monday 19/08/2024 Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.",
             "learning_outcomes": [
-                "</strong> L01",
+                "L01",
                 "L03",
                 "L04",
                 "L05",
                 "L07",
-                "L08</p></div></td>"
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 2(19 Aug - 25 Aug)",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Data Privacy, Ethics and Sustainable Marketing</strong><br/><p><strong>Week 2 - Wednesday 21/08/2024</strong> Consumer privacy, regulatory, ethical and policy issues in marketing; the critical role that marketing plays in sustainable development and changing consumer behaviour.</p></p><p><strong>Learning outcomes:</strong> L03, L04, L05, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Data Privacy, Ethics and Sustainable Marketing</strong>",
+            "topic_description": "Data Privacy, Ethics and Sustainable Marketing Week 2 - Wednesday 21/08/2024 Consumer privacy, regulatory, ethical and policy issues in marketing; the critical role that marketing plays in sustainable development and changing consumer behaviour.",
+            "learning_outcomes": [
+                "L03",
+                "L04",
+                "L05",
+                "L06",
+                "L07",
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 2(19 Aug - 25 Aug)",
+            "activity_type": "Seminar",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Marketing Leadership, Course Review and Group Presentations</strong><br/><p><strong>Week 2 - Friday 23/08/2024 </strong>Group presentations for Assessment 2; the strategic role of marketers in transforming organisational performance; and course review.</p></p><p><strong>Learning outcomes:</strong> L02, L03, L05, L07, L08</p></div></td>",
+            "topic_title": "<strong>Marketing Leadership, Course Review and Group Presentations</strong>",
+            "topic_description": "Marketing Leadership, Course Review and Group Presentations Week 2 - Friday 23/08/2024 Group presentations for Assessment 2; the strategic role of marketers in transforming organisational performance; and course review.",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L05",
+                "L07",
+                "L08"
             ]
         }
     ]
