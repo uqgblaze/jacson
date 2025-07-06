@@ -1,4 +1,8 @@
 {
+    "course_title": "Transformational Marketing",
+    "study_period": "Summer 2024",
+    "location": "Brisbane City",
+    "attendance": "In Person",
     "url": "https://course-profiles.uq.edu.au/course-profiles/MKTG7806-80096-7480",
     "full_course_code": "MKTG7806-80096-7480",
     "course_code": "MKTG7806",
@@ -109,9 +113,9 @@
         {
             "learning_period": "Week 1",
             "activity_type": "General contact hours",
-            "topic": "Day 1 - Wednesday 11/12 - Contemporary Marketing Thinking and PracticeOverview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.Learning outcomes:L01, L02, L03, L04, L05, L06, L07, L08",
-            "topic_title": "Day 1 - Wednesday 11/12 - Contemporary Marketing Thinking and Practice",
-            "topic_description": "Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Day 1 - Wednesday 11/12 - Contemporary Marketing Thinking and Practice</strong><br/><p>Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Day 1 - Wednesday 11/12 - Contemporary Marketing Thinking and Practice</strong>",
+            "topic_description": "Day 1 - Wednesday 11/12 - Contemporary Marketing Thinking and Practice Overview of course and assessment; marketing paradigms and their impact on marketing practices; marketing capabilities needed to succeed in a global digital environment; and strategic approaches, terms and concepts used in marketing strategy decision-making.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -124,15 +128,62 @@
             ]
         },
         {
+            "learning_period": "Week 1",
+            "activity_type": "General contact hours",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Day 2 - Friday 13/12/2024 - Consumer Behaviour, Brand and Customer Experience</strong><br/><p>Understanding and predicting consumer behaviour; the role of brands in shaping consumer behaviour, and key branding decisions; translating brand strategy into customer experiences.</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L07, L08</p></div></td>",
+            "topic_title": "<strong>Day 2 - Friday 13/12/2024 - Consumer Behaviour, Brand and Customer Experience</strong>",
+            "topic_description": "Day 2 - Friday 13/12/2024 - Consumer Behaviour, Brand and Customer Experience Understanding and predicting consumer behaviour; the role of brands in shaping consumer behaviour, and key branding decisions; translating brand strategy into customer experiences.",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L04",
+                "L05",
+                "L07",
+                "L08"
+            ]
+        },
+        {
             "learning_period": "Week 2",
             "activity_type": "General contact hours",
-            "topic": "Day 3 - Monday 16/12/2024 - Marcoms, Omnichannel Marketing and MartechIntegrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.Learning outcomes:L01, L03, L04, L06, L07, L08",
-            "topic_title": "Day 3 - Monday 16/12/2024 - Marcoms, Omnichannel Marketing and Martech",
-            "topic_description": "Integrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Day 3 - Monday 16/12/2024 - Marcoms, Omnichannel Marketing and Martech</strong><br/><p>Integrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Day 3 - Monday 16/12/2024 - Marcoms, Omnichannel Marketing and Martech</strong>",
+            "topic_description": "Day 3 - Monday 16/12/2024 - Marcoms, Omnichannel Marketing and Martech Integrating content, media, technology, channels and touch points across customer lifecycles; leveraging AI, automation and marketing platforms to improve marketing effectiveness.",
             "learning_outcomes": [
                 "L01",
                 "L03",
                 "L04",
+                "L06",
+                "L07",
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "General contact hours",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Day 4 - Wednesday 18/12/2024 - Value Creation, Innovation and Revenue Management</strong><br/><p>Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L07, L08</p></div></td>",
+            "topic_title": "<strong>Day 4 - Wednesday 18/12/2024 - Value Creation, Innovation and Revenue Management</strong>",
+            "topic_description": "Day 4 - Wednesday 18/12/2024 - Value Creation, Innovation and Revenue Management Understanding the importance and process for value creation and innovation in marketing; strategies and tactics to maximise value for companies, customers, and collaborators.",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05",
+                "L07",
+                "L08"
+            ]
+        },
+        {
+            "learning_period": "Week 2",
+            "activity_type": "General contact hours",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Day 5 - Friday 20/12/2024 - Data Privacy, Ethics and Sustainable Marketing</strong><br/><p>Consumer privacy, regulatory, ethical and policy issues in marketing; the critical role that marketing plays in sustainable development and changing consumer behaviour.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L06, L07, L08</p></div></td>",
+            "topic_title": "<strong>Day 5 - Friday 20/12/2024 - Data Privacy, Ethics and Sustainable Marketing</strong>",
+            "topic_description": "Day 5 - Friday 20/12/2024 - Data Privacy, Ethics and Sustainable Marketing Consumer privacy, regulatory, ethical and policy issues in marketing; the critical role that marketing plays in sustainable development and changing consumer behaviour.",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05",
                 "L06",
                 "L07",
                 "L08"
