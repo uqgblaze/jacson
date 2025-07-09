@@ -1,7 +1,7 @@
    .uq-button {color: #fff;}
     .bb-link-hover {background-color: transparent!important;}
     .jacson-preload{position: absolute; top: 100px; left: 5%; font-size: 1.4rem; display: block; width: 90%; margin: 0 auto; text-align: center;}
-    body{min-height: 1000px;}
+    body{min-height: 1500px; height: 100%;}
     
     /* CSS notes from original file */
     .icon-list{list-style-type:none;padding-left:0;margin-top:0;}
