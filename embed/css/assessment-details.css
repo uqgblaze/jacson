@@ -82,12 +82,12 @@
       margin-bottom: 2rem;
     }
     .bg-purple-gradient-horizontal {
-	    background: var( --uq-purple-gradient-horizontal);
-      color: var(--uq-white);
+	    background: var( --uq-purple-gradient-horizontal)!important;
+      color: var(--uq-white)!important;
     }
     .bg-postgrad-gradient-horizontal {
-	    background: var( --uq-postgrad-gradient-horizontal);
-      color: var(--uq-white);
+	    background: var( --uq-postgrad-gradient-horizontal)!important;
+      color: var(--uq-white)!important;
     }
     
     .assessment-title {
