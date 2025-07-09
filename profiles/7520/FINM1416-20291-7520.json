@@ -1,4 +1,8 @@
 {
+    "course_title": "Introduction to Financial Management",
+    "study_period": "Sem 1 2025",
+    "location": "St Lucia",
+    "attendance": "In Person",
     "url": "https://course-profiles.uq.edu.au/course-profiles/FINM1416-20291-7520",
     "full_course_code": "FINM1416-20291-7520",
     "course_code": "FINM1416",
@@ -37,16 +41,16 @@
                     "special_indicator_text": "Team or group-based"
                 }
             ],
-            "weighting": "30%",
-            "due_date": "Time value of money 1:00pm - Week 6 - Week 8 FriValuation 1:00pm - Week 9 - Week 11 Fri",
+            "weighting": "<dd>30%</dd>",
+            "due_date": "<dd><p>Time value of money 1:00pm - Week 6 - Week 8 Fri</p>\n<p>Valuation 1:00pm - Week 9 - Week 11 Fri</p></dd>",
             "learning_objectives": "L01, L02, L03, L04, L05",
             "mode": "Product/ Artefact/ Multimedia",
             "category": "Participation/ Student contribution, Project",
-            "task_description": "There are 2 assignments during the semester. Both are group assignments with a team of 4 to 5 students.The assignments will be posted at least 1 week before the workshop week. You will be allocated to a team during the workshop. During the workshop, we will work through examples and some parts of the assignment. You need to come to the workshop prepared by going through the assignment materials beforehand. You will then work on the assignment during and after the workshop. The assignment is to be submitted at 1:00pm exactly two weeks following your actual workshop session. The components for submission may include short videos, Excel spreadsheets, or reports. The assignment each is worth 15% of your final grade for this course.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
-            "submission_guidelines": "Submit via the Assessment folder on Blackboard.",
-            "deferral_or_extension": "You may be able toapply for an extension.",
-            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
-            "additional_info": "You may be able to\napply for an extension\n."
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>There are 2 assignments during the semester. Both are group assignments with a team of 4 to 5 students.</p>\n<p>The assignments will be posted at least 1 week before the workshop week. You will be allocated to a team during the workshop. During the workshop, we will work through examples and some parts of the assignment. You need to come to the workshop prepared by going through the assignment materials beforehand. You will then work on the assignment during and after the workshop. The assignment is to be submitted at 1:00pm exactly two weeks following your actual workshop session. The components for submission may include short videos, Excel spreadsheets, or reports. The assignment each is worth 15% of your final grade for this course.</p>\n<p><strong>AI Statement:</strong></p>\n<p>This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>Submit via the Assessment folder on Blackboard.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>",
+            "late_submission": "<p>A <a href=\"https://policies.uq.edu.au/document/view-current.php?id=184\">penalty</a> of 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.</p>",
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>"
         },
         {
             "assessment_detail_section_id": "assessment-detail-1",
@@ -61,16 +65,16 @@
                     "special_indicator_text": "In-person"
                 }
             ],
-            "weighting": "30%",
-            "due_date": "In-semester Saturday29/03/2025 - 12/04/2025",
+            "weighting": "<dd>30%</dd>",
+            "due_date": "<dd><p>In-semester Saturday</p>\n<p>29/03/2025 - 12/04/2025</p></dd>",
             "learning_objectives": "L01, L02",
             "mode": "Written",
             "category": "Examination",
-            "task_description": "The in-semester exam will be held on one of the Saturdays scheduled by the university. It is a 90 minutes exam and covers Module 1 to Module 6.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
-            "submission_guidelines": "You may be able todefer this exam.",
-            "deferral_or_extension": "You may be able todefer this exam.",
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>The in-semester exam will be held on one of the Saturdays scheduled by the university. It is a 90 minutes exam and covers Module 1 to Module 6.</p>\n<p><strong>AI Statement:</strong></p>\n<p>This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
             "late_submission": null,
-            "additional_info": "You may be able to\ndefer this exam\n."
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>"
         },
         {
             "assessment_detail_section_id": "assessment-detail-2",
@@ -85,25 +89,35 @@
                     "special_indicator_text": "In-person"
                 }
             ],
-            "weighting": "40%",
-            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "weighting": "<dd>40%</dd>",
+            "due_date": "<dd><p>End of Semester Exam Period</p>\n<p>7/06/2025 - 21/06/2025</p></dd>",
             "learning_objectives": "L01, L02, L03, L04",
             "mode": "Written",
             "category": "Examination",
-            "task_description": "The final exam will consist of problem-solving, short-answer, and essay questions, and covers all topics in the course.AI Statement:This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
-            "submission_guidelines": "You may be able todefer this exam.",
-            "deferral_or_extension": "You may be able todefer this exam.",
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>The final exam will consist of problem-solving, short-answer, and essay questions, and covers all topics in the course.</p>\n<p><strong>AI Statement:</strong></p>\n<p>This assessment task evaluates students' abilities, skills and knowledge without the aid of generative Artificial Intelligence (AI) and Machine Translation (MT). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
             "late_submission": null,
-            "additional_info": "You may be able to\ndefer this exam\n."
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>"
         }
     ],
     "learning_activities": [
         {
             "learning_period": "Week 1",
             "activity_type": "Not Timetabled",
-            "topic": "Module 1 - What is Financial Management?Learning outcomes:L01",
-            "topic_title": "Module 1 - What is Financial Management?",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 1 - What is Financial Management?</strong><br/></p><p><strong>Learning outcomes:</strong> L01</p></div></td>",
+            "topic_title": "<strong>Module 1 - What is Financial Management?</strong>",
+            "topic_description": "Module 1 - What is Financial Management?",
+            "learning_outcomes": [
+                "L01"
+            ]
+        },
+        {
+            "learning_period": "Week 1",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 1 - Introduction</strong><br/></p><p><strong>Learning outcomes:</strong> L01</p></div></td>",
+            "topic_title": "<strong>Lecture 1 - Introduction</strong>",
+            "topic_description": "Lecture 1 - Introduction",
             "learning_outcomes": [
                 "L01"
             ]
@@ -111,19 +125,19 @@
         {
             "learning_period": "Week 2",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 1 - What is financial managementLearning outcomes:L01",
-            "topic_title": "Tutorial 1 - What is financial management",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 1 - What is financial management</strong><br/></p><p><strong>Learning outcomes:</strong> L01</p></div></td>",
+            "topic_title": "<strong>Tutorial 1 - What is financial management</strong>",
+            "topic_description": "Tutorial 1 - What is financial management",
             "learning_outcomes": [
                 "L01"
             ]
         },
         {
-            "learning_period": "Week 3",
-            "activity_type": "Tutorial",
-            "topic": "Tutorial 2 - The five principles of FinanceLearning outcomes:L02, L03, L04",
-            "topic_title": "Tutorial 2 - The five principles of Finance",
-            "topic_description": "",
+            "learning_period": "Week 2",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 2 - The Five Principles of Finance</strong><br/></p><p><strong>Learning outcomes:</strong> L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Module 2 - The Five Principles of Finance</strong>",
+            "topic_description": "Module 2 - The Five Principles of Finance",
             "learning_outcomes": [
                 "L02",
                 "L03",
@@ -131,11 +145,54 @@
             ]
         },
         {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 2 - The five principles of Finance</strong><br/></p><p><strong>Learning outcomes:</strong> L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Tutorial 2 - The five principles of Finance</strong>",
+            "topic_description": "Tutorial 2 - The five principles of Finance",
+            "learning_outcomes": [
+                "L02",
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 3 - Time value of money (Part 1)</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Module 3 - Time value of money (Part 1)</strong>",
+            "topic_description": "Module 3 - Time value of money (Part 1)",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 3",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 2 - Module 1 &amp; 2</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02</p></div></td>",
+            "topic_title": "<strong>Lecture 2 - Module 1 &amp; 2</strong>",
+            "topic_description": "Lecture 2 - Module 1 & 2",
+            "learning_outcomes": [
+                "L01",
+                "L02"
+            ]
+        },
+        {
             "learning_period": "Week 4",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 3 - Time value of money (Part 1)Learning outcomes:L02",
-            "topic_title": "Tutorial 3 - Time value of money (Part 1)",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 3 - Time value of money (Part 1)</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Tutorial 3 - Time value of money (Part 1)</strong>",
+            "topic_description": "Tutorial 3 - Time value of money (Part 1)",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 4 - Time value of money (Part 2)</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Module 4 - Time value of money (Part 2)</strong>",
+            "topic_description": "Module 4 - Time value of money (Part 2)",
             "learning_outcomes": [
                 "L02"
             ]
@@ -143,9 +200,29 @@
         {
             "learning_period": "Week 5",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 4 - Time value of money (Part 2)Learning outcomes:L02",
-            "topic_title": "Tutorial 4 - Time value of money (Part 2)",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 4 - Time value of money (Part 2)</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Tutorial 4 - Time value of money (Part 2)</strong>",
+            "topic_description": "Tutorial 4 - Time value of money (Part 2)",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 5 - Valuing debt</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Module 5 - Valuing debt</strong>",
+            "topic_description": "Module 5 - Valuing debt",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 3 - Module 3 &amp; 4</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Lecture 3 - Module 3 &amp; 4</strong>",
+            "topic_description": "Lecture 3 - Module 3 & 4",
             "learning_outcomes": [
                 "L02"
             ]
@@ -153,29 +230,80 @@
         {
             "learning_period": "Week 6",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 5 - Valuing debtLearning outcomes:L02",
-            "topic_title": "Tutorial 5 - Valuing debt",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 5 - Valuing debt</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Tutorial 5 - Valuing debt</strong>",
+            "topic_description": "Tutorial 5 - Valuing debt",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 6 - Valuing shares</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Module 6 - Valuing shares</strong>",
+            "topic_description": "Module 6 - Valuing shares",
+            "learning_outcomes": [
+                "L02"
+            ]
+        },
+        {
+            "learning_period": "Week 6",
+            "activity_type": "Workshop",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Workshop 1</strong><br/></p><p><strong>Learning outcomes:</strong> L02, L05</p></div></td>",
+            "topic_title": "<strong>Workshop 1</strong>",
+            "topic_description": "Workshop 1",
+            "learning_outcomes": [
+                "L02",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 6 - Valuing shares</strong><br/></p><p><strong>Learning outcomes:</strong> L02</p></div></td>",
+            "topic_title": "<strong>Tutorial 6 - Valuing shares</strong>",
+            "topic_description": "Tutorial 6 - Valuing shares",
             "learning_outcomes": [
                 "L02"
             ]
         },
         {
             "learning_period": "Week 7",
-            "activity_type": "Tutorial",
-            "topic": "Tutorial 6 - Valuing sharesLearning outcomes:L02",
-            "topic_title": "Tutorial 6 - Valuing shares",
-            "topic_description": "",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 7 - Capital budgeting methods</strong><br/></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Module 7 - Capital budgeting methods</strong>",
+            "topic_description": "Module 7 - Capital budgeting methods",
             "learning_outcomes": [
-                "L02"
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 7",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 4 - Module 5 &amp; 6</strong><br/></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Lecture 4 - Module 5 &amp; 6</strong>",
+            "topic_description": "Lecture 4 - Module 5 & 6",
+            "learning_outcomes": [
+                "L03"
             ]
         },
         {
             "learning_period": "Week 8",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 7: Capital budgeting methodsGood Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L03",
-            "topic_title": "Tutorial 7: Capital budgeting methods",
-            "topic_description": "Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 7: Capital budgeting methods</strong><br/><p>Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.</p></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Tutorial 7: Capital budgeting methods</strong>",
+            "topic_description": "Tutorial 7: Capital budgeting methods Good Friday Public Holiday - Friday 18 April 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 8 - NPV - Relevant Cash flows</strong><br/></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Module 8 - NPV - Relevant Cash flows</strong>",
+            "topic_description": "Module 8 - NPV - Relevant Cash flows",
             "learning_outcomes": [
                 "L03"
             ]
@@ -183,47 +311,119 @@
         {
             "learning_period": "Mid-sem break",
             "activity_type": "No student involvement (Breaks, information)",
-            "topic": "In-Semester Break",
-            "topic_title": "In-Semester Break",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>In-Semester Break</strong><br/></p></div></td>",
+            "topic_title": "<strong>In-Semester Break</strong>",
+            "topic_description": "In-Semester Break",
             "learning_outcomes": []
         },
         {
             "learning_period": "Week 9",
             "activity_type": "Workshop",
-            "topic": "Workshop 2Learning outcomes:L05",
-            "topic_title": "Workshop 2",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Workshop 2</strong><br/></p><p><strong>Learning outcomes:</strong> L05</p></div></td>",
+            "topic_title": "<strong>Workshop 2</strong>",
+            "topic_description": "Workshop 2",
             "learning_outcomes": [
                 "L05"
             ]
         },
         {
-            "learning_period": "Week 10",
+            "learning_period": "Week 9",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 9: NPV - Modelling and analysisLabour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.Learning outcomes:L03",
-            "topic_title": "Tutorial 9: NPV - Modelling and analysis",
-            "topic_description": "Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 8: NPV - Relevant cash flows</strong><br/></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Tutorial 8: NPV - Relevant cash flows</strong>",
+            "topic_description": "Tutorial 8: NPV - Relevant cash flows",
             "learning_outcomes": [
                 "L03"
             ]
         },
         {
+            "learning_period": "Week 9",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 9: NPV - Modelling and Analysis</strong><br/></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Module 9: NPV - Modelling and Analysis</strong>",
+            "topic_description": "Module 9: NPV - Modelling and Analysis",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 5 - Module 7 &amp; 8</strong><br/></p><p><strong>Learning outcomes:</strong> L03, L04</p></div></td>",
+            "topic_title": "<strong>Lecture 5 - Module 7 &amp; 8</strong>",
+            "topic_description": "Lecture 5 - Module 7 & 8",
+            "learning_outcomes": [
+                "L03",
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 9: NPV - Modelling and analysis</strong><br/><p>Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.</p></p><p><strong>Learning outcomes:</strong> L03</p></div></td>",
+            "topic_title": "<strong>Tutorial 9: NPV - Modelling and analysis</strong>",
+            "topic_description": "Tutorial 9: NPV - Modelling and analysis Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
+            "learning_outcomes": [
+                "L03"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 10: Risk and Return (Part 1)</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Module 10: Risk and Return (Part 1)</strong>",
+            "topic_description": "Module 10: Risk and Return (Part 1)",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
             "learning_period": "Week 11",
             "activity_type": "Not Timetabled",
-            "topic": "Module 10: Risk and Return (Part 2)Learning outcomes:L04",
-            "topic_title": "Module 10: Risk and Return (Part 2)",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 10: Risk and Return (Part 2)</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Module 10: Risk and Return (Part 2)</strong>",
+            "topic_description": "Module 10: Risk and Return (Part 2)",
             "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 10: Risk and Return (Part 1)</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Tutorial 10: Risk and Return (Part 1)</strong>",
+            "topic_description": "Tutorial 10: Risk and Return (Part 1)",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 6 - Module 9 &amp; 10</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L04</p></div></td>",
+            "topic_title": "<strong>Lecture 6 - Module 9 &amp; 10</strong>",
+            "topic_description": "Lecture 6 - Module 9 & 10",
+            "learning_outcomes": [
+                "L01",
                 "L04"
             ]
         },
         {
             "learning_period": "Week 12",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 11: Risk and Return (Part 2)Learning outcomes:L04",
-            "topic_title": "Tutorial 11: Risk and Return (Part 2)",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 11: Risk and Return (Part 2)</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Tutorial 11: Risk and Return (Part 2)</strong>",
+            "topic_description": "Tutorial 11: Risk and Return (Part 2)",
+            "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 12",
+            "activity_type": "Not Timetabled",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Module 11: Cost of capital</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Module 11: Cost of capital</strong>",
+            "topic_description": "Module 11: Cost of capital",
             "learning_outcomes": [
                 "L04"
             ]
@@ -231,10 +431,23 @@
         {
             "learning_period": "Week 13",
             "activity_type": "Tutorial",
-            "topic": "Tutorial 12: Cost of capitalLearning outcomes:L04",
-            "topic_title": "Tutorial 12: Cost of capital",
-            "topic_description": "",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 12: Cost of capital</strong><br/></p><p><strong>Learning outcomes:</strong> L04</p></div></td>",
+            "topic_title": "<strong>Tutorial 12: Cost of capital</strong>",
+            "topic_description": "Tutorial 12: Cost of capital",
             "learning_outcomes": [
+                "L04"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 7 - Module 10&amp; 11 &amp; Revision</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04</p></div></td>",
+            "topic_title": "<strong>Lecture 7 - Module 10&amp; 11 &amp; Revision</strong>",
+            "topic_description": "Lecture 7 - Module 10& 11 & Revision",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
                 "L04"
             ]
         }
