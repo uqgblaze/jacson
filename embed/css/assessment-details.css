@@ -75,11 +75,19 @@
     }
     
     .assessment-header {
-      background: linear-gradient(135deg, #51247a 0%, #8c6bc8 100%);
+      background: linear-gradient(135deg, #51247a 0%, #962a8b 100%);
       color: white;
       padding: 1.5rem;
       border-radius: 8px;
       margin-bottom: 2rem;
+    }
+    .bg-purple-gradient-horizontal {
+	    background: var( --uq-purple-gradient-horizontal);
+      color: var(--uq-white);
+    }
+    .bg-postgrad-gradient-horizontal {
+	    background: var( --uq-postgrad-gradient-horizontal);
+      color: var(--uq-white);
     }
     
     .assessment-title {
