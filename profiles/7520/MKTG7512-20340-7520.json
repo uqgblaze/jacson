@@ -1,4 +1,8 @@
 {
+    "course_title": "Strategic Marketing Management",
+    "study_period": "Sem 1 2025",
+    "location": "St Lucia",
+    "attendance": "In Person",
     "url": "https://course-profiles.uq.edu.au/course-profiles/MKTG7512-20340-7520",
     "full_course_code": "MKTG7512-20340-7520",
     "course_code": "MKTG7512",
@@ -45,16 +49,16 @@
                     "special_indicator_text": "In-person"
                 }
             ],
-            "weighting": "20%",
-            "due_date": "Week 6 - Week 13On the assigned in-class presentation day.",
+            "weighting": "<dd>20%</dd>",
+            "due_date": "<dd><p> Week 6 - Week 13</p>\n<p>\n</p><p>On the assigned in-class presentation day.</p></dd>",
             "learning_objectives": "L01, L02, L03, L04, L06",
             "mode": "Oral, Product/ Artefact/ Multimedia",
             "category": "Presentation",
-            "task_description": "This is agroup assessment.In this assessment, students in a group setting will critically analyse a case study assigned to them, create a deck of presentation slides, submit the slides to the teaching team prior to their scheduled presentation time, and make an oral presentation based on the slides.These presentations will be scheduled for weekly tutorials.Please Note:The presentation will be recorded for marking purposes per UQ Policy.To analyse the case content, students will use marketing strategy concepts and frameworks that will be discussed in lectures.Peer Review: Group members are expected to contribute equally, fulfilling the tasks agreed on. If there are disagreements in relation to team members' contributions that cannot be resolved, students must bring the problem to the attention of their Course Coordinator as early as possible. Students can elect to undertake a Peer Review process, which can influence the marks of those who do not contribute to group work.AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
-            "submission_guidelines": "A copy of the presentation slides should be submitted to Blackboard on the specified date.",
-            "deferral_or_extension": "You may be able toapply for an extension.",
-            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
-            "additional_info": "You may be able to\napply for an extension\n."
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>This is a <strong>group assessment</strong>.</p>\n<p>In this assessment, students in a group setting will critically analyse a case study assigned to them, create a deck of presentation slides, submit the slides to the teaching team prior to their scheduled presentation time, and make an oral presentation based on the slides.</p>\n<p>These presentations will be scheduled for weekly tutorials.</p>\n<p><strong>Please Note:</strong> The presentation will be recorded for marking purposes per UQ Policy.</p>\n<p>To analyse the case content, students will use marketing strategy concepts and frameworks that will be discussed in lectures.</p>\n<p><strong>Peer Review</strong>: Group members are expected to contribute equally, fulfilling the tasks agreed on. If there are disagreements in relation to team members' contributions that cannot be resolved, students must bring the problem to the attention of their Course Coordinator as early as possible. Students can elect to undertake a Peer Review process, which can influence the marks of those who do not contribute to group work.</p>\n<p><strong>AI Statement:</strong></p>\n<p><em>This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.</em></p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>A copy of the presentation slides should be submitted to Blackboard on the specified date.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>",
+            "late_submission": "<p>A <a href=\"https://policies.uq.edu.au/document/view-current.php?id=184\">penalty</a> of 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.</p>",
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>"
         },
         {
             "assessment_detail_section_id": "assessment-detail-1",
@@ -69,16 +73,16 @@
                     "special_indicator_text": "In-person"
                 }
             ],
-            "weighting": "40%",
-            "due_date": "2/05/2025 3:00 pm",
+            "weighting": "<dd>40%</dd>",
+            "due_date": "<dd><p> 2/05/2025 3:00 pm</p></dd>",
             "learning_objectives": "L01, L02, L03, L04, L05",
             "mode": "Written",
             "category": "Paper/ Report/ Annotation",
-            "task_description": "This is anindividual assessment.In this assessment, students will critically analyse and evaluate a firm (company) and its market offering based on lecture contents.Broadly, students will:Select a product or product line from a firm of their choiceConduct situational analysisCritically analyse the firm's competitive environmentConduct segmentation analysisMake practical and useful suggestions to the firm based on the analytical results.Instructions and marking criteria (rubric) will be provided on Blackboard.AI Statement:This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.Read full task descriptionHide full task description",
-            "submission_guidelines": "The report is to be submitted to Blackboard on or before the due date.",
-            "deferral_or_extension": "You may be able toapply for an extension.",
-            "late_submission": "Apenaltyof 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.",
-            "additional_info": "You may be able to\napply for an extension\n."
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>This is an <strong>individual assessment</strong>.</p>\n<p>In this assessment, students will critically analyse and evaluate a firm (company) and its market offering based on lecture contents.</p>\n<p>Broadly, students will:</p>\n<ul>\n<li>Select a product or product line from a firm of their choice</li>\n<li>Conduct situational analysis</li>\n<li>Critically analyse the firm's competitive environment</li>\n<li>Conduct segmentation analysis</li>\n<li>Make practical and useful suggestions to the firm based on the analytical results.</li>\n</ul>\n<p>Instructions and marking criteria (rubric) will be provided on Blackboard.</p>\n<p><strong>AI Statement:</strong></p>\n<p><em>This assessment task evaluates students' abilities, skills, and knowledge without the aid of generative Artificial Intelligence (AI). Students are advised that the use of AI technologies to develop responses is strictly prohibited and may constitute student misconduct under the Student Code of Conduct.</em></p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>The report is to be submitted to Blackboard on or before the due date.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>",
+            "late_submission": "<p>A <a href=\"https://policies.uq.edu.au/document/view-current.php?id=184\">penalty</a> of 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.</p>",
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/applying-assessment-extension\">apply for an extension</a>.</p>"
         },
         {
             "assessment_detail_section_id": "assessment-detail-2",
@@ -93,25 +97,25 @@
                     "special_indicator_text": "In-person"
                 }
             ],
-            "weighting": "40%",
-            "due_date": "End of Semester Exam Period7/06/2025 - 21/06/2025",
+            "weighting": "<dd>40%</dd>",
+            "due_date": "<dd><p>End of Semester Exam Period</p>\n<p>7/06/2025 - 21/06/2025</p></dd>",
             "learning_objectives": "L01, L02, L03, L04, L05",
             "mode": "Written",
             "category": "Examination",
-            "task_description": "This final assessment task (i.e., end-of-semester exam) aims to assess students' knowledge of strategic marketing management and demonstrate their understanding as an individual. This will include the evaluation of theoretical knowledge and the ability to apply knowledge to applied strategic contexts using short-answer and extended-answer questions. Further details of the final exam, revision suggestions, and answering tips will be discussed in tutorials and lectures.Read full task descriptionHide full task description",
-            "submission_guidelines": "You may be able todefer this exam.",
-            "deferral_or_extension": "You may be able todefer this exam.",
-            "late_submission": "Exams submitted after the end of the submission time will incur alate penalty.",
-            "additional_info": "You may be able to\ndefer this exam\n."
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>This final assessment task (i.e., end-of-semester exam) aims to assess students' knowledge of strategic marketing management and demonstrate their understanding as an individual. This will include the evaluation of theoretical knowledge and the ability to apply knowledge to applied strategic contexts using short-answer and extended-answer questions. Further details of the final exam, revision suggestions, and answering tips will be discussed in tutorials and lectures.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "submission_guidelines": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
+            "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
+            "late_submission": "<p>Exams submitted after the end of the submission time will incur a <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/requesting-late-penalty-exemption-online-exam\">late penalty</a>.</p>",
+            "additional_info": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>"
         }
     ],
     "learning_activities": [
         {
             "learning_period": "Week 1",
             "activity_type": "Lecture",
-            "topic": "Lecture 1: Introduction and Course OverviewThe importance of strategic marketing, overview of the course and assessments.Learning outcomes:L01, L02, L03, L04, L06",
-            "topic_title": "Lecture 1: Introduction and Course Overview",
-            "topic_description": "The importance of strategic marketing, overview of the course and assessments.",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 1: Introduction and Course Overview</strong><br><p>The importance of strategic marketing, overview of the course and assessments.</p></br></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L06</p></div></td>",
+            "topic_title": "<strong>Lecture 1: Introduction and Course Overview</strong>",
+            "topic_description": "Lecture 1: Introduction and Course Overview The importance of strategic marketing, overview of the course and assessments.",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -123,9 +127,9 @@
         {
             "learning_period": "Week 2",
             "activity_type": "Lecture",
-            "topic": "Lecture 2: Strategic Marketing and EnvironmentStrategy v tactics, Marketing strategy process, Core strategy & SWOT analysisLearning outcomes:L01, L02, L03, L04, L05, L06",
-            "topic_title": "Lecture 2: Strategic Marketing and Environment",
-            "topic_description": "Strategy v tactics, Marketing strategy process, Core strategy & SWOT analysis",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 2: Strategic Marketing and Environment</strong><br><p>Strategy v tactics, Marketing strategy process, Core strategy &amp; SWOT analysis</p></br></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Lecture 2: Strategic Marketing and Environment</strong>",
+            "topic_description": "Lecture 2: Strategic Marketing and Environment Strategy v tactics, Marketing strategy process, Core strategy & SWOT analysis",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -136,11 +140,24 @@
             ]
         },
         {
+            "learning_period": "Week 2",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 1: Introduction and Course Overview</strong><br/><p>Group discussion - reflect on lecture 1 contents &amp; Guidelines on interactive group presentation (assessment 1; see course blackboard for details)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 1: Introduction and Course Overview</strong>",
+            "topic_description": "Tutorial 1: Introduction and Course Overview Group discussion - reflect on lecture 1 contents & Guidelines on interactive group presentation (assessment 1; see course blackboard for details)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04",
+                "L06"
+            ]
+        },
+        {
             "learning_period": "Week 3",
             "activity_type": "Lecture",
-            "topic": "Lecture 3: Customer and Competitor AnalysisCustomer analysis: buyer behaviour and market research, Competitor analysisLearning outcomes:L01, L02, L03, L04, L05",
-            "topic_title": "Lecture 3: Customer and Competitor Analysis",
-            "topic_description": "Customer analysis: buyer behaviour and market research, Competitor analysis",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 3: Customer and Competitor Analysis</strong><br/><p>Customer analysis: buyer behaviour and market research, Competitor analysis</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 3: Customer and Competitor Analysis</strong>",
+            "topic_description": "Lecture 3: Customer and Competitor Analysis Customer analysis: buyer behaviour and market research, Competitor analysis",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -150,11 +167,51 @@
             ]
         },
         {
+            "learning_period": "Week 3",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 2: Strategic Marketing and Environment</strong><br/><p>Group discussion - reflect on lecture 2 content</p>\n<p>First practice case study for group presentation (check blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 2: Strategic Marketing and Environment</strong>",
+            "topic_description": "Tutorial 2: Strategic Marketing and Environment Group discussion - reflect on lecture 2 content First practice case study for group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04",
+                "L05",
+                "L06"
+            ]
+        },
+        {
             "learning_period": "Week 4",
             "activity_type": "Lecture",
-            "topic": "Lecture 4: Organisation and SegmentationOrganisational resource base, assets and capabilities, segmentationLearning outcomes:L01, L04, L05",
-            "topic_title": "Lecture 4: Organisation and Segmentation",
-            "topic_description": "Organisational resource base, assets and capabilities, segmentation",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 4: Organisation and Segmentation</strong><br/><p>Organisational resource base, assets and capabilities, segmentation</p></p><p><strong>Learning outcomes:</strong> L01, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 4: Organisation and Segmentation</strong>",
+            "topic_description": "Lecture 4: Organisation and Segmentation Organisational resource base, assets and capabilities, segmentation",
+            "learning_outcomes": [
+                "L01",
+                "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 4",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 3: Customer and Competitor Analysis</strong><br/><p>Group discussion - reflect on lecture 3 contents</p>\n<p>Second practice case study for group presentation (check blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 3: Customer and Competitor Analysis</strong>",
+            "topic_description": "Tutorial 3: Customer and Competitor Analysis Group discussion - reflect on lecture 3 contents Second practice case study for group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04",
+                "L05",
+                "L06"
+            ]
+        },
+        {
+            "learning_period": "Week 5",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 5: Targeting and Positioning</strong><br/><p>Segmentation research, Targeting and Positioning</p></p><p><strong>Learning outcomes:</strong> L01, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 5: Targeting and Positioning</strong>",
+            "topic_description": "Lecture 5: Targeting and Positioning Segmentation research, Targeting and Positioning",
             "learning_outcomes": [
                 "L01",
                 "L04",
@@ -163,22 +220,24 @@
         },
         {
             "learning_period": "Week 5",
-            "activity_type": "Lecture",
-            "topic": "Lecture 5: Targeting and PositioningSegmentation research, Targeting and PositioningLearning outcomes:L01, L04, L05",
-            "topic_title": "Lecture 5: Targeting and Positioning",
-            "topic_description": "Segmentation research, Targeting and Positioning",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 4: Organisation and Segmentation</strong><br/><p>Group discussion - reflect on lecture 4 contents</p>\n<p>Third practice case study for group presentation (check</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 4: Organisation and Segmentation</strong>",
+            "topic_description": "Tutorial 4: Organisation and Segmentation Group discussion - reflect on lecture 4 contents Third practice case study for group presentation (check",
             "learning_outcomes": [
                 "L01",
+                "L02",
                 "L04",
-                "L05"
+                "L05",
+                "L06"
             ]
         },
         {
             "learning_period": "Week 6",
             "activity_type": "Lecture",
-            "topic": "Lecture 6: Information session for Case Study Report (Assessment 2)Submission guidelines & marking rubric for the individual case study reportLearning outcomes:L01, L02, L03, L05",
-            "topic_title": "Lecture 6: Information session for Case Study Report (Assessment 2)",
-            "topic_description": "Submission guidelines & marking rubric for the individual case study report",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 6: Information session for Case Study Report (Assessment 2)</strong><br/><p>Submission guidelines &amp; marking rubric for the individual case study report</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 6: Information session for Case Study Report (Assessment 2)</strong>",
+            "topic_description": "Lecture 6: Information session for Case Study Report (Assessment 2) Submission guidelines & marking rubric for the individual case study report",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -187,11 +246,25 @@
             ]
         },
         {
+            "learning_period": "Week 6",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 5: Targeting and Positioning</strong><br/><p>Interactive group presentation starts this week (Check Blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 5: Targeting and Positioning</strong>",
+            "topic_description": "Tutorial 5: Targeting and Positioning Interactive group presentation starts this week (Check Blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L04",
+                "L05",
+                "L06"
+            ]
+        },
+        {
             "learning_period": "Week 7",
             "activity_type": "Lecture",
-            "topic": "Lecture 7: Sustainable Competitive AdvantageSustainable Competitive AdvantageMarketing mix - Gaining and sustaining SCALearning outcomes:L01, L02, L04, L05",
-            "topic_title": "Lecture 7: Sustainable Competitive Advantage",
-            "topic_description": "Sustainable Competitive Advantage \nMarketing mix - Gaining and sustaining SCA",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 7: Sustainable Competitive Advantage</strong><br/><p>Sustainable Competitive Advantage </p>\n<p>Marketing mix - Gaining and sustaining SCA</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 7: Sustainable Competitive Advantage</strong>",
+            "topic_description": "Lecture 7: Sustainable Competitive Advantage Sustainable Competitive Advantage Marketing mix - Gaining and sustaining SCA",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -200,27 +273,76 @@
             ]
         },
         {
+            "learning_period": "Week 7",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 6: Information session for Case Study Report</strong><br/><p>Interactive group presentation (check blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 6: Information session for Case Study Report</strong>",
+            "topic_description": "Tutorial 6: Information session for Case Study Report Interactive group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05",
+                "L06"
+            ]
+        },
+        {
             "learning_period": "Week 8",
             "activity_type": "No student involvement (Breaks, information)",
-            "topic": "No Lecture this week (public holiday)No class this Friday (Good Friday public holiday)No tutorials this week",
-            "topic_title": "No Lecture this week (public holiday)",
-            "topic_description": "No class this Friday (Good Friday public holiday)\nNo tutorials this week",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>No Lecture this week (public holiday)</strong><br/><p>No class this Friday (Good Friday public holiday)</p>\n<p>No tutorials this week</p></p></div></td>",
+            "topic_title": "<strong>No Lecture this week (public holiday)</strong>",
+            "topic_description": "No Lecture this week (public holiday) No class this Friday (Good Friday public holiday) No tutorials this week",
+            "learning_outcomes": []
+        },
+        {
+            "learning_period": "Week 8",
+            "activity_type": "No student involvement (Breaks, information)",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>No tutorials this week</strong><br/><p>No tutorials this week.</p></p></div></td>",
+            "topic_title": "<strong>No tutorials this week</strong>",
+            "topic_description": "No tutorials this week No tutorials this week.",
             "learning_outcomes": []
         },
         {
             "learning_period": "Mid-sem break",
             "activity_type": "No student involvement (Breaks, information)",
-            "topic": "In-Semester BreakNo classes or tutorials this week",
-            "topic_title": "In-Semester Break",
-            "topic_description": "No classes or tutorials this week",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>In-Semester Break</strong><br/><p>No classes or tutorials this week</p></p></div></td>",
+            "topic_title": "<strong>In-Semester Break</strong>",
+            "topic_description": "In-Semester Break No classes or tutorials this week",
             "learning_outcomes": []
         },
         {
             "learning_period": "Week 9",
             "activity_type": "Lecture",
-            "topic": "Lecture 8: Customer management & SalesApproaches to customer management and strategic sales organizationLearning outcomes:L01, L02, L03, L05",
-            "topic_title": "Lecture 8: Customer management & Sales",
-            "topic_description": "Approaches to customer management and strategic sales organization",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 8: Customer management &amp; Sales </strong><br/><p>Approaches to customer management and strategic sales organization</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 8: Customer management &amp; Sales </strong>",
+            "topic_description": "Lecture 8: Customer management & Sales Approaches to customer management and strategic sales organization",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 9",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 7: Sustainable Competitive Advantage</strong><br/><p>Interactive group presentation (check blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 7: Sustainable Competitive Advantage</strong>",
+            "topic_description": "Tutorial 7: Sustainable Competitive Advantage Interactive group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
+                "L05",
+                "L06"
+            ]
+        },
+        {
+            "learning_period": "Week 10",
+            "activity_type": "Lecture",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 9: Innovation</strong><br/><p>Innovation strategy</p>\n<p>New product planning</p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 9: Innovation</strong>",
+            "topic_description": "Lecture 9: Innovation Innovation strategy New product planning",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -230,36 +352,50 @@
         },
         {
             "learning_period": "Week 10",
-            "activity_type": "Lecture",
-            "topic": "Lecture 9: InnovationInnovation strategyNew product planningLearning outcomes:L01, L02, L03, L05",
-            "topic_title": "Lecture 9: Innovation",
-            "topic_description": "Innovation strategy\nNew product planning",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 8: Customer management &amp; Sales </strong><br/><p>Interactive group presentation (check blackboard)</p>\n<p><strong>Labour Day Public Holiday - Monday 5 May 2025</strong> - Check Blackboard for announcements about affected classes.</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 8: Customer management &amp; Sales </strong>",
+            "topic_description": "Tutorial 8: Customer management & Sales Interactive group presentation (check blackboard) Labour Day Public Holiday - Monday 5 May 2025 - Check Blackboard for announcements about affected classes.",
             "learning_outcomes": [
                 "L01",
-                "L02",
                 "L03",
-                "L05"
+                "L04",
+                "L05",
+                "L06"
             ]
         },
         {
             "learning_period": "Week 11",
             "activity_type": "Lecture",
-            "topic": "Lecture 10: Strategic Alliances and NetworksStrategic alliances and networks,Implementation and internal marketingLearning outcomes:L01, L02, L04, L05",
-            "topic_title": "Lecture 10: Strategic Alliances and Networks",
-            "topic_description": "Strategic alliances and networks,\nImplementation and internal marketing",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 10: Strategic Alliances and Networks</strong><br/><p>Strategic alliances and networks,</p>\n<p>Implementation and internal marketing</p></p><p><strong>Learning outcomes:</strong> L01, L02, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 10: Strategic Alliances and Networks</strong>",
+            "topic_description": "Lecture 10: Strategic Alliances and Networks Strategic alliances and networks, Implementation and internal marketing",
             "learning_outcomes": [
                 "L01",
                 "L02",
                 "L04",
+                "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 11",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 9: Innovation</strong><br/><p>Interactive group presentation (check blackboard)</p>\n<p><br/></p></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Tutorial 9: Innovation</strong>",
+            "topic_description": "Tutorial 9: Innovation Interactive group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L03",
                 "L05"
             ]
         },
         {
             "learning_period": "Week 12",
             "activity_type": "Lecture",
-            "topic": "Lecture 11: Corporate Social Responsibility and EthicsCorporate Social Responsibility, Marketing ethics and sustainabilityLearning outcomes:L01, L03, L04, L05",
-            "topic_title": "Lecture 11: Corporate Social Responsibility and Ethics",
-            "topic_description": "Corporate Social Responsibility, Marketing ethics and sustainability",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 11: Corporate Social Responsibility and Ethics</strong><br><p>Corporate Social Responsibility, Marketing ethics and sustainability</p></br></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 11: Corporate Social Responsibility and Ethics</strong>",
+            "topic_description": "Lecture 11: Corporate Social Responsibility and Ethics Corporate Social Responsibility, Marketing ethics and sustainability",
             "learning_outcomes": [
                 "L01",
                 "L03",
@@ -268,15 +404,42 @@
             ]
         },
         {
+            "learning_period": "Week 12",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial  10: Strategic Alliances and Networks</strong><br/><p> Interactive group presentation (check blackboard)</p></p><p><strong>Learning outcomes:</strong> L01, L02, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial  10: Strategic Alliances and Networks</strong>",
+            "topic_description": "Tutorial  10: Strategic Alliances and Networks Interactive group presentation (check blackboard)",
+            "learning_outcomes": [
+                "L01",
+                "L02",
+                "L05",
+                "L06"
+            ]
+        },
+        {
             "learning_period": "Week 13",
             "activity_type": "Lecture",
-            "topic": "Lecture 12: Information for End-of-semester ExamLast lecture; Information for End-of-semester ExamQ & ALearning outcomes:L01, L04, L05",
-            "topic_title": "Lecture 12: Information for End-of-semester Exam",
-            "topic_description": "Last lecture; Information for End-of-semester Exam\nQ & A",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Lecture 12: Information for End-of-semester Exam</strong><br/><p>Last lecture; Information for End-of-semester Exam</p>\n<p>Q &amp; A</p></p><p><strong>Learning outcomes:</strong> L01, L04, L05</p></div></td>",
+            "topic_title": "<strong>Lecture 12: Information for End-of-semester Exam</strong>",
+            "topic_description": "Lecture 12: Information for End-of-semester Exam Last lecture; Information for End-of-semester Exam Q & A",
             "learning_outcomes": [
                 "L01",
                 "L04",
                 "L05"
+            ]
+        },
+        {
+            "learning_period": "Week 13",
+            "activity_type": "Tutorial",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Tutorial 11 - Corporate Social Responsibility, Ethics &amp; Exam revision</strong><br/><p>Interactive group presentation (last group; check blackboard)</p>\n<p>Exam Q &amp; A</p></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05, L06</p></div></td>",
+            "topic_title": "<strong>Tutorial 11 - Corporate Social Responsibility, Ethics &amp; Exam revision</strong>",
+            "topic_description": "Tutorial 11 - Corporate Social Responsibility, Ethics & Exam revision Interactive group presentation (last group; check blackboard) Exam Q & A",
+            "learning_outcomes": [
+                "L01",
+                "L03",
+                "L04",
+                "L05",
+                "L06"
             ]
         }
     ]
