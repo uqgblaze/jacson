@@ -56,10 +56,11 @@
       border-radius: 4px;
     }
     .week-selector {
-      display: inline-flex;
+      display: flex;
+      flex-wrap: wrap;
       gap: 5px;
       margin-top: 5px;
-      flex-wrap: wrap;
+      max-width: 500px;
     }
     .week-btn {
       padding: 6px 12px;
@@ -69,6 +70,7 @@
       cursor: pointer;
       border-radius: 4px;
       transition: all 0.2s ease;
+      min-width: 60px;
     }
     .week-btn:hover {
       background-color: #f0f0f0;
@@ -79,8 +81,10 @@
       color: white;
       border-color: #51247A;
     }
-    .button-row {
-      text-align: center;
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
       margin-top: 1rem;
     }
     .copy-button {
@@ -131,11 +135,26 @@
       background-color: #f9f9f9;
       color: #666;
     }
-    .week-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-      gap: 5px;
-      margin-top: 5px;
+    .copy-fallback {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+    }
+    .success-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .success-message.show {
+      transform: translateX(0);
     }
   </style>
 </head>
@@ -149,7 +168,7 @@
         <p>Use these buttons to copy the standardized Blackboard Ultra widget code to your clipboard. The code is pre-configured to work with any course when pasted into Blackboard.</p>
       </div>
 
-      <div class="button-row">
+      <div class="button-grid">
         <button class="copy-button" onclick="copyBlackboardWidget(1)">Copy Week 1 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(2)">Copy Week 2 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(3)">Copy Week 3 Widget</button>
@@ -162,7 +181,7 @@
         <button class="copy-button" onclick="copyBlackboardWidget(10)">Copy Week 10 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(11)">Copy Week 11 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(12)">Copy Week 12 Widget</button>
-        <button class="copy-button" onclick="copyBlackboardWidget(12)">Copy Week 13 Widget</button>
+        <button class="copy-button" onclick="copyBlackboardWidget(13)">Copy Week 13 Widget</button>
       </div>
 
       <br><hr><br>
@@ -186,7 +205,7 @@
 
         <div class="control-group">
           <label>Week Number:</label>
-          <div class="week-grid">
+          <div class="week-selector">
             <button class="week-btn active" data-week="1">Week 1</button>
             <button class="week-btn" data-week="2">Week 2</button>
             <button class="week-btn" data-week="3">Week 3</button>
@@ -219,7 +238,7 @@
         <p>Use these buttons to copy the standardized Blackboard Ultra widget code to your clipboard. The code is pre-configured to work with any course when pasted into Blackboard.</p>
       </div>
 
-      <div class="button-row">
+      <div class="button-grid">
         <button class="copy-button" onclick="copyBlackboardWidget(1)">Copy Week 1 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(2)">Copy Week 2 Widget</button>
         <button class="copy-button" onclick="copyBlackboardWidget(3)">Copy Week 3 Widget</button>
@@ -239,6 +258,14 @@
   </div>
 </div>
 
+<!-- Hidden textarea for fallback copy method -->
+<textarea id="copyFallback" class="copy-fallback"></textarea>
+
+<!-- Success message -->
+<div id="successMessage" class="success-message">
+  <span id="successText">Code copied to clipboard!</span>
+</div>
+
 <script>
 const iframeBase = "https://uqgblaze.github.io/jacson/embed/weekly-activities.html";
 const bbWidgetTemplate = '<!-- Blackboard Ultra Weekly Activities Widget -->\n' +
@@ -252,13 +279,13 @@ const bbWidgetTemplate = '<!-- Blackboard Ultra Weekly Activities Widget -->\n' 
 '  .uq-button {color: #fff;}\n' +
 '  .bb-link-hover {background-color: transparent!important;}\n' +
 '  .weekly-activities-widget {margin-bottom: 20px;}\n' +
-'  .weekly-activities-iframe {border: none; width: 100%; min-height: 500px;}\n' +
+'  .weekly-activities-iframe {border: none; width: 100%; min-height: 800px;}\n' +
 '</style>\n\n' +
 '<div class="uq-container weekly-activities-widget">\n' +
 '  <iframe \n' +
 '    id="weeklyActivitiesFrame"\n' +
 '    class="weekly-activities-iframe"\n' +
-'    height="500">\n' +
+'    height="900">\n' +
 '  </iframe>\n\n' +
 '  <a id="profileLink" class="uq-button uq-button--large uq-button--expand" href="#" target="_blank">\n' +
 '    <span class="uq-icon uq-icon--how-youll-learn--seo-search-page"></span>\n' +
@@ -303,6 +330,9 @@ const courseSelect = document.getElementById('courseSelect');
 const previewFrame = document.getElementById('previewFrame');
 const currentPreview = document.getElementById('currentPreview');
 const weekBtns = document.querySelectorAll('.week-btn');
+const copyFallback = document.getElementById('copyFallback');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
 
 let currentWeek = 1;
 
@@ -312,6 +342,77 @@ const courseNames = {
   '7520/MGTS1301-20318-7520': 'MGTS1301 - Introduction to Management',
   '7520/ECON7012-22494-7520': 'ECON7012 - Business Economics'
 };
+
+function showSuccessMessage(message) {
+  successText.textContent = message;
+  successMessage.classList.add('show');
+  setTimeout(() => {
+    successMessage.classList.remove('show');
+  }, 3000);
+}
+
+function copyToClipboardFallback(text) {
+  copyFallback.value = text;
+  copyFallback.select();
+  copyFallback.setSelectionRange(0, 99999); // For mobile devices
+  
+  try {
+    document.execCommand('copy');
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+function copyBlackboardWidget(weekNum) {
+  const code = bbWidgetTemplate.replace('__W__', weekNum);
+  const button = event.target;
+  const originalText = button.textContent;
+  
+  // Try modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(code).then(() => {
+      button.textContent = `✓ Copied Week ${weekNum}!`;
+      button.style.backgroundColor = '#28a745';
+      showSuccessMessage(`Week ${weekNum} widget copied to clipboard!`);
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '#51247A';
+      }, 2000);
+    }).catch(err => {
+      console.warn('Modern clipboard API failed, trying fallback:', err);
+      // Fallback to older method
+      if (copyToClipboardFallback(code)) {
+        button.textContent = `✓ Copied Week ${weekNum}!`;
+        button.style.backgroundColor = '#28a745';
+        showSuccessMessage(`Week ${weekNum} widget copied to clipboard!`);
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.backgroundColor = '#51247A';
+        }, 2000);
+      } else {
+        alert(`Failed to copy to clipboard. Please try manually selecting and copying the code.\n\nError: ${err.message}`);
+      }
+    });
+  } else {
+    // Use fallback method for older browsers
+    if (copyToClipboardFallback(code)) {
+      button.textContent = `✓ Copied Week ${weekNum}!`;
+      button.style.backgroundColor = '#28a745';
+      showSuccessMessage(`Week ${weekNum} widget copied to clipboard!`);
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '#51247A';
+      }, 2000);
+    } else {
+      alert(`Failed to copy to clipboard. Your browser may not support this feature.\n\nPlease manually copy the code from the console or contact support.`);
+      console.log('Widget code for Week ' + weekNum + ':', code);
+    }
+  }
+}
 
 function updatePreview() {
   const selectedValue = courseSelect.value;
@@ -335,25 +436,6 @@ function setActiveWeek(weekNum) {
   });
   
   updatePreview();
-}
-
-function copyBlackboardWidget(weekNum) {
-  const code = bbWidgetTemplate.replace('__W__', weekNum);
-  navigator.clipboard.writeText(code).then(() => {
-    // Create a temporary success message
-    const button = event.target;
-    const originalText = button.textContent;
-    button.textContent = `✓ Copied Week ${weekNum}!`;
-    button.style.backgroundColor = '#28a745';
-    
-    setTimeout(() => {
-      button.textContent = originalText;
-      button.style.backgroundColor = '#51247A';
-    }, 2000);
-  }).catch(err => {
-    alert(`Failed to copy to clipboard. Please try again.`);
-    console.error('Copy failed:', err);
-  });
 }
 
 // Event listeners
