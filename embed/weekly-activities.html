@@ -59,6 +59,7 @@
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 500;
+      cursor: help;
     }
     .no-activities {
       padding: 2rem;
@@ -155,7 +156,7 @@
           const title = document.getElementById('weekTitle');
           if (header && title) {
             header.textContent = `Week ${weekParam}`;
-            title.textContent = `Week ${weekParam} Learning Activities`;
+            title.textContent = `Learning Activities`;
           }
           
           // Construct full JSON URL
@@ -184,7 +185,7 @@
           }
           
           // Render the week activities
-          renderWeekActivities(weekActivities, weekParam);
+          renderWeekActivities(weekActivities, weekParam, courseData.learning_objectives || []);
           
           // Show main content and hide loading
           loadingState.classList.add('hidden');
@@ -198,7 +199,7 @@
         }
       });
 
-      function renderWeekActivities(activities, weekNumber) {
+      function renderWeekActivities(activities, weekNumber, learningObjectives) {
         // Group activities by activity_type
         const groupedActivities = {};
         
@@ -244,7 +245,7 @@
             activityDiv.innerHTML = `
               <div class="activity-title">${title}</div>
               <div class="activity-description">${description}</div>
-              ${renderLearningOutcomes(activity.learning_outcomes)}
+              ${renderLearningOutcomes(activity.learning_outcomes, learningObjectives)}
             `;
             
             activitiesContainer.appendChild(activityDiv);
@@ -283,14 +284,22 @@
         return '';
       }
 
-      function renderLearningOutcomes(outcomes) {
+      function renderLearningOutcomes(outcomes, learningObjectives) {
         if (!outcomes || !Array.isArray(outcomes) || outcomes.length === 0) {
           return '';
         }
         
-        const badgesHtml = outcomes.map(outcome => 
-          `<span class="learning-outcome-badge">${outcome}</span>`
-        ).join('');
+        const badgesHtml = outcomes.map(outcome => {
+          // Find the full learning objective text
+          const fullObjective = learningObjectives.find(obj => 
+            obj.code === outcome || obj.code === outcome.replace('L', 'LO')
+          );
+          
+          const fullText = fullObjective ? fullObjective.text : '';
+          const displayText = fullText ? `${outcome}. ${fullText}` : outcome;
+          
+          return `<span class="learning-outcome-badge" title="${displayText}">${outcome}</span>`;
+        }).join('');
         
         return `<div class="learning-outcomes">${badgesHtml}</div>`;
       }
