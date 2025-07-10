@@ -130,6 +130,27 @@
       background-color: #f9f9f9;
       color: #666;
     }
+    .copy-fallback {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      opacity: 0;
+    }
+    .success-message {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .success-message.show {
+      transform: translateX(0);
+    }
   </style>
 </head>
 <body>
@@ -205,6 +226,14 @@
   </div>
 </div>
 
+<!-- Hidden textarea for fallback copy method -->
+<textarea id="copyFallback" class="copy-fallback"></textarea>
+
+<!-- Success message -->
+<div id="successMessage" class="success-message">
+  <span id="successText">Code copied to clipboard!</span>
+</div>
+
 <script>
 const iframeBase = "https://uqgblaze.github.io/jacson/embed/assessment-details-v2.0.html";
 const bbWidgetTemplate = '<!-- Blackboard Ultra Assessment Details Widget -->\n' +
@@ -269,6 +298,9 @@ const courseSelect = document.getElementById('courseSelect');
 const previewFrame = document.getElementById('previewFrame');
 const currentPreview = document.getElementById('currentPreview');
 const assessmentBtns = document.querySelectorAll('.assessment-btn');
+const copyFallback = document.getElementById('copyFallback');
+const successMessage = document.getElementById('successMessage');
+const successText = document.getElementById('successText');
 
 let currentAssessment = 1;
 
@@ -279,9 +311,79 @@ const courseNames = {
   '7520/ECON7012-22494-7520': 'ECON7012 - Business Economics'
 };
 
+function showSuccessMessage(message) {
+  successText.textContent = message;
+  successMessage.classList.add('show');
+  setTimeout(() => {
+    successMessage.classList.remove('show');
+  }, 3000);
+}
+
+function copyToClipboardFallback(text) {
+  copyFallback.value = text;
+  copyFallback.select();
+  copyFallback.setSelectionRange(0, 99999); // For mobile devices
+  
+  try {
+    document.execCommand('copy');
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
+function copyBlackboardWidget(assessmentNum) {
+  const code = bbWidgetTemplate.replace('__A__', assessmentNum);
+  const button = event.target;
+  const originalText = button.textContent;
+  
+  // Try modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(code).then(() => {
+      button.textContent = `✓ Copied Assessment ${assessmentNum}!`;
+      button.style.backgroundColor = '#28a745';
+      showSuccessMessage(`Assessment ${assessmentNum} widget copied to clipboard!`);
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '#51247A';
+      }, 2000);
+    }).catch(err => {
+      console.warn('Modern clipboard API failed, trying fallback:', err);
+      // Fallback to older method
+      if (copyToClipboardFallback(code)) {
+        button.textContent = `✓ Copied Assessment ${assessmentNum}!`;
+        button.style.backgroundColor = '#28a745';
+        showSuccessMessage(`Assessment ${assessmentNum} widget copied to clipboard!`);
+        
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.style.backgroundColor = '#51247A';
+        }, 2000);
+      } else {
+        alert(`Failed to copy to clipboard. Please try manually selecting and copying the code.\n\nError: ${err.message}`);
+      }
+    });
+  } else {
+    // Use fallback method for older browsers
+    if (copyToClipboardFallback(code)) {
+      button.textContent = `✓ Copied Assessment ${assessmentNum}!`;
+      button.style.backgroundColor = '#28a745';
+      showSuccessMessage(`Assessment ${assessmentNum} widget copied to clipboard!`);
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = '#51247A';
+      }, 2000);
+    } else {
+      alert(`Failed to copy to clipboard. Your browser may not support this feature.\n\nPlease manually copy the code from the console or contact support.`);
+      console.log('Widget code for Assessment ' + assessmentNum + ':', code);
+    }
+  }
+}
+
 function updatePreview() {
   const selectedValue = courseSelect.value;
-  // Fix the URL format - remove the extra question mark that was in the original
   const src = `${iframeBase}?json=${selectedValue}&assessment=${currentAssessment}`;
   previewFrame.src = src;
   
@@ -302,25 +404,6 @@ function setActiveAssessment(assessmentNum) {
   });
   
   updatePreview();
-}
-
-function copyBlackboardWidget(assessmentNum) {
-  const code = bbWidgetTemplate.replace('__A__', assessmentNum);
-  navigator.clipboard.writeText(code).then(() => {
-    // Create a temporary success message
-    const button = event.target;
-    const originalText = button.textContent;
-    button.textContent = `✓ Copied Assessment ${assessmentNum}!`;
-    button.style.backgroundColor = '#28a745';
-    
-    setTimeout(() => {
-      button.textContent = originalText;
-      button.style.backgroundColor = '#51247A';
-    }, 2000);
-  }).catch(err => {
-    alert(`Failed to copy to clipboard. Please try again.`);
-    console.error('Copy failed:', err);
-  });
 }
 
 // Event listeners
