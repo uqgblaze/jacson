@@ -185,7 +185,7 @@
           }
           
           // Render the week activities
-          renderWeekActivities(weekActivities, weekParam, courseData.learning_objectives || []);
+          renderWeekActivities(weekActivities, weekParam, courseData.learning_outcomes || []);
           
           // Show main content and hide loading
           loadingState.classList.add('hidden');
@@ -199,7 +199,7 @@
         }
       });
 
-      function renderWeekActivities(activities, weekNumber, learningObjectives) {
+      function renderWeekActivities(activities, weekNumber, learningOutcomes) {
         // Group activities by activity_type
         const groupedActivities = {};
         
@@ -245,7 +245,7 @@
             activityDiv.innerHTML = `
               <div class="activity-title">${title}</div>
               <div class="activity-description">${description}</div>
-              ${renderLearningOutcomes(activity.learning_outcomes, learningObjectives)}
+              ${renderLearningOutcomes(activity.learning_outcomes, learningOutcomes)}
             `;
             
             activitiesContainer.appendChild(activityDiv);
@@ -284,21 +284,25 @@
         return '';
       }
 
-      function renderLearningOutcomes(outcomes, learningObjectives) {
+      function renderLearningOutcomes(outcomes, learningOutcomes) {
         if (!outcomes || !Array.isArray(outcomes) || outcomes.length === 0) {
           return '';
         }
         
         const badgesHtml = outcomes.map(outcome => {
-          // Find the full learning objective text
-          const fullObjective = learningObjectives.find(obj => 
-            obj.code === outcome || obj.code === outcome.replace('L', 'LO')
-          );
+          // Find the full learning outcome text
+          const fullOutcome = learningOutcomes.find(obj => {
+            // Match against various formats: L01, LO1, LO1.
+            const cleanNumber = obj.number.replace(/[^\w\d]/g, ''); // Remove dots, etc.
+            const cleanOutcome = outcome.replace(/[^\w\d]/g, '');
+            return cleanNumber === cleanOutcome || 
+                   cleanNumber === cleanOutcome.replace('L', 'LO') ||
+                   cleanNumber === 'LO' + cleanOutcome.replace('L', '');
+          });
           
-          const fullText = fullObjective ? fullObjective.text : '';
-          const displayText = fullText ? `${outcome}. ${fullText}` : outcome;
+          const fullText = fullOutcome ? `${fullOutcome.number} ${fullOutcome.description}` : outcome;
           
-          return `<span class="learning-outcome-badge" title="${displayText}">${outcome}</span>`;
+          return `<span class="learning-outcome-badge" title="${fullText}">${outcome}</span>`;
         }).join('');
         
         return `<div class="learning-outcomes">${badgesHtml}</div>`;
