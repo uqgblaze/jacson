@@ -352,9 +352,9 @@
         {
             "learning_period": "Week 11",
             "activity_type": "Lecture",
-            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis- Turnaround Analysis</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05</p></div></td>",
-            "topic_title": "<strong>Business Crisis- Turnaround Analysis</strong>",
-            "topic_description": "Business Crisis- Turnaround Analysis",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis: Business Model Innovation</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Business Crisis: Business Model Innovation</strong>",
+            "topic_description": "Business Crisis: Business Model Innovation",
             "learning_outcomes": [
                 "L01",
                 "L03",
@@ -378,9 +378,9 @@
         {
             "learning_period": "Week 12",
             "activity_type": "Lecture",
-            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis- Business Model Innovation &amp; Scenario Planning</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
-            "topic_title": "<strong>Business Crisis- Business Model Innovation &amp; Scenario Planning</strong>",
-            "topic_description": "Business Crisis- Business Model Innovation & Scenario Planning",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis: Scenario Planning</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Business Crisis: Scenario Planning</strong>",
+            "topic_description": "Business Crisis: Scenario Planning",
             "learning_outcomes": [
                 "L01",
                 "L02",
@@ -391,9 +391,9 @@
         {
             "learning_period": "Week 12",
             "activity_type": "Workshop",
-            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis- Turnaround Analysis</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05</p></div></td>",
-            "topic_title": "<strong>Business Crisis- Turnaround Analysis</strong>",
-            "topic_description": "Business Crisis- Turnaround Analysis",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis: Business Model Innovation</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L03, L04, L05</p></div></td>",
+            "topic_title": "<strong>Business Crisis: Business Model Innovation</strong>",
+            "topic_description": "Business Crisis: Business Model Innovation",
             "learning_outcomes": [
                 "L01",
                 "L03",
@@ -417,9 +417,9 @@
         {
             "learning_period": "Week 13",
             "activity_type": "Workshop",
-            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis- Business Model Innovation &amp; Scenario Planning</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
-            "topic_title": "<strong>Business Crisis- Business Model Innovation &amp; Scenario Planning</strong>",
-            "topic_description": "Business Crisis- Business Model Innovation & Scenario Planning",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Business Crisis: Scenario Planning</strong><br/></p><p><strong>Learning outcomes:</strong> L01, L02, L03, L05</p></div></td>",
+            "topic_title": "<strong>Business Crisis: Scenario Planning</strong>",
+            "topic_description": "Business Crisis: Scenario Planning",
             "learning_outcomes": [
                 "L01",
                 "L02",
