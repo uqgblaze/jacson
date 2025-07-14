@@ -34,7 +34,7 @@
     "assessments": [
         {
             "assessment_detail_section_id": "assessment-detail-0",
-            "assessment_title": "Mid-semester Marketing Quiz",
+            "assessment_title": "Mid-semester Marketing Exam",
             "special_indicators": [
                 {
                     "special_indicators_class": "icon--education--bookmarks-document icon-text--small",
@@ -50,7 +50,7 @@
             "learning_objectives": "L01, L02, L03",
             "mode": "Written",
             "category": "Examination",
-            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>This assessment is a multiple choice quiz that will be conducted by central exams. This will be a paper-pencil quiz.</p>\n<p>The quiz is designed to engage students in early exploration of marketing theory. The quiz will based on the content covered in Week 1, 2, and 3 lectures, Week 2, 3 and 4 tutorials, and all readings from these weeks (Chapters 1, 2, 3, and 5). </p>\n<p>Further instructions and details will be available in the Assessment folder and discussed in class.</p>\n<p><strong>AI Statement:</strong></p>\n<p>This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) or Machine Translation (MT) tools will not be permitted. Any attempted use of AI or MT may constitute student misconduct under the Student Code of Conduct.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
+            "task_description": "<div class=\"collapsible collapsible--text\">\n<p>This assessment is a multiple-choice exam that will be conducted in-person by central exams.</p>\n<p>The exam is designed to engage students in early exploration of marketing theory and will be based on the content covered in Week 1, 2, and 3 lectures, Week 2, 3 and 4 tutorials, and all readings from these weeks (Chapters 1, 2, 3, and 5).</p>\n<p>Further instructions and details will be available in the Assessment folder and discussed in class.</p>\n<p><strong>AI Statement:</strong></p>\n<p>This assessment task is to be completed in-person. The use of generative Artificial Intelligence (AI) or Machine Translation (MT) tools will not be permitted. Any attempted use of AI or MT may constitute student misconduct under the Student Code of Conduct.</p>\n<button class=\"collapsible__toggle\">\n<span class=\"collapsible__open link--icon icon--standard--arrow-down-1\">Read full task description</span>\n<span class=\"collapsible__close link--icon icon--standard--arrow-up-1\">Hide full task description</span>\n</button>\n</div>",
             "submission_guidelines": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
             "deferral_or_extension": "<p>You may be able to <a href=\"https://my.uq.edu.au/information-and-services/manage-my-program/exams-and-assessment/deferring-exam#3\">defer this exam</a>.</p>",
             "late_submission": "<p>A <a href=\"https://policies.uq.edu.au/document/view-current.php?id=184\">penalty</a> of 10% of the maximum possible mark will be deducted per 24 hours from time submission is due for up to 7 days. After 7 days, you will receive a mark of 0.</p>",
@@ -144,9 +144,9 @@
         {
             "learning_period": "Week 3",
             "activity_type": "Lecture",
-            "topic": "<td data-title=\"Topic\"><div><p><strong>Consumer Behaviour</strong><br><p>Understanding the drivers of consumer behaviour.</p>\n<p>Assessment 1: Marketing Quiz briefing.</p>\n<p>During this week, ALL students should also watch the Library Guide - accessed via the course website.</p></br></p><p><strong>Learning outcomes:</strong> L02, L03, L04</p></div></td>",
+            "topic": "<td data-title=\"Topic\"><div><p><strong>Consumer Behaviour</strong><br><p>Understanding the drivers of consumer behaviour.</p>\n<p>Assessment 1: Mid-semester Marketing Exam briefing.</p>\n<p>During this week, ALL students should also watch the Library Guide - accessed via the course website.</p></br></p><p><strong>Learning outcomes:</strong> L02, L03, L04</p></div></td>",
             "topic_title": "<strong>Consumer Behaviour</strong>",
-            "topic_description": "Consumer Behaviour Understanding the drivers of consumer behaviour. Assessment 1: Marketing Quiz briefing. During this week, ALL students should also watch the Library Guide - accessed via the course website.",
+            "topic_description": "Consumer Behaviour Understanding the drivers of consumer behaviour. Assessment 1: Mid-semester Marketing Exam briefing. During this week, ALL students should also watch the Library Guide - accessed via the course website.",
             "learning_outcomes": [
                 "L02",
                 "L03",
