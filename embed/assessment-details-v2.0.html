@@ -121,13 +121,13 @@
           const assessmentIndex = parseInt(assessmentParam) - 1;
           
           if (assessmentIndex < 0) {
-            throw new Error('Invalid assessment number');
+            throw new Error('Invalid assessment number. Ensure you include both json and assessment into the url, e.g.: https://uqgblaze.github.io/jacson/embed/assessment-details-v2.0.html?json=7520/TIMS7811-22499-7520&assessment=1');
           }
           
           // Parse course information from JSON path
           const pathParts = jsonPath.split('/');
           if (pathParts.length !== 2) {
-            throw new Error('Invalid JSON path format');
+            throw new Error('Invalid JSON path format. Ensure you include both json and assessment into the url, e.g.: https://uqgblaze.github.io/jacson/embed/assessment-details-v2.0.html?json=7520/TIMS7811-22499-7520&assessment=1');
           }
           
           const semesterCode = pathParts[0];
