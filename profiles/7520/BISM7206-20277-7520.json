@@ -12,7 +12,7 @@
     "learning_outcomes": [
         {
             "number": "LO1.",
-            "description": "Understand and apply popular data modelling techniques and develop appropriate data structures for particular business environments."
+            "description": "Demonstrate foundational understanding and/or critical application of data modelling techniques to design robust data structures that address complex business requirements."
         },
         {
             "number": "LO2.",
@@ -20,15 +20,15 @@
         },
         {
             "number": "LO3.",
-            "description": "Develop and apply data quality assurance procedures to improve data quality."
+            "description": "Explain and apply principles of data quality assurance and apply techniques such as data cleaning, validation, and integrity enforcement to improve the reliability of organisational data."
         },
         {
             "number": "LO4.",
-            "description": "Understand current Information Systems issues and identify how to exploit available data for corporate advantage."
+            "description": "Identify and analyse current Information Systems issues and suggest strategic approaches to leveraging business data for competitive advantage."
         },
         {
             "number": "LO5.",
-            "description": "Develop and apply teamwork skills and written communication skills necessary to effectively collaborate and contribute to information systems development projects."
+            "description": "Collaborate effectively in teams and articulate complex information systems concepts through advanced written and oral communication skills."
         }
     ],
     "assessments": [
