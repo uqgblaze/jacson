@@ -11,6 +11,7 @@ This guide explains everything that must be edited if you're adapting JacSON for
 
 - View code on Github: https://github.com/uqgblaze/jacson
 - Live version: https://uqgblaze.github.io/jacson/
+- View all course profiles: https://uqgblaze.github.io/jacson/docs/
 
 ## Overview
 
