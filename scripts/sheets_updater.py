@@ -9,14 +9,16 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # ─── CONFIG ────────────────────────────────────────────────────────────────────
-SPREADSHEET_ID    = '1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs'
+SCRIPT_DIR        = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT      = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+SPREADSHEET_ID    = '1ucVAYIE8Il9rKASQIlt5yy3TTuNyccmLBVdeLmONetg'
 FETCH_RANGE       = 'Sheet1!A4:F'    # used by fetch_course_list
 CODE_RANGE        = 'Sheet1!A4:A'    # used by update_status_sheet
 START_ROW         = 4                # first row of CODE_RANGE
 SCOPES            = ['https://www.googleapis.com/auth/spreadsheets']
-CREDENTIALS_FILE  = os.path.join('secrets', 'credentials.json')
+CREDENTIALS_FILE  = os.path.join(PROJECT_ROOT, "secrets", "credentials.json")
 # ────────────────────────────────────────────────────────────────────────────────
-
+# URL to existing list: https://docs.google.com/spreadsheets/d/1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs/edit?usp=sharing
 
 def get_service():
     """

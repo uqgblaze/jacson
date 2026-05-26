@@ -1,0 +1,557 @@
+/* ─────────────────────────────────────────────────────────────
+   JacDash — Main Stylesheet
+   Target: desktop-first, 1920×1080. Responsive down to ~900px.
+───────────────────────────────────────────────────────────── */
+
+:root {
+  --jacson-purple:  #51247A;
+  --jacson-magenta: #962A8B;
+  --jacson-deep:    #1F0029;
+  --sidebar-bg:     #EBE8E6;
+  --terminal-bg:    #100015;
+  --terminal-text:  #97D49B;
+  --terminal-glow:  #17541B;
+  --sidebar-split:  260px;  /* y-centre of the logo card */
+  --sidebar-w:      340px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  overflow: hidden;      /* no page-level scroll; terminal box scrolls instead */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* ── Layout ──────────────────────────────────────────────────── */
+
+.jd-layout {
+  display: flex;
+  height: 100vh;         /* fill exactly the viewport — no more, no less */
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+
+.jd-sidebar {
+  position: relative;
+  flex: 0 0 var(--sidebar-w);
+  width: var(--sidebar-w);
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--sidebar-bg);
+  color: #111;
+}
+
+/* Two-layer gradient block behind the logo */
+.jd-logo-bg {
+  position: absolute;
+  left: 50%;
+  top: var(--sidebar-split);
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.35),
+    0 0 0 1px rgba(255,255,255,0.08);
+  z-index: 1;
+}
+
+.jd-logo-bg-bottom {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    30deg,
+    var(--jacson-purple) 5%,
+    var(--jacson-deep)   50%,
+    var(--jacson-purple) 95%
+  );
+}
+
+.jd-logo-bg-top {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    200deg,
+    rgba(81,  36, 122, 0.68) 22%,
+    rgba(150, 42, 139, 0.68) 48%,
+    rgba(150, 42, 139, 0.68) 66%,
+    rgba(81,  36, 122, 0.68) 100%
+  );
+}
+
+/* Logo card — sits centred over the gradient block */
+.jd-logo-card {
+  position: absolute;
+  left: 50%;
+  top: var(--sidebar-split);
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.jd-logo-card img {
+  max-width: 78%;
+  max-height: 78%;
+  object-fit: contain;
+}
+
+/* Nav content starts below the logo */
+.jd-sidebar-nav {
+  position: absolute;
+  top: calc(var(--sidebar-split) + 120px);
+  left: 0; right: 0; bottom: 0;
+  z-index: 4;
+  padding: 1.25rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+}
+
+/* ── Info blocks (time, count) ───────────────────────────────── */
+
+.jd-info-block {
+  margin-bottom: 0.25rem;
+}
+
+.jd-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.15rem;
+}
+
+.jd-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.65;
+}
+
+.jd-info-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+}
+
+.jd-info-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #111;
+  padding-left: 1.4rem;
+  line-height: 1.4;
+}
+
+.jd-divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 0.75rem 0;
+}
+
+/* ── Sidebar buttons ─────────────────────────────────────────── */
+
+.jd-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.jd-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: opacity 0.15s, filter 0.15s;
+  white-space: nowrap;
+}
+
+.jd-btn:hover { opacity: 0.88; }
+.jd-btn:active { filter: brightness(0.92); }
+
+.jd-btn--primary {
+  background: var(--jacson-purple);
+  color: #fff;
+}
+
+.jd-btn--secondary {
+  background: rgba(81, 36, 122, 0.10);
+  color: var(--jacson-purple);
+  border: 1px solid rgba(81, 36, 122, 0.25);
+}
+
+.jd-btn--ghost {
+  background: #e8e4eb;
+  color: #444;
+  border: 1px solid #ccc;
+}
+
+/* Running state */
+.jd-btn--running {
+  background: #8B0000 !important;
+  color: #fff !important;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.jd-btn:disabled,
+.jd-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.jd-btn-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);  /* white icons on coloured buttons */
+}
+
+.jd-btn--secondary .jd-btn-icon {
+  filter: none;
+  opacity: 0.7;
+}
+
+/* ── Footer links ────────────────────────────────────────────── */
+
+.jd-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.jd-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.78rem;
+  color: var(--jacson-purple);
+  cursor: pointer;
+  padding: 0.2rem 0;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.jd-link-btn:hover { opacity: 1; text-decoration: underline; }
+
+.jd-sidebar-user {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.7rem;
+  color: #888;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── Terminal panel ──────────────────────────────────────────── */
+
+.jd-terminal {
+  flex: 1 1 auto;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: "Cascadia Code", "Fira Code", Consolas, Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding: 1.75rem 2rem 2rem;
+  overflow: hidden;          /* panel itself never scrolls */
+  display: flex;
+  flex-direction: column;
+  text-shadow:
+    0 0 8px var(--terminal-glow),
+    0 0 3px var(--terminal-glow);
+}
+
+.jd-terminal-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.jd-terminal h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--terminal-text);
+  font-weight: 400;
+}
+
+.jd-download-btn {
+  background: none;
+  border: 1px solid rgba(150, 212, 155, 0.35);
+  color: var(--terminal-text);
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-shadow: inherit;
+  transition: border-color 0.15s;
+}
+
+.jd-download-btn:hover { border-color: var(--terminal-text); }
+
+.jd-log {
+  flex: 1 1 0;           /* grow to fill available height */
+  min-height: 0;         /* allow flex child to shrink below content size */
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* ── Status log ──────────────────────────────────────────────── */
+
+.jd-status-log {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(150, 212, 155, 0.2);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1.5rem;
+}
+
+.jd-status-label {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.jd-status-val {
+  font-size: 0.75rem;
+}
+
+.jd-status-val--success { color: #97D49B; }
+.jd-status-val--failed  { color: #e87272; text-shadow: 0 0 8px #600, 0 0 3px #600; }
+
+/* ── Modals ──────────────────────────────────────────────────── */
+
+.jd-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 0, 21, 0.75);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.jd-modal-overlay.is-open {
+  display: flex;
+}
+
+.jd-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 580px;
+  max-width: 95vw;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  overflow: hidden;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-shadow: none;
+}
+
+.jd-modal-header {
+  background: linear-gradient(
+    135deg,
+    var(--jacson-purple) 0%,
+    var(--jacson-magenta) 100%
+  );
+  color: #fff;
+  padding: 0.9rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.jd-modal-body {
+  padding: 1.4rem 1.5rem 0.75rem;
+}
+
+.jd-modal-footer {
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  border-top: 1px solid #eee;
+}
+
+.jd-modal-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 0.25rem;
+}
+
+.jd-modal-hint {
+  font-size: 0.78rem;
+  color: #666;
+  margin: 0 0 0.9rem;
+  line-height: 1.5;
+}
+
+.jd-modal-msg {
+  font-size: 0.78rem;
+  margin-top: 0.5rem;
+  min-height: 1.2em;
+  color: #b00;
+}
+
+/* Schedule modal: two-column layout */
+.jd-schedule-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.jd-day-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.jd-day-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.75rem;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.jd-day-pill input[type="checkbox"] { display: none; }
+
+.jd-day-pill:has(input:checked) {
+  background: var(--jacson-purple);
+  border-color: var(--jacson-purple);
+  color: #fff;
+}
+
+.jd-time-input {
+  font-size: 1.5rem;
+  font-family: "Cascadia Code", Consolas, monospace;
+  color: var(--jacson-purple);
+  border: 2px solid var(--jacson-purple);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  background: #f7f3fc;
+  outline: none;
+}
+
+.jd-time-input:focus { border-color: var(--jacson-magenta); }
+
+/* Users modal */
+.jd-user-search-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.jd-search-wrap {
+  position: relative;
+  flex: 1 1 160px;
+}
+
+.jd-search-icon {
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  opacity: 0.4;
+}
+
+.jd-search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.jd-search-input:focus { border-color: var(--jacson-purple); }
+
+.jd-add-btn {
+  flex-shrink: 0;
+  width: auto;
+  padding: 0.5rem 1rem;
+}
+
+.jd-user-list {
+  border: 1.5px solid #eee;
+  border-radius: 8px;
+  min-height: 120px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 0.25rem 0;
+}
+
+.jd-user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.82rem;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.jd-user-row:last-child { border-bottom: none; }
+
+.jd-user-name { font-weight: 500; }
+.jd-user-uname { color: #666; font-size: 0.78rem; }
+
+.jd-user-remove {
+  background: none;
+  border: none;
+  color: #b00;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.jd-user-remove:hover { background: #fde8e8; }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  :root { --sidebar-w: 280px; --sidebar-split: 220px; }
+
+  .jd-logo-bg,
+  .jd-logo-card { width: 180px; height: 180px; }
+
+  .jd-schedule-body { grid-template-columns: 1fr; }
+}

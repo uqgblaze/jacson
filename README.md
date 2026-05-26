@@ -1,17 +1,19 @@
 <p align="center">
-  <img src="jacson-logo-small.svg" alt="JacSON Logo" width="200"/>
+  <img src="assets/jacson-logo-small.svg" alt="JacSON Logo" width="200"/>
 </p>
 
 # JacSON — Overview, Setup & Configuration Guide
 
-Welcome to JacSON: a Javascript and JSON-based scraper and publishing tool for UQ Jac Course Profiles.  
+Welcome to JacSON: a Javascript and JSON-based scraper and integration tool from UQ Jac Course Profiles into Blackboard Ultra.  
 This guide explains everything that must be edited if you're adapting JacSON for another school, faculty, or institution.
 
 ## Quick Links
 
 - View code on Github: https://github.com/uqgblaze/jacson
-- Live version: https://uqgblaze.github.io/jacson/
-- View all course profiles: https://uqgblaze.github.io/jacson/docs/
+- Live version: 
+  - Assessments preview: https://uq-business-school.github.io/jacson/demo/assessments.html
+  - Weekly Activities preview: https://uq-business-school.github.io/jacson/demo/weekly-activities.html
+  - Installation instructions: https://uq-business-school.github.io/jacson/demo/install.html
 
 ## Overview
 
@@ -19,17 +21,16 @@ JacSON automates the retrieval of learning outcomes, assessment details, and wee
 
 ## Key Features
 
-- 🧠 **Course Intelligence**: Parses and extracts structured data such as:
+- **Course Intelligence**: Parses and extracts structured data such as:
   - Learning Outcomes
   - Assessment Tasks (titles, weights, dates, descriptions)
   - Weekly Activities (topics, outcomes, periods)
-- ⛔ **Smart Filtering**: Ignores any links to archived course profiles.
-- 📝 **Google Sheets Enabled**: Reads course codes from a central **Google Sheet** and updates scrape status and notes for each course
-- 🪵 **Creates logs and buffers**: Uses a local `course-list.csv` file to determine which courses to scrape or ignore.
-- 🗃️ **Organized Output**: Saves JSON output in folders by semester code.
-- ☁️ **Automatic Cloud Publishing**: Configured to automatically upload JSON results to GitHub repository
-- 🧪 **Python-based and extensible**: Designed to be modular and easy to integrate with existing Python or web workflows.
-- ✅ **Deploy and copy HTML to any course**: You can then copy and deploy the HTML to **any** course in Blackboard Ultra. It will automatically find the course code and find the scraped JSON file within a document.
+- **Smart Filtering**: Ignores any links to archived course profiles.
+- **Local course list**: Uses a local `course-list.csv` file to determine which courses to scrape or ignore.
+- **Organized Output**: Saves JSON output in folders by semester code.
+- **Automatic Cloud Publishing**: Can upload JSON results to a GitHub repository.
+- **Python-based and extensible**: Designed to be modular and easy to integrate with existing Python or web workflows.
+- **Deploy and copy HTML to any course**: You can then copy and deploy the HTML to **any** course in Blackboard Ultra. It will automatically find the course code and find the scraped JSON file within a document.
 
 ## Limitations
 
@@ -39,343 +40,137 @@ JacSON automates the retrieval of learning outcomes, assessment details, and wee
 
 ---
 
-## 🚀 Getting Started
+## Getting Started (Raspberry Pi / Linux)
 
-Here’s how to replicate JacSON from scratch in your school or faculty.
+### 1. Get the project
 
-### 1. Download Repo as ZIP file
+Download the project as a ZIP, extract it, and go to the project folder (the folder that contains `run_JacSON.py` and the `scripts` folder).
 
-If you haven't already, download the Repo as a ZIP file. Instructions below assume you've saved it to: `%USERPROFILE%\Documents\JacSON`
+### 2. Install Python and dependencies
 
-### 2. 🐍 Install Python
+Raspberry Pi OS uses an “externally managed” system Python, so install into a **virtual environment** in the project folder. From the **project root**:
 
-Make sure Python 3.10 or later is installed.
+```bash
+# Create a virtual environment (once)
+python3 -m venv venv
 
-- [Download Python](https://www.python.org/downloads/)
-- During install: ✅ *Add Python to PATH*
+# Install dependencies into it
+venv/bin/pip install -r scripts/requirements.txt
+```
 
-Once that is installed, open a command prompt window (CMD.exe, not PowerShell!) and change to the folder: e.g. `cd %USERPROFILE%\Documents\JacSON`
+If `python3 -m venv` fails, install the venv package first: `sudo apt install python3-venv` (and optionally `python3-full`).
 
-Then install dependencies:
+### 3. Set up your course list
 
-`pip install -r requirements.txt`
+Edit `course-list.csv` in the project root. It has two columns: **included** and **excluded**. Put one course code per row in the **included** column (e.g. `ACCT7804`). Leave **excluded** blank unless you want to skip specific courses.
 
-- If you get an error about 'pip', that means you need to manually install PIP. Google is your friend!
+Example:
 
----
+| included | excluded |
+|----------|----------|
+| ACCT7804 |          |
+| BISM7808 |          |
 
-### 3\. 📄 Google Sheet Setup
+### 4. (Optional) GitHub upload
 
-- See link for template: https://docs.google.com/spreadsheets/d/1y4JfTa76oVyWndfA83bAqeN4XwjbMKyWgOyR60yEzXs/edit?usp=sharing
+If you want the scraper to upload the generated JSON to GitHub:
 
-JacSON expects this layout:
+1. Create a Personal Access Token on GitHub (Settings → Developer settings → Personal access tokens) with `repo` scope.
+2. Create a `secrets` folder in the project root.
+3. Create a file `secrets/github_token.txt` and paste the token (one line, no spaces).
 
-| A (Course Code) | B (Auto) | C (Status) | D (Manual) | E | F (Notes) |
-| --- | --- | --- | --- | --- | --- |
-| ACCT7804 | TRUE |  |  |  |  |
+If you skip this, the scraper will still run and save JSON under `profiles/`; only the upload step will be skipped or fail.
 
--   Column B: `TRUE` to auto-run
--   Column C: Status (e.g., Scheduled, Success!, Failure)
--   Column D: If `TRUE`, the course is ignored
+### 5. Run the scraper
 
+From the project root, use the virtual environment’s Python:
 
----
+```bash
+venv/bin/python run_JacSON.py
+```
 
-## Getting your SECRETS ready
-
-### 4\. 🔐 Google Sheets Setup
-
-JacSON reads and writes to a shared Google Sheet. To enable this:
-
-#### a. Create a Service Account:
-
--   Visit: https://console.cloud.google.com/
--   Create a new project and enable the **Google Sheets API**
--   Generate a Service Account with a JSON key file
--   Share your Sheet with the service account email (e.g., `jacson-api@your-project.iam.gserviceaccount.com`)
-
-#### b. Save the key file
-
-Place your credentials JSON here:
-
-`./secrets/credentials.json`
-
-- **Currently unsupported feature**: For GitHub Actions, set as an environment variable `GOOGLE_SERVICE_ACCOUNT_JSON`.
-
-### 🔐 How to Set Up a GitHub Personal Access Token
-
-#### 🧱 Prerequisites
-
--   A GitHub account
--   Access to the target GitHub repository (owner or write access)
-* * *
-
-#### ✅ Step-by-Step Instructions
-
-##### **a\. Log in to GitHub**
-
-Go to: [https://github.com/login](https://github.com/login)
-
-* * *
-
-##### **b\. Open Developer Settings**
-
--   Click your profile icon in the top-right
--   Select **"Settings"**
--   Scroll down the left sidebar to **"Developer settings"**
--   Click on **"Personal access tokens"**
--   Then click **"Tokens (classic)"**
-* * *
-
-##### **c\. Generate a New Token**
-
--   Click **"Generate new token" → "Generate new token (classic)"**
-* * *
-
-##### **d\. Configure the Token**
-
-Fill out the form:
-
--   **Note**: Something like `JacSON Uploader`
--   **Expiration**: Choose a long-lived token if you're automating
--   **Scopes**: ✅ Tick only:
-    -   `repo` → full control of private repositories
-
-This includes:
-
--   `repo:status`
--   `repo_deployment`
--   `public_repo`
--   `repo:invite`
-* * *
-
-##### **e\. Generate and Save the Token**
-
--   Click the green **"Generate token"** button
--   📋 **Copy and Save the token immediately** — GitHub will not show it again!
-* * *
-
-### 🔒 Using the Token in JacSON
-
-1.  Open your JacSON folder.
-2.  Create a file:
-
-    `./secrets/github_token.txt`
-
-3.  Paste the token into the file:
-
-    `ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXX`
-
-✔️ Now JacSON’s `upload_profiles.py` will authenticate and upload `.json`
-
+For scheduled runs (e.g. daily), use cron and point it at the venv Python and full path to `run_JacSON.py` (see **Automated Controls** below).
 
 ---
 
-## 🛠 Manual Controls
+## Getting Started (Windows)
 
--   To **test specific courses**: edit `course-list.csv` directly
--   To **run individual scripts**:
-    -   Pull course list: `python scripts/generate_course_list.py`
-    -   Scrape only: `python jacson.py`
-    -   Upload only: `python scripts/upload_profiles.py`
-    -   Update status:
+### 1. Get the project
+
+Download the repo and open the folder that contains `run_JacSON.bat` and the `scripts` folder.
+
+### 2. Install Python
+
+Install Python 3.10 or later from [python.org](https://www.python.org/downloads/). During install, enable **Add Python to PATH**.
+
+Open a command prompt (CMD), go to the project folder, then:
+
+```cmd
+pip install -r scripts/requirements.txt
+```
+
+### 3. Set up your course list
+
+Edit `course-list.csv` in the project root (included / excluded course codes as in the Pi section above).
+
+### 4. (Optional) GitHub upload
+
+Same as Pi: create `secrets/github_token.txt` with your GitHub Personal Access Token if you want automatic upload to a repo.
+
+### 5. Run the scraper
+
+Double-click `run_JacSON.bat`, or in CMD from the project folder:
+
+```cmd
+python scripts\scraper_runner.py
+```
+
+---
+
+## Manual Controls
+
+- To **test specific courses**: edit `course-list.csv` (included / excluded columns).
+- To **run only the scraper** (no upload): from project root, `python3 scripts/jacson.py` (Linux/Pi) or `python scripts\jacson.py` (Windows). Ensure you run from the project root so `course-list.csv` and `profiles/` are found.
+- To **upload only** (after scraping): `python3 scripts/upload_profiles.py` (Linux/Pi) or `python scripts\upload_profiles.py` (Windows), again from project root.
 
 ---
 
 ## Automated Controls
 
-- To run this automatically from your computer, run either option depending on your operating system:
+### Raspberry Pi / Linux — Cron
 
-## ✅ Option 1: **Windows** — Use Task Scheduler
+To run daily at 9:00 PM, edit crontab (`crontab -e`) and add (replace `/path/to/your/JacSON` with your real project path):
 
-### 🔧 Script File (Windows Batch Script)
-
-Save this as `run_jacson.bat` in the same folder as your JacSON project:
-
-`@echo off cd /d "C:\Path\To\Your\JacSON" python scraper_runner.py`
-
-> 🔄 Replace `C:\Path\To\Your\JacSON` with your actual folder path.
-
-* * *
-
-### 📅 Setup in Task Scheduler
-
-1.  Open **Task Scheduler**
-2.  Click **Create Basic Task**
-3.  Name it: `Run JacSON Scraper`
-4.  Choose **Daily**
-5.  Set your time (e.g., 9:00 PM)
-6.  Action: **Start a program**
-7.  Program/script: `C:\Path\To\Your\JacSON\run_jacson.bat`
-8.  Finish ✅
-
-* * *
-
-## ✅ Option 2: **macOS / Linux** — Use Cron
-
-### 🔧 Script File
-
-Save this as `run_jacson.sh` and make it executable:
-
-`#!/bin/bash cd /path/to/your/JacSON /usr/bin/python3 scraper_runner.py`
-
-> Use `which python3` to confirm the Python path
-
-Then make it executable:
-
-`chmod +x run_jacson.sh`
-
-* * *
-
-### 📅 Setup Cron Job
-
-1.  Open terminal
-2.  Edit your crontab:
-
-    `crontab -e`
-
-3.  Add a line like this (for 9:00 PM daily):
-
-    `0 21 * * * /path/to/your/JacSON/run_jacson.sh >> /path/to/your/JacSON/logs/cron.log 2>&1`
-
----
-
-# 🔧 Editable Configuration Overview
-
-Below is a complete list of files, variables, and settings that you will need to modify to get JacSON running in your own environment.
-
----
-
-### 1. ✅ Google Sheets Configuration
-
-**File:** `scripts/sheets_updater.py`  
-**Lines:**
-```python
-SPREADSHEET_ID = '1tJ04EY1AtyS-7iKlmgZhmom0f97xK3DsZ88wkqmRwNs'
-RANGE_NAME     = 'Sheet1!A2:F'
-CREDENTIALS_FILE = os.path.join('secrets', 'credentials.json')
-```
-
-- 🔄 Replace `SPREADSHEET_ID` with your own Google Sheet ID (found in the URL).
-- 🔄 Update `RANGE_NAME` if your data starts in a different cell.
-- 📁 Ensure `credentials.json` exists at `./secrets/credentials.json`.
-
----
-
-### 2. 🔐 Google Service Account Setup
-
-**Files:**  
-- `scripts/sheets_updater.py`  
-- `scripts/update_status.py`  
-- `scripts/generate_course_list.py`
-
-These scripts expect a service account credential file saved to:
 ```bash
-./secrets/credentials.json
+0 21 * * * /path/to/your/JacSON/venv/bin/python /path/to/your/JacSON/run_JacSON.py >> /path/to/your/JacSON/logs/cron.log 2>&1
 ```
 
----
+### Windows — Task Scheduler
 
-### 3. ☁️ GitHub Repository Settings
-
-**File:** `scripts/upload_profiles.py`  
-**Lines:**
-```python
-GITHUB_OWNER = "uqgblaze"
-GITHUB_REPO  = "jacson"
-```
-
-- 🔄 Replace with your GitHub username/org and repository name.
+1. Create a batch file (e.g. `run_JacSON.bat`) in the project folder with:
+   ```cmd
+   @echo off
+   cd /d "C:\Path\To\Your\JacSON"
+   python scripts\scraper_runner.py
+   ```
+   Replace the path with your actual project path.
+2. In Task Scheduler, create a basic task that runs daily and starts that batch file.
 
 ---
 
-### 4. 🔑 GitHub Personal Access Token
+## Editable Configuration Overview
 
-**File:** `scripts/upload_profiles.py`  
-**Line:**
-```python
-TOKEN_PATH = os.path.join(PROJECT_ROOT, "secrets", "github_token.txt")
-```
-
-- 🔄 Store your GitHub token in this path as a plain text file (no newline).
-
----
-
-### 5. 🧾 Google Sheet Column Logic
-
-All Google Sheets integrations assume:
-- Column A = Course Code
-- Column B = Auto-run checkbox
-- Column C = Status (e.g., Scheduled, Success!, Failure)
-- Column D = Manual flag (exclusion)
-- Column F = Notes
-
-🔄 Adjust in scripts if your Sheet layout differs.
+| What to change        | File(s)                | Location / note                    |
+|-----------------------|------------------------|------------------------------------|
+| GitHub repo (upload)  | `scripts/upload_profiles.py` | `GITHUB_OWNER`, `GITHUB_REPO` |
+| GitHub token          | —                      | `secrets/github_token.txt`        |
+| Target scrape domain | `scripts/jacson.py`    | Inside `get_course_profile_links()` |
+| Output folder         | `scripts/jacson.py`    | Inside `save_course_data()`       |
+| Course list file      | Several scripts        | `course-list.csv` in project root |
 
 ---
 
-### 6. 📄 Target Scraping Domain
+## Credits
 
-**File:** `jacson.py`  
-**Line:**
-```python
-target_domain = "https://course-profiles.uq.edu.au/course-profiles/"
-```
-
-- 🔄 Replace with your institution’s profile system root URL.
-
----
-
-### 7. 📁 Output File Structure
-
-**File:** `jacson.py` → inside `save_course_data()`  
-**Line:**
-```python
-profiles_root = os.path.join(base_directory, "profiles")
-```
-
-- 🔄 Change directory if you want to save files somewhere else.
-
----
-
-### 8. 📋 CSV Filename
-
-**Files:** `jacson.py`, `generate_course_list.py`, `sheets_updater.py`
-
-- 🔄 The file `course-list.csv` is read and written by many scripts. You may rename it, but update all references.
-
----
-
-### 9. 🕒 GitHub Action Schedule (Optional)
-
-**File:** `.github/workflows/run-jacson.yml`  
-**Line:**
-```yaml
-cron: '0 17 * * *'  # 3:00 AM AEST
-```
-
-- 🔄 Update if you want a different automation time or remove schedule entirely.
-
----
-
-## 📦 Summary Table
-
-| What to Change               | File(s)                       | Location/Note                                  |
-|-----------------------------|-------------------------------|-------------------------------------------------|
-| Google Sheets ID            | `sheets_updater.py`           | `SPREADSHEET_ID`                               |
-| Sheets API credentials      | All Google-related scripts    | Path: `./secrets/credentials.json`             |
-| GitHub repo details         | `upload_profiles.py`          | `GITHUB_OWNER`, `GITHUB_REPO`                  |
-| GitHub token                | `upload_profiles.py`          | `./secrets/github_token.txt`                   |
-| Course sheet column logic   | Sheets-related scripts        | B = Auto, C = Status, D = Manual, F = Notes    |
-| Target scrape domain        | `jacson.py`                   | Inside `get_course_profile_links()`            |
-| Output folder               | `jacson.py`                   | Inside `save_course_data()`                    |
-| CSV filename                | Most scripts                  | `course-list.csv`                              |
-| GitHub Action schedule      | `run-jacson.yml`              | `cron:` section                                |
-
----
-
-## 🙏 Credits
-
-JacSON was built by the UQ Business School Learning Design team with both love 💖 and spite 🤬 for Ultra's Assessment Overview tables. Here's to never needing to manually update those tables ever again!
-- Lead developers: **Geoffrey Blazer** and **Bee Hughes**
-- With thanks to **Carrie Finn** for letting us cook.
+JacSON was built by the UQ Business School Learning Design team.  
+Lead developers: **Geoffrey Blazer** and **Bee Hughes**. With thanks to **Carrie Finn** for letting us cook.

@@ -1,0 +1,6 @@
+flask>=3.0
+pytz
+# The following are already required by JacSON scripts:
+# google-api-python-client, google-auth, google-auth-httplib2,
+# google-auth-oauthlib, beautifulsoup4, requests
+# Install everything via:  pip install -r scripts/requirements.txt -r jacdash/requirements.txt

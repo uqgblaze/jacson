@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JacDash — JacSON Control Panel</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/jacson-logo-small.ico') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/jacdash.css') }}">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MAIN LAYOUT
+════════════════════════════════════════════════════════════════ -->
+<div class="jd-layout">
+
+  <!-- ── LEFT SIDEBAR ─────────────────────────────────────────── -->
+  <aside class="jd-sidebar">
+
+    <!-- Gradient logo block -->
+    <div class="jd-logo-bg">
+      <div class="jd-logo-bg-bottom"></div>
+      <div class="jd-logo-bg-top"></div>
+    </div>
+    <div class="jd-logo-card">
+      <img src="{{ url_for('static', filename='assets/jacson-logo-small.svg') }}"
+           alt="JacSON logo">
+    </div>
+
+    <!-- Navigation content (below logo) -->
+    <div class="jd-sidebar-nav">
+
+      <!-- Time block -->
+      <div class="jd-info-block">
+        <div class="jd-info-row">
+          <img src="{{ url_for('static', filename='assets/time.svg') }}" class="jd-icon" alt="">
+          <span class="jd-info-label">Current Server Time</span>
+        </div>
+        <div class="jd-info-value" id="server-time">—</div>
+
+        <div class="jd-info-row" style="margin-top:0.75rem;">
+          <img src="{{ url_for('static', filename='assets/running.svg') }}" class="jd-icon" alt="">
+          <span class="jd-info-label">Next Scheduled Run</span>
+        </div>
+        <div class="jd-info-value" id="next-run">—</div>
+      </div>
+
+      <hr class="jd-divider">
+
+      <!-- Action buttons -->
+      <div class="jd-btn-group">
+        <button class="jd-btn jd-btn--secondary" id="btn-schedule"
+                onclick="openScheduleModal()">
+          <img src="{{ url_for('static', filename='assets/time.svg') }}" class="jd-btn-icon" alt="">
+          Modify Run Time
+        </button>
+
+        <button class="jd-btn jd-btn--primary" id="btn-run"
+                onclick="startRun()">
+          <img src="{{ url_for('static', filename='assets/start.svg') }}" class="jd-btn-icon" alt="">
+          <span id="btn-run-label">Start Manual Run</span>
+        </button>
+
+        <a class="jd-btn jd-btn--secondary" id="btn-sheet"
+           href="{{ google_sheet_url }}" target="_blank" rel="noopener">
+          <img src="{{ url_for('static', filename='assets/data-table.svg') }}" class="jd-btn-icon" alt="">
+          Edit Course List
+        </a>
+
+        <a class="jd-btn jd-btn--secondary"
+           href="{{ ultra_builder_url }}" target="_blank" rel="noopener">
+          <img src="{{ url_for('static', filename='assets/course.svg') }}" class="jd-btn-icon" alt="">
+          Open Ultra Builder
+        </a>
+      </div>
+
+      <hr class="jd-divider">
+
+      <!-- Courses count -->
+      <div class="jd-info-block">
+        <div class="jd-info-row">
+          <img src="{{ url_for('static', filename='assets/users.svg') }}" class="jd-icon" alt="">
+          <span class="jd-info-label">Courses to Scrape</span>
+        </div>
+        <div class="jd-info-value" id="courses-count">—</div>
+      </div>
+
+      <hr class="jd-divider">
+
+      <!-- Footer links -->
+      <div class="jd-footer-links">
+        <button class="jd-link-btn" id="btn-users" onclick="openUsersModal()">
+          <img src="{{ url_for('static', filename='assets/add-user.svg') }}" class="jd-icon" alt="">
+          Manage Users
+        </button>
+        <a class="jd-link-btn" href="{{ github_url }}" target="_blank" rel="noopener">
+          <img src="{{ url_for('static', filename='assets/search.svg') }}" class="jd-icon" alt="">
+          GitHub
+        </a>
+      </div>
+
+      <div class="jd-sidebar-user">Signed in as <strong>{{ username }}</strong></div>
+
+    </div><!-- /jd-sidebar-nav -->
+  </aside>
+
+  <!-- ── MAIN TERMINAL PANEL ──────────────────────────────────── -->
+  <main class="jd-terminal">
+
+    <div class="jd-terminal-header">
+      <h2>Terminal output here.</h2>
+      <button class="jd-download-btn" id="btn-download" style="display:none"
+              onclick="downloadLog()">
+        ↓ Download log
+      </button>
+    </div>
+
+    <pre id="log-output" class="jd-log"></pre>
+
+    <!-- Status log (most recent job) -->
+    <div class="jd-status-log" id="status-log">
+      <div class="jd-status-row">
+        <span class="jd-status-label">Job start time</span>
+        <span class="jd-status-val" id="stat-started">—</span>
+      </div>
+      <div class="jd-status-row">
+        <span class="jd-status-label">Job finish time</span>
+        <span class="jd-status-val" id="stat-finished">—</span>
+      </div>
+      <div class="jd-status-row">
+        <span class="jd-status-label">Courses scraped</span>
+        <span class="jd-status-val" id="stat-scraped">—</span>
+      </div>
+      <div class="jd-status-row">
+        <span class="jd-status-label">Courses skipped</span>
+        <span class="jd-status-val" id="stat-skipped">—</span>
+      </div>
+      <div class="jd-status-row">
+        <span class="jd-status-label">Next job scheduled</span>
+        <span class="jd-status-val" id="stat-next">—</span>
+      </div>
+      <div class="jd-status-row">
+        <span class="jd-status-label">Last job status</span>
+        <span class="jd-status-val" id="stat-status">—</span>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /jd-layout -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MODAL: SCHEDULE
+════════════════════════════════════════════════════════════════ -->
+<div class="jd-modal-overlay" id="modal-schedule" role="dialog" aria-modal="true"
+     aria-labelledby="modal-schedule-title">
+  <div class="jd-modal">
+    <div class="jd-modal-header">
+      <span id="modal-schedule-title">Modify Run Schedule</span>
+    </div>
+    <div class="jd-modal-body jd-schedule-body">
+
+      <div class="jd-schedule-col">
+        <h3 class="jd-modal-section-title">Schedule Days</h3>
+        <p class="jd-modal-hint">Tick the days of the week you wish JacSON to run.</p>
+        <div class="jd-day-pills" id="schedule-days">
+          <label class="jd-day-pill"><input type="checkbox" value="Mon"> Mon</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Tue"> Tue</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Wed"> Wed</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Thu"> Thu</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Fri"> Fri</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Sat"> Sat</label>
+          <label class="jd-day-pill"><input type="checkbox" value="Sun"> Sun</label>
+        </div>
+      </div>
+
+      <div class="jd-schedule-col">
+        <h3 class="jd-modal-section-title">Schedule Time</h3>
+        <p class="jd-modal-hint">Enter the time you wish JacSON to run on the specified days.</p>
+        <input type="time" id="schedule-time" class="jd-time-input" value="03:00">
+      </div>
+
+    </div>
+    <div class="jd-modal-footer">
+      <button class="jd-btn jd-btn--ghost" onclick="closeModal('modal-schedule')">Close</button>
+      <button class="jd-btn jd-btn--primary" onclick="saveSchedule()">Save</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MODAL: MANAGE USERS
+════════════════════════════════════════════════════════════════ -->
+<div class="jd-modal-overlay" id="modal-users" role="dialog" aria-modal="true"
+     aria-labelledby="modal-users-title">
+  <div class="jd-modal">
+    <div class="jd-modal-header">
+      <span id="modal-users-title">Manage Users</span>
+    </div>
+    <div class="jd-modal-body">
+
+      <div class="jd-user-search-row">
+        <div class="jd-search-wrap">
+          <img src="{{ url_for('static', filename='assets/search.svg') }}"
+               class="jd-search-icon" alt="">
+          <input type="text" id="new-username"
+                 class="jd-search-input" placeholder="Enter UQ username, e.g. uqgblaze"
+                 autocomplete="off">
+        </div>
+        <div class="jd-search-wrap" style="margin-left:0.5rem">
+          <input type="text" id="new-fullname"
+                 class="jd-search-input" placeholder="Full name, e.g. Geoffrey Blazer"
+                 autocomplete="off">
+        </div>
+        <button class="jd-btn jd-btn--primary jd-add-btn" onclick="addUser()">
+          <img src="{{ url_for('static', filename='assets/add-user.svg') }}"
+               class="jd-btn-icon" alt="">
+          + Add
+        </button>
+      </div>
+
+      <div class="jd-user-list" id="user-list">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="jd-modal-msg" id="users-msg"></div>
+    </div>
+    <div class="jd-modal-footer">
+      <button class="jd-btn jd-btn--ghost" onclick="closeModal('modal-users')">Close</button>
+      <button class="jd-btn jd-btn--primary" onclick="closeModal('modal-users')">Done</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/jacdash.js') }}"></script>
+</body>
+</html>

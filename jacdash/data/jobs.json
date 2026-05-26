@@ -1,0 +1,35 @@
+[
+  {
+    "job_id": "20260415_131206",
+    "triggered_by": "uqgblaze",
+    "is_scheduled": false,
+    "started_at": "2026-04-15T13:12:06.379367",
+    "finished_at": "2026-04-15T13:13:03.507721",
+    "status": "success",
+    "courses_scraped": 13,
+    "courses_skipped": 0,
+    "log_path": "C:\\Users\\geoff\\OneDrive - The University of Queensland\\Documents\\Custom HTML\\JacSON_versioned\\JacSON-pi\\v1.2.0\\logs\\scrape_20260415_131206.log"
+  },
+  {
+    "job_id": "20260415_131437",
+    "triggered_by": "uqgblaze",
+    "is_scheduled": false,
+    "started_at": "2026-04-15T13:14:37.691969",
+    "finished_at": "2026-04-15T13:15:19.513087",
+    "status": "success",
+    "courses_scraped": 13,
+    "courses_skipped": 0,
+    "log_path": "C:\\Users\\geoff\\OneDrive - The University of Queensland\\Documents\\Custom HTML\\JacSON_versioned\\JacSON-pi\\v1.2.0\\logs\\scrape_20260415_131437.log"
+  },
+  {
+    "job_id": "20260415_132855",
+    "triggered_by": "uqgblaze",
+    "is_scheduled": false,
+    "started_at": "2026-04-15T13:28:55.447693",
+    "finished_at": "2026-04-15T13:30:35.226762",
+    "status": "success",
+    "courses_scraped": 13,
+    "courses_skipped": 0,
+    "log_path": "C:\\Users\\geoff\\OneDrive - The University of Queensland\\Documents\\Custom HTML\\JacSON_versioned\\JacSON-pi\\v1.2.0\\logs\\scrape_20260415_132855.log"
+  }
+]
