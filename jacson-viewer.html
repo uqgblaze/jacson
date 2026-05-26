@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JacSON Viewer — UQ Course Profiles</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #2b2b2b; background: #f5f3f7; min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+        a { color: #51247a; }
+        a:hover { color: #962a8b; }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, #51247a 0%, #3b1a5a 100%);
+            color: #fff; padding: 18px 24px; flex-shrink: 0;
+        }
+        .header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+        .header p { font-size: 0.85rem; opacity: 0.8; margin-top: 2px; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; }
+        .header-stats { font-size: 0.8rem; opacity: 0.7; }
+
+        /* ===== TOOLBAR ===== */
+        .toolbar {
+            background: #fff; border-bottom: 1px solid #e0dbe5;
+            padding: 12px 24px; display: flex; gap: 10px; align-items: center;
+            flex-wrap: wrap; flex-shrink: 0;
+        }
+        .toolbar input[type="text"] {
+            flex: 1; min-width: 180px; padding: 8px 14px; border: 1px solid #d0c8d8;
+            border-radius: 6px; font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+        }
+        .toolbar input[type="text"]:focus { border-color: #51247a; box-shadow: 0 0 0 3px rgba(81,36,122,0.1); }
+        .toolbar select {
+            padding: 8px 10px; border: 1px solid #d0c8d8; border-radius: 6px;
+            font-size: 0.82rem; background: #fff; cursor: pointer; outline: none; max-width: 200px;
+        }
+        .toolbar select:focus { border-color: #51247a; }
+        .result-count { font-size: 0.8rem; color: #888; white-space: nowrap; }
+        .filter-sep { color: #d0c8d8; font-size: 1.2rem; user-select: none; }
+        .toggle-label {
+            display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+            font-size: 0.82rem; color: #51247a; user-select: none; white-space: nowrap;
+        }
+        .toggle-label input[type="checkbox"] { accent-color: #51247a; width: 15px; height: 15px; cursor: pointer; }
+
+        /* ===== MAIN LAYOUT ===== */
+        .app-layout {
+            display: grid; grid-template-columns: 360px 1fr;
+            flex: 1; overflow: hidden;
+        }
+
+        /* ===== COURSE LIST ===== */
+        .course-list {
+            background: #fff; border-right: 1px solid #e0dbe5;
+            overflow-y: auto; padding: 8px;
+        }
+        .course-item {
+            padding: 10px 14px; border-radius: 8px; cursor: pointer;
+            transition: background 0.15s; border: 1px solid transparent;
+        }
+        .course-item:hover { background: #f5f3f7; }
+        .course-item.active { background: #ede8f3; border-color: #51247a; }
+        .course-item-code { font-weight: 600; font-size: 0.95rem; color: #51247a; }
+        .course-item-meta { font-size: 0.78rem; color: #888; margin-top: 2px; }
+        .course-item-meta span { margin-right: 8px; }
+        .course-item-programs { margin-top: 4px; display: flex; gap: 4px; flex-wrap: wrap; }
+        .prog-chip {
+            display: inline-block; padding: 1px 7px; border-radius: 10px;
+            font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3px;
+        }
+        .prog-chip-core { background: #51247a; color: #fff; }
+        .prog-chip-major { background: #ede8f3; color: #51247a; }
+        .prog-chip-other { background: #f0ecf3; color: #888; }
+        .list-message { padding: 24px; text-align: center; color: #999; font-size: 0.9rem; }
+        .show-more-btn {
+            display: block; width: 100%; padding: 10px; margin-top: 4px;
+            background: #f5f3f7; border: 1px dashed #d0c8d8; border-radius: 8px;
+            color: #51247a; cursor: pointer; font-size: 0.85rem; text-align: center;
+        }
+        .show-more-btn:hover { background: #ede8f3; }
+
+        /* ===== COURSE DETAIL ===== */
+        .course-detail { overflow-y: auto; padding: 24px 32px; }
+
+        /* Empty state */
+        .empty-state {
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; height: 100%; text-align: center; color: #aaa;
+        }
+        .empty-state h2 { font-size: 1.2rem; color: #999; margin-bottom: 8px; }
+        .empty-state p { font-size: 0.9rem; max-width: 400px; line-height: 1.5; }
+
+        /* Loading */
+        .loading-state { display: flex; flex-direction: column; align-items: center; padding-top: 80px; }
+        .spinner {
+            width: 36px; height: 36px; border: 3px solid #e0dbe5;
+            border-top-color: #51247a; border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-state p { margin-top: 12px; color: #999; font-size: 0.9rem; }
+
+        /* Profile header */
+        .profile-header { margin-bottom: 28px; }
+        .profile-title { font-size: 1.6rem; font-weight: 700; color: #51247a; margin-bottom: 4px; }
+        .profile-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+        .meta-badge {
+            display: inline-flex; align-items: center; padding: 4px 12px;
+            background: #f5f3f7; border-radius: 20px; font-size: 0.8rem; color: #51247a;
+        }
+        .profile-url { font-size: 0.8rem; color: #888; word-break: break-all; }
+        .profile-url a { color: #51247a; }
+
+        /* Program badges in detail view */
+        .program-context { margin-bottom: 20px; }
+        .program-context-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-bottom: 8px; }
+        .program-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 5px 12px; margin: 3px 4px 3px 0; border-radius: 20px;
+            font-size: 0.82rem; border: 1px solid #e0dbe5;
+        }
+        .program-badge-core { background: #51247a; color: #fff; border-color: #51247a; }
+        .program-badge-major { background: #ede8f3; color: #51247a; border-color: #c9b8dc; }
+        .program-badge-other { background: #f5f3f7; color: #666; }
+        .program-badge .badge-role { font-weight: 600; }
+        .program-badge .badge-prog { opacity: 0.8; }
+
+        /* Download buttons */
+        .download-bar { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .dl-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border-radius: 6px; font-size: 0.85rem;
+            cursor: pointer; border: 1px solid #d0c8d8; background: #fff;
+            color: #51247a; font-weight: 500; transition: all 0.15s;
+        }
+        .dl-btn:hover { background: #51247a; color: #fff; border-color: #51247a; }
+        .dl-btn svg { width: 16px; height: 16px; }
+
+        /* Sections */
+        .section { margin-bottom: 32px; }
+        .section-title {
+            font-size: 1.15rem; font-weight: 700; color: #51247a;
+            border-bottom: 2px solid #51247a; padding-bottom: 6px; margin-bottom: 16px;
+        }
+
+        /* Learning outcomes */
+        .lo-list { list-style: none; }
+        .lo-item { padding: 8px 0; border-bottom: 1px solid #f0ecf3; font-size: 0.92rem; line-height: 1.5; }
+        .lo-item:last-child { border-bottom: none; }
+        .lo-number { font-weight: 600; color: #51247a; margin-right: 6px; }
+
+        /* Assessments */
+        .assessment-card {
+            background: #fff; border: 1px solid #e0dbe5; border-radius: 10px;
+            padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .assessment-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .assessment-title { font-size: 1.05rem; font-weight: 600; color: #333; }
+        .assessment-weight-badge {
+            background: #51247a; color: #fff; padding: 4px 12px;
+            border-radius: 20px; font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+        }
+        .weight-bar-container { margin-bottom: 14px; }
+        .weight-bar { height: 8px; background: #51247a; border-radius: 4px; transition: width 0.4s ease; }
+        .weight-bar-bg { height: 8px; background: #f0ecf3; border-radius: 4px; width: 100%; }
+        .assessment-details { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 16px; margin-bottom: 14px; }
+        .detail-item { font-size: 0.85rem; }
+        .detail-label { color: #999; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .detail-value { color: #333; margin-top: 2px; }
+        .assessment-body { font-size: 0.9rem; line-height: 1.6; }
+        .assessment-body h4 { font-size: 0.85rem; font-weight: 600; color: #51247a; margin: 14px 0 6px; }
+        .assessment-body p { margin-bottom: 8px; }
+        .assessment-body ul { margin-left: 20px; margin-bottom: 8px; }
+        .assessment-body li { margin-bottom: 4px; }
+
+        /* Activities table */
+        .activities-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .activities-table th {
+            background: #51247a; color: #fff; padding: 10px 12px;
+            text-align: left; font-weight: 600; font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.3px;
+        }
+        .activities-table td { padding: 10px 12px; border-bottom: 1px solid #f0ecf3; vertical-align: top; }
+        .activities-table tr:hover td { background: #faf8fc; }
+        .activities-table .week-col { white-space: nowrap; font-weight: 500; color: #51247a; min-width: 120px; }
+        .activities-table .type-col { white-space: nowrap; min-width: 90px; }
+        .activities-table .topic-col { line-height: 1.5; }
+        .activities-table .lo-col { white-space: nowrap; font-size: 0.8rem; color: #888; }
+        .break-row td { background: #f9f7fb; color: #999; font-style: italic; }
+
+        /* Error state */
+        .error-state {
+            background: #fff3f3; border: 1px solid #ffc9c9; border-radius: 8px;
+            padding: 20px; margin: 20px 0; color: #c0392b;
+        }
+        .error-state h3 { margin-bottom: 8px; }
+        .error-state p { font-size: 0.9rem; line-height: 1.5; }
+        .error-state code { background: #fde8e8; padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; }
+        .retry-btn {
+            margin-top: 12px; padding: 8px 16px; background: #c0392b; color: #fff;
+            border: none; border-radius: 6px; cursor: pointer; font-size: 0.85rem;
+        }
+        .retry-btn:hover { background: #a93226; }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .header, .toolbar, .course-list, .download-bar { display: none !important; }
+            .app-layout { display: block !important; }
+            .course-detail { padding: 0 !important; overflow: visible !important; }
+            .assessment-card { break-inside: avoid; }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .app-layout { grid-template-columns: 1fr; }
+            .course-list { max-height: 280px; border-right: none; border-bottom: 1px solid #e0dbe5; }
+            .course-detail { padding: 16px; }
+            .toolbar { padding: 10px 16px; }
+            .profile-title { font-size: 1.3rem; }
+            .filter-sep { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-row">
+        <div>
+            <h1>JacSON Viewer</h1>
+            <p>Browse and download UQ course profiles</p>
+        </div>
+        <div class="header-stats" id="headerStats"></div>
+    </div>
+</header>
+
+<div class="toolbar">
+    <input type="text" id="searchInput" placeholder="Search by course code (e.g. MGTS1301)..." autocomplete="off">
+    <select id="semesterFilter"><option value="">All Semesters</option></select>
+    <select id="prefixFilter"><option value="">All Disciplines</option></select>
+    <span class="filter-sep">|</span>
+    <label class="toggle-label" title="Show only courses in UQBS programs (including service courses from other faculties)">
+        <input type="checkbox" id="uqbsToggle"> UQBS only
+    </label>
+    <select id="programFilter"><option value="">All Programs</option></select>
+    <select id="majorFilter"><option value="">All Majors</option></select>
+    <span class="result-count" id="resultCount"></span>
+</div>
+
+<main class="app-layout">
+    <aside class="course-list" id="courseList">
+        <div class="list-message" id="listLoading">Loading course index...</div>
+    </aside>
+    <section class="course-detail" id="courseDetail">
+        <div class="empty-state" id="emptyState">
+            <h2>Select a course to view its profile</h2>
+            <p>Use the search bar or filters above to find courses, then click one to view the full course profile.</p>
+        </div>
+    </section>
+</main>
+
+<script>
+// ===== EMBEDDED PROGRAM TAXONOMY =====
+const UQBS_PROGRAMS = {"_metadata":{"description":"UQBS course-to-program mapping for JacSON viewer","source":"UQBS GA Mapping, AoL, Typologies spreadsheet","generated":"2026-04-13","total_courses":308,"total_programs":14,"total_mappings":436},"programs":{"BBusMan":{"name":"Bachelor of Business Management","level":"UG","core":["ACCT1101","BISM1201","ECON1011","FINM1416","LAWS1100","MGTS1301","MGTS1601","MKTG1501"],"majors":{"Marketing":["ADVT3509","MKTG2501","MKTG2508","MKTG2509","MKTG2510","MKTG3501","MKTG3504","MKTG3506"],"BIS":["BISM2202","BISM2203","BISM2206","BISM2207","BISM2208","BISM3205","BISM3206","BISM3208","BISM3222"],"Leadership":["BSAN2201","DECO1100","ECON2060","MGTS2603","MGTS2606","MGTS3602","MGTS3605","MGTS3610","PSYC3052"],"Business Economics":["ECON2070","ECON2410","ECON2420","ECON2540","ECON3210","ECON3430","ECON3440","ECON3820"],"IB":["IBUS2301","IBUS2302","IBUS2309","IBUS3303","IBUS3306","IBUS3310","MGTS3301","MGTS3606"],"HR":["MGTS2604","MGTS2607","MGTS2609","MGTS3601","MGTS3603","MGTS3604","MGTS3607","MGTS3609"],"I&E":["TIMS1301","TIMS2301","TIMS2302","TIMS3302","TIMS3304","TIMS3309","TIMS3310","TIMS3311"]}},"BTHEM":{"name":"Bachelor of Tourism, Hospitality and Event Management","level":"UG","core":["ACCT1101","BISM1201","LAWS1100","MGTS1301","TOUR1000","TOUR1002","TOUR1003","TOUR1004"],"majors":{"HHM":["HOSP2001","HOSP2003","HOSP2005","HOSP2006","HOSP3000","HOSP3004","HOSP3005","TOUR3008"],"TEM":["TRVT2000","TRVT2001","TRVT2002","TRVT2003","TRVT3001","TRVT3002","TRVT3003","TRVT3004"]}},"BCom":{"name":"Bachelor of Commerce","level":"UG","core":["ACCT1102","ACCT1110","BISM1201","ECON1011","ECON1310","FINM1415","LAWS1100","MGTS1301"],"majors":{"Accounting":["ACCT2102","ACCT2110","ACCT3101","ACCT3103","ACCT3104","ACCT3106","LAWS3100","LAWS3101"],"BIS":["BISM2202","BISM2203","BISM2206","BISM2207","BISM2208","BISM3205","BISM3206","BISM3208","BISM3222"],"BSAN":["BSAN2201","BSAN2204","BSAN2205","BSAN3204","BSAN3209","BSAN3210","BSAN3212","BSAN4204"],"Finance":["ECON2300","ECON3210","FINM2415","FINM2416","FINM3403","FINM3404","FINM3405","FINM3406","FINM3407"]}},"BAFE":{"name":"Bachelor of Advanced Finance and Economics","level":"UG","core":["ACCT1111","ACCT2111","ACCT2114","ECON1050","ECON1310","ECON2011","ECON2021","ECON2030","ECON2040","ECON2050","ECON2300","ECON3210","ECON3350","FINM2411","FINM3403","FINM3411","FINM3412","FINM3414","FINM3422"],"majors":{"General Pathway Flexible Core":["ECON3010","ECON3020","ECON3200","ECON3360","ECON3440","ECON3450","ECON3460","ECON3520","ECON3700","ECON4390","FINM3400","FINM3405","FINM3406","FINM3407","FINM3421","FINM4412","FINM4413","FINM4414"],"General Pathway Courses":["FINM4411","RBUS4411"]}},"BAB":{"name":"Bachelor of Advanced Business","level":"UG","core":["ACCT1112","ACCT2112","ACCT2113","BISM1201","BSAN2201","ECON2012","ECON2022","FINM2412","IBUS2301","LAWS1100","MGTS2301","MGTS2604","MGTS4602","MKTG1501","RBUS3900","TIMS1301"],"majors":{"Accounting":["ACCT2110","ACCT3101","ACCT3103","ACCT3104","ACCT3106","ACCT4101","ECON1310","LAWS3100","LAWS3101"],"Marketing":["ADVT3509","MKTG2501","MKTG2508","MKTG2509","MKTG2510","MKTG3501","MKTG3504","MKTG3506","MKTG4501"],"BIS":["BISM2202","BISM2203","BISM2206","BISM2207","BISM2208","BISM3205","BISM3206","BISM3222","BISM4203"],"BSAN":["BSAN2204","BSAN2205","BSAN3204","BSAN3209","BSAN3210","BSAN3212","BSAN4201","BSAN4204"],"Finance":["ECON3210","FINM2415","FINM2416","FINM3403","FINM3404","FINM3405","FINM3406","FINM3407","FINM4401"],"IB":["IBUS2302","IBUS2309","IBUS3303","IBUS3306","IBUS3310","IBUS4301","MGTS3301","MGTS3606"],"HR":["MGTS2607","MGTS2609","MGTS3601","MGTS3603","MGTS3604","MGTS3607","MGTS3609","MGTS4603"],"I&E":["TIMS2301","TIMS2302","TIMS3302","TIMS3304","TIMS3309","TIMS3310","TIMS3311","TIMS4303"]}},"Elective":{"name":"Elective (cross-program)","level":"UG","core":["ACCT2103","RBUS3999","RBUS4999"],"majors":{}},"Grad Dip":{"name":"Graduate Diploma in Business Research Methods","level":"PG","core":[],"majors":{"BRM Electives":["ACCT6101","ACCT6102","ACCT6104"]}},"MCom":{"name":"Master of Commerce","level":"PG","core":["ACCT7101","BISM7202","ECON7002","FINM7401"],"majors":{"Professional Accounting":["ACCT7102","ACCT7103","ACCT7104","ACCT7107","LAWS7012","LAWS7023"],"Applied Finance":["ACCT7106","ECON7300","FINM7402","FINM7403","FINM7405","FINM7406","FINM7407"],"Information Systems":["BISM7206","BISM7208","BISM7209","BISM7213","BISM7216","BISM7217","BISM7221","BISM7233","BISM7255"]}},"MBA":{"name":"Master of Business Administration","level":"PG","core":["ACCT7804","FINM7805","MGTS7803","MGTS7810","MGTS7812"],"majors":{"Program Electives":["BISM7807","BISM7808","ECON7012","MGTS7809","MKTG7806","TIMS7811"],"Flexible Core (Part A)":["MGTS7820","RBUS6901","RBUS6902","RBUS6904"],"Flexible Core (Part B)":["MGTS7821","MGTS7822","RBUS7981","RBUS7984","RBUS7985"]}},"MBus":{"name":"Master of Business","level":"PG","core":["MGTS7610"],"majors":{"Advertising":["ADVT7506","ADVT7507","ADVT7508","ADVT7509","ADVT7510","ADVT7512","ADVT7513"],"Supply Chain Management":["BISM7202","IBUS7316","IBUS7322"],"Information Systems":["BISM7206","BISM7208","BISM7209","BISM7213","BISM7216","BISM7217","BISM7221","BISM7233","BISM7255"],"Innovation & Entrepreneursh":["EIBS7300"],"Innovation & Entrepreneurship":["EIBS7301","EIBS7311","MGTS7303","MGTS7308","MKTG7513","TIMS7301","TIMS7328","TIMS7329","TIMS7330","TIMS7331","TIMS7332"],"Foundation":["FINM7409","MGTS7301","MGTS7608"],"International Business":["IBUS7302","IBUS7306","IBUS7312","IBUS7316","IBUS7322","MGTS7303","MGTS7329","MGTS7523","MGTS7604"],"Organisational Sustainability":["MGTS7303","MGTS7308","MGTS7309","MGTS7523","MGTS7524","MKTG7513","TIMS7317","TIMS7328","TIMS7329"],"HRM":["MGTS7601","MGTS7603","MGTS7604","MGTS7605","MGTS7609","MGTS7611","MGTS7612","MGTS7618"],"Leadership":["MGTS7607","MGTS7618","MGTS7619","MGTS7620","ORGC7610","TIMS7317"],"Capstone":["MGTS7621"],"Marketing":["MKTG7501","MKTG7502","MKTG7503","MKTG7504","MKTG7510","MKTG7512","MKTG7513"]}},"MEI":{"name":"Master of Entrepreneurship and Innovation","level":"PG","core":["EIBS7300","EIBS7301","EIBS7302","EIBS7303"],"majors":{"Design and Information Technology":["BISM7202"],"Social and Communty Entrepreneurship":["EIBS7304","MGTS7308","MKTG7513","TIMS7329"],"Capstone":["EIBS7311"],"Sustainable Energy":["MGTS7523","TIMS7317","TIMS7328"],"Food Entrepreneurship":["MKTG7961"],"Biotechnology":["TIMS7328"]}},"MBusAn":{"name":"Master of Business Analytics","level":"PG","core":["BSAN7204","BSAN7205"],"majors":{"Advanced":["BSAN7206","BSAN7207","BSAN7208","BSAN7209","BSAN7210","BSAN7211","BSAN7212","BSAN7214"],"Project Led Collaboration":["BSAN7213","BSAN7215"]}},"MTHEM":{"name":"Master of Tourism, Hospitality and Event Management","level":"PG","core":["TOUR7000","TOUR7031","TOUR7032"],"majors":{"Event Management":["EVNT7050","EVNT7051","EVNT7052","EVNT7053"],"Hotel Management":["HOSP7050","HOSP7051","HOSP7052","HOSP7053"],"Foundation":["TOUR7020","TOUR7021","TOUR7022","TOUR7023"],"Travel and Tourism Management":["TOUR7050","TOUR7051","TOUR7052","TOUR7053"]}},"MFIM":{"name":"Master of Financial Mathematics","level":"PG","core":["FINM7101","FINM7102","FINM7103","FINM7104","FINM7105","FINM7106","FINM7107","FINM7108"],"majors":{}}},"course_programs":{"ACCT1101":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"},{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"ACCT1102":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"}],"ACCT1110":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"}],"ACCT1111":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ACCT1112":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"ACCT2102":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"}],"ACCT2103":[{"program":"Elective","program_name":"Elective (cross-program)","role":"Unspecified","level":"UG"}],"ACCT2110":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"ACCT2111":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ACCT2112":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"ACCT2113":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"ACCT2114":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ACCT3101":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"ACCT3103":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"ACCT3104":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"}],"ACCT3106":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"}],"ACCT4101":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"ACCT6101":[{"program":"Grad Dip","program_name":"Graduate Diploma in Business Research Methods","role":"BRM Electives","level":"PG"}],"ACCT6102":[{"program":"Grad Dip","program_name":"Graduate Diploma in Business Research Methods","role":"BRM Electives","level":"PG"}],"ACCT6104":[{"program":"Grad Dip","program_name":"Graduate Diploma in Business Research Methods","role":"BRM Electives","level":"PG"}],"ACCT7101":[{"program":"MCom","program_name":"Master of Commerce","role":"Core","level":"PG"}],"ACCT7102":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"ACCT7103":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"ACCT7104":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"ACCT7106":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"ACCT7107":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"ACCT7804":[{"program":"MBA","program_name":"Master of Business Administration","role":"Core","level":"PG"}],"ADVT3509":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"ADVT7506":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7507":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7508":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7509":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7510":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7512":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"ADVT7513":[{"program":"MBus","program_name":"Master of Business","role":"Advertising","level":"PG"}],"BISM1201":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"},{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"BISM2202":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"}],"BISM2203":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"}],"BISM2206":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"}],"BISM2207":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"}],"BISM2208":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"}],"BISM3205":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"}],"BISM3206":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"}],"BISM3208":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"}],"BISM3222":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BIS","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"BIS","level":"UG"}],"BISM4203":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BIS","level":"UG"}],"BISM7202":[{"program":"MCom","program_name":"Master of Commerce","role":"Core","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Design and Information Technology","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Supply Chain Management","level":"PG"}],"BISM7206":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7208":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7209":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7213":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7216":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7217":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7221":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7233":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7255":[{"program":"MBus","program_name":"Master of Business","role":"Information Systems","level":"PG"},{"program":"MCom","program_name":"Master of Commerce","role":"Information Systems","level":"PG"}],"BISM7807":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"BISM7808":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"BSAN2201":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"BSAN2204":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN2205":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN3204":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN3209":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN3210":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN3212":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"}],"BSAN4201":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"}],"BSAN4204":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"BSAN","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"BSAN","level":"UG"}],"BSAN7204":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Core","level":"PG"}],"BSAN7205":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Core","level":"PG"}],"BSAN7206":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7207":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7208":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7209":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7210":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7211":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7212":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7213":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Project Led Collaboration","level":"PG"}],"BSAN7214":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Advanced","level":"PG"}],"BSAN7215":[{"program":"MBusAn","program_name":"Master of Business Analytics","role":"Project Led Collaboration","level":"PG"}],"DECO1100":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"ECON1011":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"}],"ECON1050":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON1310":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"},{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"}],"ECON2011":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON2012":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"ECON2021":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON2022":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"ECON2030":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON2040":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON2050":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON2060":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"ECON2070":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON2300":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"}],"ECON2410":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON2420":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON2540":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON3010":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3020":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3200":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3210":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"},{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"}],"ECON3350":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"ECON3360":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3430":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON3440":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"},{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3450":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3460":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3520":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3700":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON3820":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Business Economics","level":"UG"}],"ECON4390":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"ECON7002":[{"program":"MCom","program_name":"Master of Commerce","role":"Core","level":"PG"}],"ECON7012":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"ECON7300":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"EIBS7300":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneursh","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Core","level":"PG"}],"EIBS7301":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Core","level":"PG"}],"EIBS7302":[{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Core","level":"PG"}],"EIBS7303":[{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Core","level":"PG"}],"EIBS7304":[{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Social and Communty Entrepreneurship","level":"PG"}],"EIBS7311":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Capstone","level":"PG"}],"EVNT7050":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Event Management","level":"PG"}],"EVNT7051":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Event Management","level":"PG"}],"EVNT7052":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Event Management","level":"PG"}],"EVNT7053":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Event Management","level":"PG"}],"FINM1415":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"}],"FINM1416":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"}],"FINM2411":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"FINM2412":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"FINM2415":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"}],"FINM2416":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"}],"FINM3400":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"FINM3403":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"}],"FINM3404":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"}],"FINM3405":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"}],"FINM3406":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"}],"FINM3407":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Finance","level":"UG"}],"FINM3411":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"FINM3412":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"FINM3414":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"FINM3421":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"FINM3422":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"Core","level":"UG"}],"FINM4401":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Finance","level":"UG"}],"FINM4411":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Courses","level":"UG"}],"FINM4412":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"FINM4413":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"FINM4414":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Flexible Core","level":"UG"}],"FINM7101":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7102":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7103":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7104":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7105":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7106":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7107":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7108":[{"program":"MFIM","program_name":"Master of Financial Mathematics","role":"Core","level":"PG"}],"FINM7401":[{"program":"MCom","program_name":"Master of Commerce","role":"Core","level":"PG"}],"FINM7402":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"FINM7403":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"FINM7405":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"FINM7406":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"FINM7407":[{"program":"MCom","program_name":"Master of Commerce","role":"Applied Finance","level":"PG"}],"FINM7409":[{"program":"MBus","program_name":"Master of Business","role":"Foundation","level":"PG"}],"FINM7805":[{"program":"MBA","program_name":"Master of Business Administration","role":"Core","level":"PG"}],"HOSP2001":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP2003":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP2005":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP2006":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP3000":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP3004":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP3005":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"HOSP7050":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Hotel Management","level":"PG"}],"HOSP7051":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Hotel Management","level":"PG"}],"HOSP7052":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Hotel Management","level":"PG"}],"HOSP7053":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Hotel Management","level":"PG"}],"IBUS2301":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"}],"IBUS2302":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS2309":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS3303":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS3306":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS3310":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS4301":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"IBUS7302":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"}],"IBUS7306":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"}],"IBUS7312":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"}],"IBUS7316":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Supply Chain Management","level":"PG"}],"IBUS7322":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Supply Chain Management","level":"PG"}],"LAWS1100":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"},{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"LAWS3100":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"LAWS3101":[{"program":"BCom","program_name":"Bachelor of Commerce","role":"Accounting","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Accounting","level":"UG"}],"LAWS7012":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"LAWS7023":[{"program":"MCom","program_name":"Master of Commerce","role":"Professional Accounting","level":"PG"}],"MGTS1301":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"},{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"},{"program":"BCom","program_name":"Bachelor of Commerce","role":"Core","level":"UG"}],"MGTS1601":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"}],"MGTS2301":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"MGTS2603":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"MGTS2604":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"}],"MGTS2606":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"MGTS2607":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS2609":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3301":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"MGTS3601":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3602":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"MGTS3603":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3604":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3605":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"MGTS3606":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"IB","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"IB","level":"UG"}],"MGTS3607":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3609":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"HR","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS3610":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"MGTS4602":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"MGTS4603":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"HR","level":"UG"}],"MGTS7301":[{"program":"MBus","program_name":"Master of Business","role":"Foundation","level":"PG"}],"MGTS7303":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"MGTS7308":[{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Social and Communty Entrepreneurship","level":"PG"}],"MGTS7309":[{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"}],"MGTS7329":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"}],"MGTS7523":[{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Sustainable Energy","level":"PG"}],"MGTS7524":[{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"}],"MGTS7601":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7603":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7604":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"International Business","level":"PG"}],"MGTS7605":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7607":[{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"}],"MGTS7608":[{"program":"MBus","program_name":"Master of Business","role":"Foundation","level":"PG"}],"MGTS7609":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7610":[{"program":"MBus","program_name":"Master of Business","role":"Core","level":"PG"}],"MGTS7611":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7612":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"}],"MGTS7618":[{"program":"MBus","program_name":"Master of Business","role":"HRM","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"}],"MGTS7619":[{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"}],"MGTS7620":[{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"}],"MGTS7621":[{"program":"MBus","program_name":"Master of Business","role":"Capstone","level":"PG"}],"MGTS7803":[{"program":"MBA","program_name":"Master of Business Administration","role":"Core","level":"PG"}],"MGTS7809":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"MGTS7810":[{"program":"MBA","program_name":"Master of Business Administration","role":"Core","level":"PG"}],"MGTS7812":[{"program":"MBA","program_name":"Master of Business Administration","role":"Core","level":"PG"}],"MGTS7820":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part A)","level":"PG"}],"MGTS7821":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part B)","level":"PG"}],"MGTS7822":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part B)","level":"PG"}],"MKTG1501":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Core","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"MKTG2501":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG2508":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG2509":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG2510":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG3501":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG3504":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG3506":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Marketing","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG4501":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Marketing","level":"UG"}],"MKTG7501":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7502":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7503":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7504":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7510":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7512":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"}],"MKTG7513":[{"program":"MBus","program_name":"Master of Business","role":"Marketing","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Social and Communty Entrepreneurship","level":"PG"}],"MKTG7806":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"MKTG7961":[{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Food Entrepreneurship","level":"PG"}],"ORGC7610":[{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"}],"PSYC3052":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"Leadership","level":"UG"}],"RBUS3900":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"}],"RBUS3999":[{"program":"Elective","program_name":"Elective (cross-program)","role":"Unspecified","level":"UG"}],"RBUS4411":[{"program":"BAFE","program_name":"Bachelor of Advanced Finance and Economics","role":"General Pathway Courses","level":"UG"}],"RBUS4999":[{"program":"Elective","program_name":"Elective (cross-program)","role":"Unspecified","level":"UG"}],"RBUS6901":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part A)","level":"PG"}],"RBUS6902":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part A)","level":"PG"}],"RBUS6904":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part A)","level":"PG"}],"RBUS7981":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part B)","level":"PG"}],"RBUS7984":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part B)","level":"PG"}],"RBUS7985":[{"program":"MBA","program_name":"Master of Business Administration","role":"Flexible Core (Part B)","level":"PG"}],"TIMS1301":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"Core","level":"UG"},{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"}],"TIMS2301":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS2302":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS3302":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS3304":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS3309":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS3310":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS3311":[{"program":"BBusMan","program_name":"Bachelor of Business Management","role":"I&E","level":"UG"},{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS4303":[{"program":"BAB","program_name":"Bachelor of Advanced Business","role":"I&E","level":"UG"}],"TIMS7301":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7317":[{"program":"MBus","program_name":"Master of Business","role":"Leadership","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Sustainable Energy","level":"PG"}],"TIMS7328":[{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Biotechnology","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Sustainable Energy","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7329":[{"program":"MBus","program_name":"Master of Business","role":"Organisational Sustainability","level":"PG"},{"program":"MEI","program_name":"Master of Entrepreneurship and Innovation","role":"Social and Communty Entrepreneurship","level":"PG"},{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7330":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7331":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7332":[{"program":"MBus","program_name":"Master of Business","role":"Innovation & Entrepreneurship","level":"PG"}],"TIMS7811":[{"program":"MBA","program_name":"Master of Business Administration","role":"Program Electives","level":"PG"}],"TOUR1000":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"TOUR1002":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"TOUR1003":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"TOUR1004":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"Core","level":"UG"}],"TOUR3008":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"HHM","level":"UG"}],"TOUR7000":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Core","level":"PG"}],"TOUR7020":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Foundation","level":"PG"}],"TOUR7021":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Foundation","level":"PG"}],"TOUR7022":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Foundation","level":"PG"}],"TOUR7023":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Foundation","level":"PG"}],"TOUR7031":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Core","level":"PG"}],"TOUR7032":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Core","level":"PG"}],"TOUR7050":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Travel and Tourism Management","level":"PG"}],"TOUR7051":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Travel and Tourism Management","level":"PG"}],"TOUR7052":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Travel and Tourism Management","level":"PG"}],"TOUR7053":[{"program":"MTHEM","program_name":"Master of Tourism, Hospitality and Event Management","role":"Travel and Tourism Management","level":"PG"}],"TRVT2000":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT2001":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT2002":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT2003":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT3001":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT3002":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT3003":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}],"TRVT3004":[{"program":"BTHEM","program_name":"Bachelor of Tourism, Hospitality and Event Management","role":"TEM","level":"UG"}]}};
+
+// ===== CONFIGURATION =====
+const REPO_OWNER = 'uq-course-profiles';
+const REPO_NAME = 'jacson';
+const BRANCH = 'main';
+const RAW_BASE = `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}`;
+const API_BASE = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
+const CACHE_KEY = 'jacson_viewer_index_v2';
+const CACHE_DURATION = 12 * 60 * 60 * 1000;
+const LIST_PAGE_SIZE = 150;
+
+// ===== STATE =====
+let courseIndex = [];
+let filteredCourses = [];
+let currentCourse = null;
+let currentPath = '';
+let listOffset = 0;
+let titleCache = {};
+
+// ===== PROGRAM LOOKUP HELPERS =====
+function getCoursePrograms(courseCode) {
+    return UQBS_PROGRAMS.course_programs[courseCode] || [];
+}
+
+function getCourseProgramChips(courseCode) {
+    const progs = getCoursePrograms(courseCode);
+    if (progs.length === 0) return '';
+    return progs.map(p => {
+        const cls = p.role === 'Core' ? 'prog-chip-core' :
+                    (p.role === 'Unspecified' || p.role === 'Elective') ? 'prog-chip-other' : 'prog-chip-major';
+        const label = p.role === 'Core' ? p.program : `${p.program}: ${p.role}`;
+        return `<span class="prog-chip ${cls}" title="${p.program_name}: ${p.role}">${label}</span>`;
+    }).join('');
+}
+
+function getCourseProgramBadges(courseCode) {
+    const progs = getCoursePrograms(courseCode);
+    if (progs.length === 0) return '';
+    let html = '<div class="program-context"><div class="program-context-title">Program Mapping</div>';
+    progs.forEach(p => {
+        const cls = p.role === 'Core' ? 'program-badge-core' :
+                    (p.role === 'Unspecified' || p.role === 'Elective') ? 'program-badge-other' : 'program-badge-major';
+        html += `<span class="program-badge ${cls}" title="${p.program_name}">
+            <span class="badge-prog">${p.program}</span>
+            <span class="badge-role">${p.role}</span>
+        </span>`;
+    });
+    html += '</div>';
+    return html;
+}
+
+function getProgramCourseSet(programCode, majorName) {
+    const prog = UQBS_PROGRAMS.programs[programCode];
+    if (!prog) return new Set();
+    const codes = new Set();
+    if (!majorName || majorName === '') {
+        prog.core.forEach(c => codes.add(c));
+        Object.values(prog.majors).forEach(courses => courses.forEach(c => codes.add(c)));
+    } else if (majorName === '_core') {
+        prog.core.forEach(c => codes.add(c));
+    } else {
+        if (prog.majors[majorName]) prog.majors[majorName].forEach(c => codes.add(c));
+    }
+    return codes;
+}
+
+// ===== SEMESTER DECODER =====
+function decodeSemesterCode(code) {
+    if (!code || code.length !== 4) return code;
+    const year = 2020 + parseInt(code[1]);
+    const termDigit = parseInt(code[2]);
+    const termMap = {
+        1: 'Summer', 2: 'Semester 1', 3: 'Term 3', 4: 'Term 4',
+        5: 'Term 5', 6: 'Semester 2', 7: 'Term 7', 8: 'Term 8', 9: 'Term 9'
+    };
+    return `${termMap[termDigit] || `Term ${termDigit}`}, ${year}`;
+}
+
+// ===== HTML UTILITIES =====
+function cleanHtmlForDisplay(html) {
+    if (!html) return '';
+    let s = html;
+    s = s.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, '');
+    s = s.replace(/<div[^>]*class="collapsible[^"]*"[^>]*>/gi, '');
+    s = s.replace(/<\/?dd>/gi, '');
+    s = s.replace(/<td[^>]*>/gi, '');
+    s = s.replace(/<\/td>/gi, '');
+    s = s.replace(/<span[^>]*class="[^"]*icon[^"]*"[^>]*>[^<]*<\/span>/gi, '');
+    return s.trim();
+}
+
+function htmlToText(html) {
+    if (!html) return '';
+    let t = html;
+    t = t.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, '');
+    t = t.replace(/<br\s*\/?>/gi, '\n');
+    t = t.replace(/<\/p>/gi, '\n');
+    t = t.replace(/<\/li>/gi, '\n');
+    t = t.replace(/<\/div>/gi, '\n');
+    t = t.replace(/<[^>]+>/g, '');
+    t = t.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    t = t.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+    t = t.replace(/\n{3,}/g, '\n\n');
+    return t.trim();
+}
+
+function htmlToMarkdown(html) {
+    if (!html) return '';
+    let md = html;
+    md = md.replace(/<button[^>]*>[\s\S]*?<\/button>/gi, '');
+    md = md.replace(/<strong>([\s\S]*?)<\/strong>/gi, '**$1**');
+    md = md.replace(/<em>([\s\S]*?)<\/em>/gi, '*$1*');
+    md = md.replace(/<i>([\s\S]*?)<\/i>/gi, '*$1*');
+    md = md.replace(/<a\s+href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi, '[$2]($1)');
+    md = md.replace(/<li>([\s\S]*?)<\/li>/gi, '- $1\n');
+    md = md.replace(/<\/p>/gi, '\n\n');
+    md = md.replace(/<br\s*\/?>/gi, '\n');
+    md = md.replace(/<[^>]+>/g, '');
+    md = md.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+    md = md.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+    md = md.replace(/\n{3,}/g, '\n\n');
+    return md.trim();
+}
+
+function extractWeight(html) {
+    if (!html) return '';
+    const match = html.match(/>(\d+%?)</);
+    return match ? match[1] : htmlToText(html);
+}
+
+function extractWeightNumber(html) {
+    const w = extractWeight(html);
+    const num = parseInt(w);
+    return isNaN(num) ? 0 : num;
+}
+
+// ===== DATA FETCHING =====
+function getCachedIndex() {
+    try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+            const { data, timestamp } = JSON.parse(cached);
+            if (Date.now() - timestamp < CACHE_DURATION) return data;
+        }
+    } catch (e) {}
+    return null;
+}
+
+function setCachedIndex(data) {
+    try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() }));
+    } catch (e) {}
+}
+
+async function fetchRepoIndex() {
+    const cached = getCachedIndex();
+    if (cached) return cached;
+
+    const branchRes = await fetch(`${API_BASE}/branches/${BRANCH}`);
+    if (!branchRes.ok) {
+        if (branchRes.status === 403) throw new Error('RATE_LIMIT');
+        throw new Error(`Failed to fetch branch info (${branchRes.status})`);
+    }
+    const branchData = await branchRes.json();
+    const treeSha = branchData.commit.commit.tree.sha;
+
+    const treeRes = await fetch(`${API_BASE}/git/trees/${treeSha}?recursive=1`);
+    if (!treeRes.ok) {
+        if (treeRes.status === 403) throw new Error('RATE_LIMIT');
+        throw new Error(`Failed to fetch tree (${treeRes.status})`);
+    }
+    const treeData = await treeRes.json();
+
+    const profiles = treeData.tree
+        .filter(item => item.type === 'blob' && item.path.startsWith('profiles/') && item.path.endsWith('.json'))
+        .map(item => {
+            const parts = item.path.split('/');
+            const semesterCode = parts[1];
+            const filename = parts[2].replace('.json', '');
+            const segments = filename.split('-');
+            const courseCode = segments[0];
+            const classCode = segments.length > 1 ? segments[1] : '';
+            const prefix = (courseCode.match(/^[A-Z]+/) || [''])[0];
+            return { courseCode, classCode, semesterCode, prefix, path: item.path, semesterLabel: decodeSemesterCode(semesterCode) };
+        });
+
+    profiles.sort((a, b) => {
+        if (b.semesterCode !== a.semesterCode) return b.semesterCode.localeCompare(a.semesterCode);
+        return a.courseCode.localeCompare(b.courseCode);
+    });
+
+    setCachedIndex(profiles);
+    return profiles;
+}
+
+async function loadCourseJSON(path) {
+    const url = `${RAW_BASE}/${path}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Failed to fetch course (${res.status})`);
+    return await res.json();
+}
+
+// ===== MARKDOWN GENERATION =====
+function generateCourseMarkdown(data) {
+    let md = '';
+    md += `# ${data.course_code} — ${data.course_title}\n\n`;
+    md += `- **Study Period:** ${data.study_period || 'N/A'}\n`;
+    md += `- **Location:** ${data.location || 'N/A'}\n`;
+    md += `- **Attendance:** ${data.attendance || 'N/A'}\n`;
+    md += `- **Course Profile URL:** ${data.url || 'N/A'}\n`;
+    if (data.semester_details) md += `- **Semester Details:** ${htmlToText(data.semester_details)}\n`;
+
+    // Program context
+    const progs = getCoursePrograms(data.course_code);
+    if (progs.length > 0) {
+        md += `\n### Program Mapping\n\n`;
+        progs.forEach(p => {
+            md += `- **${p.program}** (${p.program_name}): ${p.role}\n`;
+        });
+    }
+
+    md += `\n---\n\n`;
+
+    if (data.learning_outcomes && data.learning_outcomes.length > 0) {
+        md += `## Course Learning Outcomes\n\n`;
+        data.learning_outcomes.forEach(lo => { md += `- **${lo.number}** ${lo.description}\n`; });
+        md += `\n---\n\n`;
+    }
+
+    if (data.assessments && data.assessments.length > 0) {
+        md += `## Assessments\n\n`;
+        data.assessments.forEach((a, i) => {
+            const weight = extractWeight(a.weighting);
+            md += `### ${i + 1}. ${a.assessment_title} (${weight})\n\n`;
+            const due = htmlToText(a.due_date);
+            if (due) md += `**Due:** ${due}\n\n`;
+            if (a.mode) md += `**Mode:** ${a.mode}\n\n`;
+            if (a.category) md += `**Category:** ${a.category}\n\n`;
+            if (a.learning_objectives) md += `**Learning Outcomes:** ${a.learning_objectives}\n\n`;
+            if (a.task_description) md += `#### Task Description\n\n${htmlToMarkdown(a.task_description)}\n\n`;
+            if (a.submission_guidelines) md += `#### Submission Guidelines\n\n${htmlToMarkdown(a.submission_guidelines)}\n\n`;
+            if (a.late_submission) md += `#### Late Submission\n\n${htmlToMarkdown(a.late_submission)}\n\n`;
+            if (a.deferral_or_extension) md += `#### Deferral/Extension\n\n${htmlToMarkdown(a.deferral_or_extension)}\n\n`;
+            if (a.additional_info) md += `#### Additional Information\n\n${htmlToMarkdown(a.additional_info)}\n\n`;
+            md += `---\n\n`;
+        });
+    }
+
+    if (data.learning_activities && data.learning_activities.length > 0) {
+        md += `## Weekly Learning Activities\n\n`;
+        md += `| Week | Type | Topic | Learning Outcomes |\n`;
+        md += `|------|------|-------|-------------------|\n`;
+        data.learning_activities.forEach(la => {
+            const period = (la.learning_period || '').replace(/\n/g, ' ');
+            const type = la.activity_type || '';
+            const topic = (la.topic_title || htmlToText(la.topic || '').split('\n')[0] || '').replace(/\|/g, '/');
+            const outcomes = (la.learning_outcomes || []).join(', ');
+            md += `| ${period} | ${type} | ${topic} | ${outcomes} |\n`;
+        });
+        md += `\n`;
+    }
+
+    md += `---\n\n*Generated from JacSON (https://github.com/uq-course-profiles/jacson) on ${new Date().toLocaleDateString('en-AU')}*\n`;
+    return md;
+}
+
+// ===== DOWNLOAD HELPERS =====
+function downloadFile(content, filename, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+function downloadMarkdown() {
+    if (!currentCourse) return;
+    const md = generateCourseMarkdown(currentCourse);
+    const sem = (currentCourse.study_period || currentCourse.semester_code || '').replace(/[^a-zA-Z0-9]/g, '_');
+    downloadFile(md, `${currentCourse.course_code}_${sem}.md`, 'text/markdown;charset=utf-8');
+}
+
+function downloadJSON() {
+    if (!currentCourse) return;
+    const json = JSON.stringify(currentCourse, null, 2);
+    const sem = (currentCourse.study_period || currentCourse.semester_code || '').replace(/[^a-zA-Z0-9]/g, '_');
+    downloadFile(json, `${currentCourse.course_code}_${sem}.json`, 'application/json;charset=utf-8');
+}
+
+function printAsPDF() {
+    if (!currentCourse) return;
+    const d = currentCourse;
+    let html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
+    <title>${d.course_code} - ${d.course_title}</title>
+    <style>
+        body { font-family: Georgia, 'Times New Roman', serif; max-width: 780px; margin: 0 auto; padding: 36px; color: #222; font-size: 11pt; line-height: 1.5; }
+        h1 { color: #51247a; font-size: 18pt; margin-bottom: 4px; }
+        h2 { color: #51247a; font-size: 14pt; border-bottom: 2px solid #51247a; padding-bottom: 4px; margin: 24px 0 12px; }
+        h3 { font-size: 12pt; margin: 16px 0 8px; }
+        h4 { font-size: 11pt; color: #51247a; margin: 12px 0 4px; }
+        .meta { color: #666; font-size: 10pt; margin-bottom: 8px; }
+        .prog-map { font-size: 9.5pt; color: #555; margin-bottom: 16px; padding: 8px 12px; background: #f8f6fa; border-radius: 6px; }
+        .prog-map strong { color: #51247a; }
+        .lo-list { margin-left: 0; padding-left: 20px; }
+        .lo-list li { margin-bottom: 4px; }
+        .assessment { border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-bottom: 14px; page-break-inside: avoid; }
+        .assessment-name { font-size: 12pt; font-weight: bold; margin-bottom: 4px; }
+        .assessment-weight { color: #51247a; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin-top: 8px; }
+        th { background: #51247a; color: #fff; padding: 6px 10px; text-align: left; }
+        td { padding: 6px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+        tr:nth-child(even) td { background: #faf8fc; }
+        .footer { margin-top: 32px; font-size: 9pt; color: #999; border-top: 1px solid #ddd; padding-top: 8px; }
+        a { color: #51247a; }
+        @media print { body { padding: 0; } .assessment { break-inside: avoid; } }
+    </style></head><body>`;
+
+    html += `<h1>${d.course_code} — ${d.course_title}</h1>`;
+    html += `<div class="meta">${d.study_period || ''} &bull; ${d.location || ''} &bull; ${d.attendance || ''}</div>`;
+
+    // Program context in PDF
+    const progs = getCoursePrograms(d.course_code);
+    if (progs.length > 0) {
+        html += `<div class="prog-map"><strong>Program Mapping:</strong> `;
+        html += progs.map(p => `${p.program} (${p.role})`).join(' &bull; ');
+        html += `</div>`;
+    }
+
+    if (d.url) html += `<p style="font-size:9pt; color:#888;">Source: <a href="${d.url}">${d.url}</a></p>`;
+
+    if (d.learning_outcomes && d.learning_outcomes.length > 0) {
+        html += `<h2>Course Learning Outcomes</h2><ol class="lo-list">`;
+        d.learning_outcomes.forEach(lo => { html += `<li><strong>${lo.number}</strong> ${lo.description}</li>`; });
+        html += `</ol>`;
+    }
+
+    if (d.assessments && d.assessments.length > 0) {
+        html += `<h2>Assessments</h2>`;
+        d.assessments.forEach((a, i) => {
+            html += `<div class="assessment">`;
+            html += `<div class="assessment-name">${i+1}. ${a.assessment_title} <span class="assessment-weight">(${extractWeight(a.weighting)})</span></div>`;
+            const due = htmlToText(a.due_date);
+            if (due) html += `<p><strong>Due:</strong> ${due}</p>`;
+            if (a.mode) html += `<p><strong>Mode:</strong> ${a.mode}</p>`;
+            if (a.category) html += `<p><strong>Category:</strong> ${a.category}</p>`;
+            if (a.learning_objectives) html += `<p><strong>Learning Outcomes:</strong> ${a.learning_objectives}</p>`;
+            if (a.task_description) html += `<h4>Task Description</h4>${cleanHtmlForDisplay(a.task_description)}`;
+            if (a.submission_guidelines) html += `<h4>Submission Guidelines</h4>${cleanHtmlForDisplay(a.submission_guidelines)}`;
+            if (a.late_submission) html += `<h4>Late Submission</h4>${cleanHtmlForDisplay(a.late_submission)}`;
+            if (a.deferral_or_extension) html += `<h4>Deferral/Extension</h4>${cleanHtmlForDisplay(a.deferral_or_extension)}`;
+            html += `</div>`;
+        });
+    }
+
+    if (d.learning_activities && d.learning_activities.length > 0) {
+        html += `<h2>Weekly Learning Activities</h2><table><thead><tr><th>Week</th><th>Type</th><th>Topic</th><th>LOs</th></tr></thead><tbody>`;
+        d.learning_activities.forEach(la => {
+            const topic = la.topic_title || htmlToText(la.topic || '').split('\n')[0] || '';
+            const outcomes = (la.learning_outcomes || []).join(', ');
+            html += `<tr><td>${la.learning_period || ''}</td><td>${la.activity_type || ''}</td><td>${topic}</td><td>${outcomes}</td></tr>`;
+        });
+        html += `</tbody></table>`;
+    }
+
+    html += `<div class="footer">Generated from JacSON on ${new Date().toLocaleDateString('en-AU')} &bull; <a href="https://github.com/uq-course-profiles/jacson">github.com/uq-course-profiles/jacson</a></div>`;
+    html += `</body></html>`;
+
+    const w = window.open('', '_blank');
+    w.document.write(html);
+    w.document.close();
+    setTimeout(() => w.print(), 400);
+}
+
+// ===== UI RENDERING =====
+function populateFilters() {
+    const semesters = [...new Set(courseIndex.map(c => c.semesterCode))].sort().reverse();
+    const prefixes = [...new Set(courseIndex.map(c => c.prefix))].sort();
+
+    const semSelect = document.getElementById('semesterFilter');
+    semSelect.innerHTML = '<option value="">All Semesters</option>';
+    semesters.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s; opt.textContent = decodeSemesterCode(s);
+        semSelect.appendChild(opt);
+    });
+
+    const prefixSelect = document.getElementById('prefixFilter');
+    prefixSelect.innerHTML = '<option value="">All Disciplines</option>';
+    prefixes.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p; opt.textContent = p;
+        prefixSelect.appendChild(opt);
+    });
+
+    // Program filter
+    const progSelect = document.getElementById('programFilter');
+    progSelect.innerHTML = '<option value="">All Programs</option>';
+    const progCodes = Object.keys(UQBS_PROGRAMS.programs).sort((a, b) => {
+        const la = UQBS_PROGRAMS.programs[a].level;
+        const lb = UQBS_PROGRAMS.programs[b].level;
+        if (la !== lb) return la === 'UG' ? -1 : 1;
+        return a.localeCompare(b);
+    });
+    let lastLevel = '';
+    progCodes.forEach(pc => {
+        const prog = UQBS_PROGRAMS.programs[pc];
+        if (prog.level !== lastLevel) {
+            const optGroup = document.createElement('optgroup');
+            optGroup.label = prog.level === 'UG' ? 'Undergraduate' : 'Postgraduate';
+            progSelect.appendChild(optGroup);
+            lastLevel = prog.level;
+        }
+        const opt = document.createElement('option');
+        opt.value = pc; opt.textContent = `${pc} — ${prog.name}`;
+        progSelect.lastElementChild.appendChild(opt);
+    });
+}
+
+function updateMajorFilter() {
+    const progCode = document.getElementById('programFilter').value;
+    const majorSelect = document.getElementById('majorFilter');
+    majorSelect.innerHTML = '<option value="">All Majors</option>';
+
+    if (!progCode) { majorSelect.disabled = true; return; }
+    majorSelect.disabled = false;
+
+    const prog = UQBS_PROGRAMS.programs[progCode];
+    if (!prog) return;
+
+    // Add "Core" option
+    if (prog.core.length > 0) {
+        const opt = document.createElement('option');
+        opt.value = '_core'; opt.textContent = `Core (${prog.core.length} courses)`;
+        majorSelect.appendChild(opt);
+    }
+
+    // Add majors sorted
+    Object.keys(prog.majors).sort().forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m; opt.textContent = `${m} (${prog.majors[m].length} courses)`;
+        majorSelect.appendChild(opt);
+    });
+}
+
+function updateStats() {
+    const semesters = new Set(courseIndex.map(c => c.semesterCode)).size;
+    const disciplines = new Set(courseIndex.map(c => c.prefix)).size;
+    document.getElementById('headerStats').textContent =
+        `${courseIndex.length.toLocaleString()} profiles · ${semesters} semesters · ${disciplines} disciplines · ${Object.keys(UQBS_PROGRAMS.programs).length} programs`;
+}
+
+function applyFilters() {
+    const query = document.getElementById('searchInput').value.trim().toUpperCase();
+    const semester = document.getElementById('semesterFilter').value;
+    const prefix = document.getElementById('prefixFilter').value;
+    const uqbsOnly = document.getElementById('uqbsToggle').checked;
+    const program = document.getElementById('programFilter').value;
+    const major = document.getElementById('majorFilter').value;
+
+    // Build program course set if filtering by program
+    let programCourses = null;
+    if (program) {
+        programCourses = getProgramCourseSet(program, major);
+    }
+
+    filteredCourses = courseIndex.filter(c => {
+        if (query && !c.courseCode.includes(query)) return false;
+        if (semester && c.semesterCode !== semester) return false;
+        if (prefix && c.prefix !== prefix) return false;
+        if (uqbsOnly && !UQBS_PROGRAMS.course_programs[c.courseCode]) return false;
+        if (programCourses && !programCourses.has(c.courseCode)) return false;
+        return true;
+    });
+
+    listOffset = 0;
+    renderCourseList();
+}
+
+function renderCourseList() {
+    const listEl = document.getElementById('courseList');
+    const visible = filteredCourses.slice(0, listOffset + LIST_PAGE_SIZE);
+    const remaining = filteredCourses.length - visible.length;
+
+    document.getElementById('resultCount').textContent =
+        `${filteredCourses.length} result${filteredCourses.length !== 1 ? 's' : ''}`;
+
+    if (filteredCourses.length === 0) {
+        listEl.innerHTML = '<div class="list-message">No courses match your filters.</div>';
+        return;
+    }
+
+    let html = '';
+    visible.forEach(c => {
+        const isActive = c.path === currentPath;
+        const title = titleCache[c.courseCode] ? ` — ${titleCache[c.courseCode]}` : '';
+        const chips = getCourseProgramChips(c.courseCode);
+        html += `<div class="course-item${isActive ? ' active' : ''}" data-path="${c.path}" onclick="selectCourse('${c.path}')">
+            <div class="course-item-code">${c.courseCode}${title}</div>
+            <div class="course-item-meta">
+                <span>${c.semesterLabel}</span>
+                <span>Class ${c.classCode}</span>
+            </div>
+            ${chips ? `<div class="course-item-programs">${chips}</div>` : ''}
+        </div>`;
+    });
+
+    if (remaining > 0) {
+        html += `<button class="show-more-btn" onclick="showMore()">Show ${Math.min(remaining, LIST_PAGE_SIZE)} more (${remaining} remaining)</button>`;
+    }
+
+    listEl.innerHTML = html;
+}
+
+function showMore() {
+    listOffset += LIST_PAGE_SIZE;
+    renderCourseList();
+}
+
+async function selectCourse(path) {
+    currentPath = path;
+    renderCourseList();
+
+    const detailEl = document.getElementById('courseDetail');
+    detailEl.innerHTML = `<div class="loading-state"><div class="spinner"></div><p>Loading course profile...</p></div>`;
+
+    try {
+        const data = await loadCourseJSON(path);
+        currentCourse = data;
+
+        if (data.course_code && data.course_title) {
+            titleCache[data.course_code] = data.course_title;
+            renderCourseList();
+        }
+
+        renderCourseProfile(data);
+
+        const filename = path.split('/').pop().replace('.json', '');
+        history.replaceState(null, '', `#${filename}`);
+    } catch (err) {
+        detailEl.innerHTML = `<div class="error-state"><h3>Failed to load course</h3><p>${err.message}</p>
+            <button class="retry-btn" onclick="selectCourse('${path}')">Retry</button></div>`;
+    }
+}
+
+function renderCourseProfile(d) {
+    const detailEl = document.getElementById('courseDetail');
+    let html = '';
+
+    // Header
+    html += `<div class="profile-header">
+        <div class="profile-title">${d.course_code} — ${d.course_title || 'Untitled'}</div>
+        <div class="profile-meta">
+            ${d.study_period ? `<span class="meta-badge">${d.study_period}</span>` : ''}
+            ${d.location ? `<span class="meta-badge">${d.location}</span>` : ''}
+            ${d.attendance ? `<span class="meta-badge">${d.attendance}</span>` : ''}
+        </div>
+        ${d.url ? `<div class="profile-url">Source: <a href="${d.url}" target="_blank">${d.url}</a></div>` : ''}
+    </div>`;
+
+    // Program context badges
+    html += getCourseProgramBadges(d.course_code);
+
+    // Download buttons
+    html += `<div class="download-bar">
+        <button class="dl-btn" onclick="printAsPDF()" title="Opens a print-friendly view — use Save as PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Save as PDF
+        </button>
+        <button class="dl-btn" onclick="downloadMarkdown()" title="Clean text format — great for LLMs and reading">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Markdown
+        </button>
+        <button class="dl-btn" onclick="downloadJSON()" title="Raw JSON data">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download JSON
+        </button>
+    </div>`;
+
+    // Learning Outcomes
+    if (d.learning_outcomes && d.learning_outcomes.length > 0) {
+        html += `<div class="section"><h2 class="section-title">Course Learning Outcomes</h2><ul class="lo-list">`;
+        d.learning_outcomes.forEach(lo => {
+            html += `<li class="lo-item"><span class="lo-number">${lo.number}</span>${lo.description}</li>`;
+        });
+        html += `</ul></div>`;
+    } else {
+        html += `<div class="section"><h2 class="section-title">Course Learning Outcomes</h2><p style="color:#999; font-style:italic;">No learning outcomes available for this profile.</p></div>`;
+    }
+
+    // Assessments
+    if (d.assessments && d.assessments.length > 0) {
+        html += `<div class="section"><h2 class="section-title">Assessments</h2>`;
+        d.assessments.forEach((a, i) => {
+            const weight = extractWeight(a.weighting);
+            const weightNum = extractWeightNumber(a.weighting);
+            const due = htmlToText(a.due_date);
+            html += `<div class="assessment-card">
+                <div class="assessment-header">
+                    <div class="assessment-title">${i+1}. ${a.assessment_title}</div>
+                    <div class="assessment-weight-badge">${weight}</div>
+                </div>
+                <div class="weight-bar-container"><div class="weight-bar-bg"><div class="weight-bar" style="width:${weightNum}%"></div></div></div>
+                <div class="assessment-details">
+                    ${due ? `<div class="detail-item"><div class="detail-label">Due Date</div><div class="detail-value">${due}</div></div>` : ''}
+                    ${a.mode ? `<div class="detail-item"><div class="detail-label">Mode</div><div class="detail-value">${a.mode}</div></div>` : ''}
+                    ${a.category ? `<div class="detail-item"><div class="detail-label">Category</div><div class="detail-value">${a.category}</div></div>` : ''}
+                    ${a.learning_objectives ? `<div class="detail-item"><div class="detail-label">Learning Outcomes</div><div class="detail-value">${a.learning_objectives}</div></div>` : ''}
+                </div>
+                <div class="assessment-body">
+                    ${a.task_description ? `<h4>Task Description</h4>${cleanHtmlForDisplay(a.task_description)}` : ''}
+                    ${a.submission_guidelines ? `<h4>Submission Guidelines</h4>${cleanHtmlForDisplay(a.submission_guidelines)}` : ''}
+                    ${a.late_submission ? `<h4>Late Submission</h4>${cleanHtmlForDisplay(a.late_submission)}` : ''}
+                    ${a.deferral_or_extension ? `<h4>Deferral/Extension</h4>${cleanHtmlForDisplay(a.deferral_or_extension)}` : ''}
+                    ${a.additional_info ? `<h4>Additional Information</h4>${cleanHtmlForDisplay(a.additional_info)}` : ''}
+                </div>
+            </div>`;
+        });
+        html += `</div>`;
+    }
+
+    // Learning Activities
+    if (d.learning_activities && d.learning_activities.length > 0) {
+        html += `<div class="section"><h2 class="section-title">Weekly Learning Activities</h2>
+        <div style="overflow-x:auto;">
+        <table class="activities-table"><thead><tr>
+            <th>Week</th><th>Type</th><th>Topic</th><th>LOs</th>
+        </tr></thead><tbody>`;
+        d.learning_activities.forEach(la => {
+            const isBreak = (la.activity_type || '').toLowerCase().includes('break') ||
+                            (la.activity_type || '').toLowerCase().includes('no student');
+            const topic = la.topic_title || htmlToText(la.topic || '').split('\n')[0] || '';
+            const topicDesc = la.topic_description || '';
+            const outcomes = (la.learning_outcomes || []).join(', ');
+            html += `<tr class="${isBreak ? 'break-row' : ''}">
+                <td class="week-col">${la.learning_period || ''}</td>
+                <td class="type-col">${la.activity_type || ''}</td>
+                <td class="topic-col"><strong>${topic}</strong>${topicDesc ? '<br><span style="color:#666; font-size:0.85em;">' + topicDesc + '</span>' : ''}</td>
+                <td class="lo-col">${outcomes}</td>
+            </tr>`;
+        });
+        html += `</tbody></table></div></div>`;
+    }
+
+    detailEl.innerHTML = html;
+    detailEl.scrollTop = 0;
+}
+
+// ===== EVENT HANDLERS =====
+let searchTimeout;
+document.getElementById('searchInput').addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(applyFilters, 200);
+});
+document.getElementById('semesterFilter').addEventListener('change', applyFilters);
+document.getElementById('prefixFilter').addEventListener('change', applyFilters);
+document.getElementById('uqbsToggle').addEventListener('change', applyFilters);
+document.getElementById('programFilter').addEventListener('change', () => {
+    updateMajorFilter();
+    applyFilters();
+});
+document.getElementById('majorFilter').addEventListener('change', applyFilters);
+
+// Keyboard shortcut: Ctrl/Cmd+K to focus search
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        document.getElementById('searchInput').focus();
+    }
+});
+
+// ===== DEEP LINKING =====
+function handleHash() {
+    const hash = location.hash.replace('#', '');
+    if (!hash || courseIndex.length === 0) return;
+    const match = courseIndex.find(c => c.path.includes(hash));
+    if (match) selectCourse(match.path);
+}
+
+// ===== INITIALISATION =====
+async function init() {
+    const listEl = document.getElementById('courseList');
+    // Disable major filter until a program is selected
+    document.getElementById('majorFilter').disabled = true;
+
+    try {
+        courseIndex = await fetchRepoIndex();
+        updateStats();
+        populateFilters();
+        filteredCourses = [...courseIndex];
+        renderCourseList();
+        handleHash();
+    } catch (err) {
+        let msg = `<div class="error-state"><h3>Failed to load course index</h3>`;
+        if (err.message === 'RATE_LIMIT') {
+            msg += `<p>GitHub API rate limit exceeded. Unauthenticated requests are limited to 60 per hour. Please try again in a few minutes.</p>`;
+        } else if (err.message.includes('Failed to fetch') || err.name === 'TypeError') {
+            msg += `<p>Could not connect to GitHub API. This can happen if you're opening this file directly (file:// protocol).
+            Try one of these options:</p>
+            <p>1. Serve locally: <code>python3 -m http.server 8000</code> then open <code>http://localhost:8000</code></p>
+            <p>2. Host on GitHub Pages or any web server</p>
+            <p>3. Try a different browser (Firefox may work with local files)</p>`;
+        } else {
+            msg += `<p>${err.message}</p>`;
+        }
+        msg += `<button class="retry-btn" onclick="location.reload()">Retry</button></div>`;
+        listEl.innerHTML = msg;
+    }
+}
+
+init();
+</script>
+</body>
+</html>
