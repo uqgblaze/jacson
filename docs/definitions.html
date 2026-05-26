@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Field Definitions — JacSON Course Profile Viewer</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("jacson-theme") || "classic";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "classic");
+      }
+    })();
+  </script>
+  <style>
+    /* Page-scoped styles for definitions layout */
+    .def-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .def-layout { grid-template-columns: 1fr; }
+      .def-toc { display: none; }
+    }
+
+    /* Sticky table of contents */
+    .def-toc {
+      position: sticky;
+      top: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 16px;
+      font-size: 13px;
+    }
+    .def-toc h4 {
+      margin: 0 0 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--ink-muted);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+    .def-toc ol {
+      margin: 0;
+      padding: 0 0 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .def-toc a { color: var(--uq-purple); }
+    .def-toc a:hover { text-decoration: underline; }
+
+    /* Definition tables */
+    .def-table-wrap {
+      overflow-x: auto;
+      margin: 0 0 12px;
+    }
+    table.def {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    table.def th {
+      background: var(--accent-soft);
+      color: var(--uq-purple-dark);
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid var(--rule);
+      white-space: nowrap;
+    }
+    table.def td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    table.def tr:last-child td { border-bottom: none; }
+    table.def tr:hover td { background: var(--accent-soft); }
+
+    /* Key column — monospace */
+    table.def td.key {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      color: var(--uq-purple);
+      white-space: nowrap;
+    }
+    /* Nested key indent */
+    table.def td.key.nested { padding-left: 28px; }
+    table.def td.key.nested::before {
+      content: "└ ";
+      color: var(--ink-faint);
+    }
+
+    /* Type pill */
+    table.def td.type {
+      white-space: nowrap;
+    }
+    .type-pill {
+      display: inline-block;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: var(--chip-bg);
+      color: var(--chip-ink);
+      font-weight: 600;
+    }
+
+    /* Present badges */
+    .badge-always {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: var(--ok-bg);
+      color: var(--ok);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-cond {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: var(--warn-bg);
+      color: var(--warn);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-inner {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 8px;
+      border-radius: 999px;
+      background: var(--chip-bg);
+      color: var(--chip-ink);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Inline code in description cells */
+    table.def td code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 12px;
+      background: var(--accent-soft);
+      color: var(--uq-purple);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    /* Legend */
+    .def-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    .def-legend span { display: flex; align-items: center; gap: 6px; }
+
+    /* Section spacing */
+    .def-content section { margin-bottom: 40px; }
+    .def-content h2 { scroll-margin-top: 20px; }
+
+    /* Intro paragraph */
+    .def-intro {
+      color: var(--ink-muted);
+      font-size: 14px;
+      margin-bottom: 28px;
+      max-width: 720px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <h1>JacSON Course Profile Viewer</h1>
+    <nav>
+      <a href="index.html">Courses</a>
+      <a href="definitions.html" class="active">Field Definitions</a>
+      <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">Repository ↗</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme"
+              title="Switch between Classic and Fun themes">
+        <span class="tt-icon" aria-hidden="true">◐</span>
+        <span class="tt-label">Classic</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="margin-top:0">Field Definitions</h2>
+    <p class="def-intro">
+      Each course profile is stored as a <code>.json</code> file under
+      <code>profiles/{semester_code}/{full_course_code}.json</code>.
+      The tables below define every key and array that may appear in these files.
+    </p>
+
+    <div class="def-legend">
+      <span><span class="badge-always">Always</span> Present on every profile.</span>
+      <span><span class="badge-cond">Conditional</span> Only written when that content exists on the source page.</span>
+      <span><span class="badge-inner">Within object</span> Always present once the parent object/array exists.</span>
+    </div>
+
+    <div class="def-layout">
+
+      <!-- Table of contents -->
+      <aside class="def-toc" aria-label="Page sections">
+        <h4>Sections</h4>
+        <ol>
+          <li><a href="#metadata">Top-level metadata</a></li>
+          <li><a href="#overview">Course overview</a></li>
+          <li><a href="#requirements">Requirements</a></li>
+          <li><a href="#contacts">Course contacts</a></li>
+          <li><a href="#staff">Course staff</a></li>
+          <li><a href="#timetable">Timetable</a></li>
+          <li><a href="#aims">Aims &amp; learning outcomes</a></li>
+          <li><a href="#assessments">Assessments (summary)</a></li>
+          <li><a href="#assessment-details">Assessment details</a></li>
+          <li><a href="#special-indicators">Special indicators</a></li>
+          <li><a href="#resources">Learning resources</a></li>
+          <li><a href="#activities">Learning activities</a></li>
+          <li><a href="#policies">Policies &amp; procedures</a></li>
+        </ol>
+      </aside>
+
+      <!-- Content -->
+      <div class="def-content">
+
+        <section id="metadata">
+          <h2>Top-level metadata</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">url</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Full URL of the scraped UQ course profile page.</td>
+                </tr>
+                <tr>
+                  <td class="key">scraped_at</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>ISO 8601 UTC timestamp of when the profile was scraped (e.g. <code>"2026-04-15T03:42:27.257811+00:00"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">course_code</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Four-letter, four-digit course code (e.g. <code>"MGTS1301"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">class_code</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Numeric class identifier from the profile URL (e.g. <code>"20352"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">semester_code</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Numeric semester identifier from the profile URL (e.g. <code>"7620"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">full_course_code</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Composite identifier used as the filename: <code>{course_code}-{class_code}-{semester_code}</code> (e.g. <code>"MGTS1301-20352-7620"</code>).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="overview">
+          <h2>Course overview</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">course_title</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-always">Always</span></td>
+                  <td>Full course title, with any trailing parenthetical stripped (e.g. <code>"Introduction to Management"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">study_period</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Short study period label scraped from the hero banner (e.g. <code>"Sem 1 2026"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">semester_details</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Full study period string from the overview section, including date range (e.g. <code>"Semester 1, 2026 (23/02/2026 - 20/06/2026)"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">study_level</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Academic level of the course (e.g. <code>"Undergraduate"</code>, <code>"Postgraduate"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">location</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Campus or delivery location (e.g. <code>"St Lucia"</code>, <code>"Online"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">attendance_mode</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Delivery mode as listed in the overview table (e.g. <code>"In Person"</code>, <code>"Online"</code>, <code>"Flexible"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">units</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Credit unit value of the course (e.g. <code>"2"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">administrative_campus</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Administrative campus responsible for the course (e.g. <code>"St Lucia"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">coordinating_unit</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>School or faculty coordinating the course (e.g. <code>"Business School"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">course_description</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Prose description paragraphs from the course overview section. Multiple paragraphs are joined with <code>\n\n</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="requirements">
+          <h2>Requirements</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">requirements</td>
+                  <td class="type"><span class="type-pill">object</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Contains one or more of the sub-keys below. Only written if any requirements content is found on the page.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">prerequisites</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>List of prerequisite course codes or descriptions.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">incompatible</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>List of incompatible course codes.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">companions</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>List of companion course codes.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">restrictions</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Enrolment restriction descriptions.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">assumed_background</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Assumed prior knowledge or course codes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="contacts">
+          <h2>Course contacts</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">course_contacts</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Array of contact cards from the course contact section.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">role</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Contact's role label (e.g. <code>"Course coordinator"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">role_slug</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Lowercase, underscored version of the role for programmatic use (e.g. <code>"course_coordinator"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">name</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Contact's full name, including title if present (e.g. <code>"Associate Professor Sandra Figueira"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">email</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Contact's email address as displayed.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">email_uri</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Full <code>mailto:</code> URI for the email address.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">phone</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Contact's phone number as displayed.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">phone_uri</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Full <code>tel:</code> URI for the phone number.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">notes_text</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Plain-text content of any notes attached to the contact card.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">notes_html</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Raw HTML content of the notes element, preserved for rich rendering.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="staff">
+          <h2>Course staff</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">course_staff</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Array of teaching staff from the course staff section.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">role</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Staff member's teaching role (e.g. <code>"Lecturer"</code>, <code>"Tutor"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">name</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Staff member's full name, including title if present.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">email</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Staff member's email address.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="timetable">
+          <h2>Timetable</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">timetable</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Text content of the timetable section, with the section heading stripped.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="aims">
+          <h2>Aims and learning outcomes</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">course_aims</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>The course aims statement. Multiple paragraphs are joined with <code>\n\n</code>.</td>
+                </tr>
+                <tr>
+                  <td class="key">learning_outcomes</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Ordered list of learning outcomes.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">number</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Learning outcome identifier (e.g. <code>"LO1."</code>, <code>"LO2."</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">description</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Full text description of the learning outcome.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="assessments">
+          <h2>Assessments (summary)</h2>
+          <p class="subtitle">One entry per row in the top-level assessment summary table.</p>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">assessments</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Summary-level list of assessments as they appear in the overview table.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">category</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Assessment category (e.g. <code>"Examination"</code>, <code>"Paper/ Report/ Annotation"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">assessment_title</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Title of the assessment item.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">weighting</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Mark weighting (e.g. <code>"45%"</code>, <code>"20% Best 3 of 5"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">due_date</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Due date(s) as displayed; may include multiple dates or a date range.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">special_indicators</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Array of special indicator icons. Empty array if none apply. See <a href="#special-indicators">Special indicators</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="assessment-details">
+          <h2>Assessment details</h2>
+          <p class="subtitle">One entry per detailed assessment section on the page. Fields within each item are conditional on what the course profile includes.</p>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">assessment_details</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Detailed breakdown of each assessment item.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">assessment_detail_section_id</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>HTML anchor ID of the detail section, used for deep-linking (e.g. <code>"assessment-detail-0"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">assessment_title</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Title of the assessment item.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">mode</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Submission or delivery mode (e.g. <code>"Written"</code>, <code>"Oral"</code>, <code>"Product/ Artefact/ Multimedia"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">category</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Assessment category (matches the summary table).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">weighting</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Mark weighting (matches the summary table).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">due_date</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Due date(s) as displayed.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">learning_objectives</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Comma-separated list of learning outcome numbers assessed (e.g. <code>"LO1, LO2, LO3"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">other_conditions</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Additional conditions such as peer assessment or time limits (e.g. <code>"Peer assessment factor. See the conditions definitions"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">task_description</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Full text of the task description.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">exam_details</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Exam-specific metadata such as duration, calculator policy, and invigilation type. Present only for examination items.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">submission_guidelines</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Instructions for how and where to submit.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">deferral_or_extension</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Policy text on whether deferral or extension is permitted.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">late_submission</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Late submission penalty policy.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">ai_statement</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Extracted text relating to permitted or prohibited use of AI tools. Only written when AI-related content is detected in the task description.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">special_indicators</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Array of special indicator icons. See <a href="#special-indicators">Special indicators</a>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="special-indicators">
+          <h2>Special indicators</h2>
+          <p class="subtitle">Appear within both <code>assessments[]</code> and <code>assessment_details[]</code> items.</p>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">special_indicators_class</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td>CSS class string from the icon list item, encoding the icon type (e.g. <code>"icon--how-youll-learn--multiple-circle icon-text--small"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key">special_indicator_text</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td>Human-readable label for the indicator (e.g. <code>"Team or group-based"</code>, <code>"Identity Verified"</code>, <code>"In-person"</code>, <code>"Online"</code>).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="resources">
+          <h2>Learning resources</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">learning_resources</td>
+                  <td class="type"><span class="type-pill">object</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Key-value pairs where each key is a slugified section heading and each value is the corresponding text content. Keys are dynamic and vary by course (e.g. <code>"library_resources"</code>, <code>"required_resources"</code>, <code>"recommended_resources"</code>).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="activities">
+          <h2>Learning activities</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">learning_activities</td>
+                  <td class="type"><span class="type-pill">object[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Ordered list of weekly learning activities from the activities table.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">learning_period</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Teaching week or period label (e.g. <code>"Week 1"</code>, <code>"Mid-sem break"</code>). Carried forward from the preceding group row for continuation rows.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">activity_type</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Type of activity (e.g. <code>"Lecture"</code>, <code>"Tutorial"</code>, <code>"No student involvement (Breaks, information)"</code>).</td>
+                </tr>
+                <tr>
+                  <td class="key nested">topic</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-inner">Within object</span></td>
+                  <td>Raw HTML string of the topic table cell (<code>&lt;td&gt;</code>), suitable for client-side parsing to extract the title and description.</td>
+                </tr>
+                <tr>
+                  <td class="key nested">learning_outcomes</td>
+                  <td class="type"><span class="type-pill">string[]</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>List of learning outcome identifiers referenced in the topic cell (e.g. <code>["LO1", "LO2"]</code>). Only written when LO references are detected.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="policies">
+          <h2>Policies and procedures</h2>
+          <div class="def-table-wrap">
+            <table class="def">
+              <thead>
+                <tr><th>Key</th><th>Type</th><th>Present</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="key">policies_and_procedures</td>
+                  <td class="type"><span class="type-pill">string</span></td>
+                  <td><span class="badge-cond">Conditional</span></td>
+                  <td>Plain-text content of the policies and procedures section, with the section heading stripped.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div><!-- /.def-content -->
+    </div><!-- /.def-layout -->
+  </main>
+
+  <footer class="site">
+    JacSON Course Profile Viewer · Data scraped from course-profiles.uq.edu.au ·
+    <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">uq-course-profiles/jacson</a>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+  <script>window.JacSON.initTheme();</script>
+</body>
+</html>

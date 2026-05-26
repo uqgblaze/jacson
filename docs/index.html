@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JacSON Course Profile Viewer</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script>
+    // Apply saved theme before first paint to avoid FOUC
+    (function () {
+      try {
+        var t = localStorage.getItem("jacson-theme") || "classic";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "classic");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="site">
+    <h1>JacSON Course Profile Viewer</h1>
+    <nav>
+      <a href="index.html" class="active">Courses</a>
+      <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">Repository ↗</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme"
+              title="Switch between Classic and Fun themes">
+        <span class="tt-icon" aria-hidden="true">◐</span>
+        <span class="tt-label">Classic</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="stat-bar">
+      <div class="stat"><b id="course-count">0</b><span>courses shown</span></div>
+      <div class="stat" id="meta-info">Loading…</div>
+      <div class="stat bulk-actions" style="margin-left:auto">
+        <button id="export-csv" class="btn-link" type="button" title="Download filtered courses as CSV">Export CSV ↓</button>
+        <button id="export-zip-json" class="btn-link" type="button" title="Download filtered courses as a ZIP of raw JSON files">ZIP (JSON) ↓</button>
+        <span id="bulk-status" class="small muted" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div>
+        <label for="search">Search code or title</label>
+        <input id="search" type="search" placeholder="e.g. MGTS1601 or Strategy">
+      </div>
+      <div>
+        <label for="filter-level">Study level</label>
+        <select id="filter-level"><option value="">Any level</option></select>
+      </div>
+      <div>
+        <label for="filter-mode">Mode</label>
+        <select id="filter-mode"><option value="">Any mode</option></select>
+      </div>
+      <div>
+        <label for="filter-location">Location</label>
+        <select id="filter-location"><option value="">Any location</option></select>
+      </div>
+      <div>
+        <label for="filter-semester">Semester</label>
+        <select id="filter-semester"><option value="">Any semester</option></select>
+      </div>
+      <div class="filter-toggle-wrap">
+        <label class="filter-toggle" for="filter-unique">
+          <input type="checkbox" id="filter-unique" role="switch">
+          <span class="filter-toggle__track" aria-hidden="true"></span>
+          <span class="filter-toggle__label">Latest only</span>
+        </label>
+        <p class="filter-toggle__hint">Show only the most recent profile for each course code</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="courses">
+        <thead>
+          <tr>
+            <th data-sort="course_code">Code</th>
+            <th data-sort="course_title">Title</th>
+            <th data-sort="study_period">Period</th>
+            <th data-sort="course_coordinator_name">Course Coordinator</th>
+            <th data-sort="study_level">Level</th>
+            <th data-sort="units">Units</th>
+            <th data-sort="attendance">Mode</th>
+            <th data-sort="location">Location</th>
+          </tr>
+        </thead>
+        <tbody id="courses-body">
+          <tr><td colspan="8" class="loading">Loading profiles…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site">
+    JacSON Course Profile Viewer · Data scraped from course-profiles.uq.edu.au ·
+    <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">uq-course-profiles/jacson</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" referrerpolicy="no-referrer"></script>
+  <script src="./assets/app.js"></script>
+  <script>window.JacSON.initBrowser();</script>
+</body>
+</html>

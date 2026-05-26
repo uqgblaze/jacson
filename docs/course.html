@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course — JacSON Course Profile Viewer</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("jacson-theme") || "classic";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "classic");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header class="site">
+    <h1>JacSON Course Profile Viewer</h1>
+    <nav>
+      <a href="index.html">Courses</a>
+      <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">Repository ↗</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme"
+              title="Switch between Classic and Fun themes">
+        <span class="tt-icon" aria-hidden="true">◐</span>
+        <span class="tt-label">Classic</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <p style="margin-top:0"><a href="index.html" class="small">← Back to course browser</a></p>
+    <div id="course-root">
+      <div class="loading">Loading course profile…</div>
+    </div>
+  </main>
+
+  <footer class="site">
+    JacSON Course Profile Viewer · Data scraped from course-profiles.uq.edu.au ·
+    <a href="https://github.com/uq-course-profiles/jacson" target="_blank" rel="noopener">uq-course-profiles/jacson</a>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+  <script>window.JacSON.initCourseDetail();</script>
+</body>
+</html>
