@@ -174,3 +174,35 @@ To run daily at 9:00 PM, edit crontab (`crontab -e`) and add (replace `/path/to/
 
 JacSON was built by the UQ Business School Learning Design team.  
 Lead developers: **Geoffrey Blazer** and **Bee Hughes**. With thanks to **Carrie Finn** for letting us cook.
+
+---
+
+## JacDash on Raspberry Pi 3B (LAN on port 1909)
+
+JacDash can run on a Raspberry Pi 3B and expose the dashboard to your local network.
+
+### Start JacDash
+
+From the project root:
+
+```bash
+python3 -m venv venv
+venv/bin/pip install -r scripts/requirements.txt
+venv/bin/pip install -r jacdash/requirements.txt
+cd jacdash
+../venv/bin/python wsgi.py
+```
+
+By default, JacDash binds to `0.0.0.0` and port `1909`, so open:
+
+```text
+http://<pi-lan-ip>:1909/
+```
+
+### Triggering JacSON from the web dashboard
+
+- Click **Start Manual Run** in JacDash.
+- JacDash runs `run_JacSON.py` in the background.
+- Live output is streamed back into the dashboard terminal panel.
+
+This lets you run and monitor the scraper from any device on the same LAN.
