@@ -12,8 +12,8 @@ JACDASH_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Root of the JacSON project (one level up from jacdash/)
 JACSON_ROOT = os.path.abspath(os.path.join(JACDASH_ROOT, ".."))
 
-# Path to scraper_runner.py entrypoint
-SCRAPER_RUNNER = os.path.join(JACSON_ROOT, "scripts", "scraper_runner.py")
+# Path to JacSON runner entrypoint (invokes scripts/scraper_runner.py)
+RUN_JACSON = os.path.join(JACSON_ROOT, "run_JacSON.py")
 
 # Path to course-list.csv used to count courses
 COURSE_CSV = os.path.join(JACSON_ROOT, "course-list.csv")
@@ -51,6 +51,10 @@ BOOTSTRAP_USER = ("uqgblaze", "Geoffrey Blazer")
 # ── Flask ──────────────────────────────────────────────────────────────────────
 # Change this to a long random string in production.
 SECRET_KEY = os.environ.get("JACDASH_SECRET_KEY", "your-long-secret-key-here")
+
+# Local/LAN host + port (Raspberry Pi friendly default)
+HOST = os.environ.get("JACDASH_HOST", "0.0.0.0")
+PORT = int(os.environ.get("JACDASH_PORT", "1909"))
 
 # ── Schedule defaults ─────────────────────────────────────────────────────────
 # Applied when the settings row is first created.

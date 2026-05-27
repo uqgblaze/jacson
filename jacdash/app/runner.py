@@ -43,7 +43,7 @@ def start_job(triggered_by: str, is_scheduled: bool = False) -> dict:
     venv_python = os.path.join(config.JACDASH_ROOT, "..", "venv", "bin", "python")
     python_exe = venv_python if os.path.exists(venv_python) else sys.executable
 
-    cmd = [python_exe, config.SCRAPER_RUNNER, "--job-id", job_id]
+    cmd = [python_exe, config.RUN_JACSON, "--job-id", job_id]
 
     db.set_job_running(job_id, is_scheduled)
 
