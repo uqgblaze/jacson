@@ -46,3 +46,17 @@ def require_auth(f):
             ), 403
         return f(*args, **kwargs)
     return decorated
+
+
+def require_admin(f):
+    """Decorator for endpoints that require an active admin user."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        username = get_remote_user()
+        if not username or not db.user_exists(username):
+            return render_template("403.html", reason="Admin access required."), 403
+        user = db.get_user_by_username(username)
+        if not user or not bool(user.get("is_admin")) or not bool(user.get("is_active")):
+            return render_template("403.html", reason="Admin access required."), 403
+        return f(*args, **kwargs)
+    return decorated

@@ -6,7 +6,7 @@
  *   - Start manual runs via /api/run
  *   - Poll /api/log while a job is running (live terminal output)
  *   - Schedule modal: GET + POST /api/schedule
- *   - Users modal:    GET / POST / DELETE /api/users
+ *   - Users modal: admin CRUD /api/admin/users
  */
 
 "use strict";
@@ -279,9 +279,11 @@ function renderUserList(users) {
         <div class="jd-user-name">${esc(u.full_name)}</div>
         <div class="jd-user-uname">${esc(u.uq_username)}</div>
       </div>
-      <button class="jd-user-remove" onclick="removeUser('${esc(u.uq_username)}')">
-        Remove
-      </button>
+      <div>
+        <label><input type="checkbox" ${u.is_admin ? "checked" : ""} onchange="toggleAdmin(${u.id}, this.checked)"> Admin</label>
+        <label style="margin-left:0.5rem"><input type="checkbox" ${u.is_active ? "checked" : ""} onchange="toggleActive(${u.id}, this.checked)"> Active</label>
+        <button class="jd-user-remove" onclick="resetPassword(${u.id}, '${esc(u.uq_username)}')">Reset Password</button>
+      </div>
     </div>
   `).join("");
 }
@@ -289,21 +291,26 @@ function renderUserList(users) {
 async function addUser() {
   const unameEl = document.getElementById("new-username");
   const nameEl  = document.getElementById("new-fullname");
+  const passEl  = document.getElementById("new-password");
+  const adminEl = document.getElementById("new-is-admin");
+  const activeEl = document.getElementById("new-is-active");
   const uname   = (unameEl?.value ?? "").trim();
   const name    = (nameEl?.value  ?? "").trim();
+  const password = (passEl?.value ?? "").trim();
 
-  if (!uname || !name) {
-    setMsg("users-msg", "Please enter both a UQ username and a full name.");
+  if (!uname || !name || !password) {
+    setMsg("users-msg", "Please enter username, full name, and initial password.");
     return;
   }
 
   try {
-    await apiFetch("/api/users", {
+    await apiFetch("/api/admin/users", {
       method: "POST",
-      body: JSON.stringify({ uq_username: uname, full_name: name }),
+      body: JSON.stringify({ uq_username: uname, full_name: name, password, is_admin: !!adminEl?.checked, is_active: !!activeEl?.checked }),
     });
     if (unameEl) unameEl.value = "";
     if (nameEl)  nameEl.value  = "";
+    if (passEl)  passEl.value  = "";
     setMsg("users-msg", "");
     await loadUsers();
   } catch (e) {
@@ -318,6 +325,39 @@ async function removeUser(uname) {
     await loadUsers();
   } catch (e) {
     setMsg("users-msg", e.message || "Failed to remove user.");
+  }
+}
+
+async function toggleAdmin(userId, checked) {
+  try {
+    await apiFetch(`/api/admin/users/${userId}`, { method: "PATCH", body: JSON.stringify({ is_admin: checked }) });
+    setMsg("users-msg", "");
+    await loadUsers();
+  } catch (e) {
+    setMsg("users-msg", e.message || "Failed to update admin status.");
+    await loadUsers();
+  }
+}
+
+async function toggleActive(userId, checked) {
+  try {
+    await apiFetch(`/api/admin/users/${userId}`, { method: "PATCH", body: JSON.stringify({ is_active: checked }) });
+    setMsg("users-msg", "");
+    await loadUsers();
+  } catch (e) {
+    setMsg("users-msg", e.message || "Failed to update active status.");
+    await loadUsers();
+  }
+}
+
+async function resetPassword(userId, uname) {
+  const password = prompt(`Enter a new password for ${uname}:`);
+  if (!password) return;
+  try {
+    await apiFetch(`/api/admin/users/${userId}/reset-password`, { method: "POST", body: JSON.stringify({ password }) });
+    setMsg("users-msg", `Password reset for ${uname}.`);
+  } catch (e) {
+    setMsg("users-msg", e.message || "Failed to reset password.");
   }
 }
 

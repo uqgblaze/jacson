@@ -216,6 +216,13 @@
                  class="jd-search-input" placeholder="Full name, e.g. Geoffrey Blazer"
                  autocomplete="off">
         </div>
+        <div class="jd-search-wrap" style="margin-left:0.5rem">
+          <input type="password" id="new-password"
+                 class="jd-search-input" placeholder="Initial password"
+                 autocomplete="new-password">
+        </div>
+        <label style="margin-left:0.5rem"><input type="checkbox" id="new-is-admin"> Admin</label>
+        <label style="margin-left:0.5rem"><input type="checkbox" id="new-is-active" checked> Active</label>
         <button class="jd-btn jd-btn--primary jd-add-btn" onclick="addUser()">
           <img src="{{ url_for('static', filename='assets/add-user.svg') }}"
                class="jd-btn-icon" alt="">
@@ -228,6 +235,7 @@
       </div>
 
       <div class="jd-modal-msg" id="users-msg"></div>
+      <div class="jd-modal-hint">Tip: reset passwords and toggle admin/active status from each user row.</div>
     </div>
     <div class="jd-modal-footer">
       <button class="jd-btn jd-btn--ghost" onclick="closeModal('modal-users')">Close</button>

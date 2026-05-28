@@ -42,6 +42,9 @@ def init_db():
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
                 uq_username TEXT    UNIQUE NOT NULL,
                 full_name   TEXT    NOT NULL,
+                password_hash TEXT,
+                is_admin    INTEGER NOT NULL DEFAULT 0,
+                is_active   INTEGER NOT NULL DEFAULT 1,
                 created_at  TEXT    NOT NULL
             );
 
@@ -64,6 +67,13 @@ def init_db():
                 next_run_at     TEXT
             );
         """)
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(users)").fetchall()}
+        if "password_hash" not in cols:
+            conn.execute("ALTER TABLE users ADD COLUMN password_hash TEXT")
+        if "is_admin" not in cols:
+            conn.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+        if "is_active" not in cols:
+            conn.execute("ALTER TABLE users ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1")
 
         # Seed settings row
         conn.execute("""
@@ -81,8 +91,8 @@ def init_db():
         if config.BOOTSTRAP_USER:
             username, full_name = config.BOOTSTRAP_USER
             conn.execute("""
-                INSERT OR IGNORE INTO users (uq_username, full_name, created_at)
-                VALUES (?, ?, ?)
+                INSERT OR IGNORE INTO users (uq_username, full_name, is_admin, is_active, created_at)
+                VALUES (?, ?, 1, 1, ?)
             """, (username, full_name, datetime.utcnow().isoformat()))
 
 
@@ -91,7 +101,7 @@ def init_db():
 def get_users():
     with get_db() as conn:
         rows = conn.execute(
-            "SELECT uq_username, full_name, created_at FROM users ORDER BY full_name"
+            "SELECT id, uq_username, full_name, is_admin, is_active, created_at FROM users ORDER BY full_name"
         ).fetchall()
     return [dict(r) for r in rows]
 
@@ -99,23 +109,80 @@ def get_users():
 def user_exists(uq_username: str) -> bool:
     with get_db() as conn:
         row = conn.execute(
-            "SELECT 1 FROM users WHERE uq_username = ?", (uq_username,)
+            "SELECT 1 FROM users WHERE uq_username = ? AND is_active = 1", (uq_username,)
         ).fetchone()
     return row is not None
 
 
-def add_user(uq_username: str, full_name: str):
+def get_user_by_username(uq_username: str) -> dict | None:
+    with get_db() as conn:
+        row = conn.execute(
+            "SELECT * FROM users WHERE uq_username = ?",
+            (uq_username.strip().lower(),),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def get_user_by_id(user_id: int) -> dict | None:
+    with get_db() as conn:
+        row = conn.execute("SELECT * FROM users WHERE id = ?", (user_id,)).fetchone()
+    return dict(row) if row else None
+
+
+def count_active_admins() -> int:
+    with get_db() as conn:
+        row = conn.execute(
+            "SELECT COUNT(*) AS c FROM users WHERE is_admin = 1 AND is_active = 1"
+        ).fetchone()
+    return int(row["c"]) if row else 0
+
+
+def add_user(uq_username: str, full_name: str, password_hash: str | None = None,
+             is_admin: bool = False, is_active: bool = True):
     with get_db() as conn:
         conn.execute(
-            "INSERT INTO users (uq_username, full_name, created_at) VALUES (?, ?, ?)",
-            (uq_username.strip().lower(), full_name.strip(),
-             datetime.utcnow().isoformat()),
+            """
+            INSERT INTO users (uq_username, full_name, password_hash, is_admin, is_active, created_at)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                uq_username.strip().lower(),
+                full_name.strip(),
+                password_hash,
+                1 if is_admin else 0,
+                1 if is_active else 0,
+                datetime.utcnow().isoformat(),
+            ),
         )
 
 
 def remove_user(uq_username: str):
     with get_db() as conn:
         conn.execute("DELETE FROM users WHERE uq_username = ?", (uq_username,))
+
+
+def update_user(user_id: int, *, full_name: str | None = None,
+                is_admin: bool | None = None, is_active: bool | None = None):
+    fields, values = [], []
+    if full_name is not None:
+        fields.append("full_name = ?")
+        values.append(full_name.strip())
+    if is_admin is not None:
+        fields.append("is_admin = ?")
+        values.append(1 if is_admin else 0)
+    if is_active is not None:
+        fields.append("is_active = ?")
+        values.append(1 if is_active else 0)
+    if not fields:
+        return
+    values.append(user_id)
+    with get_db() as conn:
+        conn.execute(f"UPDATE users SET {', '.join(fields)} WHERE id = ?", values)
+
+
+def set_user_password(user_id: int, password_hash: str):
+    with get_db() as conn:
+        conn.execute("UPDATE users SET password_hash = ? WHERE id = ?", (password_hash, user_id))
 
 
 # ── Settings ───────────────────────────────────────────────────────────────────

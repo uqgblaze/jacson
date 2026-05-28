@@ -11,7 +11,8 @@ import pytz
 
 import db
 import config
-from app.auth import require_auth, get_remote_user
+from app.auth import require_auth, require_admin, get_remote_user
+from werkzeug.security import generate_password_hash
 from app.runner import start_job, _calc_next_run
 
 api_bp = Blueprint("api", __name__)
@@ -202,13 +203,13 @@ def _calc_next_run_with(schedule_time: str, schedule_days: str) -> str | None:
 # ── Users ──────────────────────────────────────────────────────────────────────
 
 @api_bp.route("/users", methods=["GET"])
-@require_auth
+@require_admin
 def list_users():
     return jsonify(db.get_users())
 
 
 @api_bp.route("/users", methods=["POST"])
-@require_auth
+@require_admin
 def add_user():
     data = request.get_json(force=True)
     username = (data.get("uq_username") or "").strip().lower()
@@ -232,10 +233,84 @@ def add_user():
 
 
 @api_bp.route("/users/<uq_username>", methods=["DELETE"])
-@require_auth
+@require_admin
 def delete_user(uq_username: str):
     current = get_remote_user()
     if uq_username == current:
         return jsonify({"error": "You cannot remove yourself"}), 400
     db.remove_user(uq_username)
     return "", 204
+
+
+def _validate_password(password: str) -> str | None:
+    if len(password) < 10:
+        return "Password must be at least 10 characters."
+    if password.lower() == password or password.upper() == password:
+        return "Password must include both uppercase and lowercase letters."
+    if not any(ch.isdigit() for ch in password):
+        return "Password must include at least one number."
+    return None
+
+
+@api_bp.route("/admin/users", methods=["POST"])
+@require_admin
+def admin_create_user():
+    data = request.get_json(force=True) or {}
+    username = (data.get("uq_username") or "").strip().lower()
+    full_name = (data.get("full_name") or "").strip()
+    password = (data.get("password") or "").strip()
+    is_admin = bool(data.get("is_admin", False))
+    is_active = bool(data.get("is_active", True))
+    if not username or not full_name or not password:
+        return jsonify({"error": "uq_username, full_name and password are required"}), 400
+    import re
+    if not re.fullmatch(r"[a-z0-9]{3,20}", username):
+        return jsonify({"error": "Invalid UQ username format"}), 400
+    weak_reason = _validate_password(password)
+    if weak_reason:
+        return jsonify({"error": weak_reason}), 400
+    try:
+        db.add_user(username, full_name, generate_password_hash(password), is_admin=is_admin, is_active=is_active)
+    except Exception as exc:
+        if "UNIQUE" in str(exc):
+            return jsonify({"error": f"{username} is already a JacDash user"}), 409
+        raise
+    return jsonify(db.get_user_by_username(username)), 201
+
+
+@api_bp.route("/admin/users/<int:user_id>", methods=["PATCH"])
+@require_admin
+def admin_update_user(user_id: int):
+    existing = db.get_user_by_id(user_id)
+    if not existing:
+        return jsonify({"error": "User not found"}), 404
+    data = request.get_json(force=True) or {}
+    is_admin = data.get("is_admin")
+    is_active = data.get("is_active")
+    full_name = data.get("full_name")
+    if full_name is not None and not str(full_name).strip():
+        return jsonify({"error": "full_name cannot be empty"}), 400
+    new_is_admin = bool(is_admin) if is_admin is not None else bool(existing["is_admin"])
+    new_is_active = bool(is_active) if is_active is not None else bool(existing["is_active"])
+    if bool(existing["is_admin"]) and bool(existing["is_active"]) and (not new_is_admin or not new_is_active):
+        if db.count_active_admins() <= 1:
+            return jsonify({"error": "Invalid state: cannot deactivate or demote the last active admin"}), 400
+    db.update_user(user_id, full_name=full_name, is_admin=is_admin, is_active=is_active)
+    return jsonify(db.get_user_by_id(user_id))
+
+
+@api_bp.route("/admin/users/<int:user_id>/reset-password", methods=["POST"])
+@require_admin
+def admin_reset_password(user_id: int):
+    existing = db.get_user_by_id(user_id)
+    if not existing:
+        return jsonify({"error": "User not found"}), 404
+    data = request.get_json(force=True) or {}
+    password = (data.get("password") or "").strip()
+    if not password:
+        return jsonify({"error": "password is required"}), 400
+    weak_reason = _validate_password(password)
+    if weak_reason:
+        return jsonify({"error": weak_reason}), 400
+    db.set_user_password(user_id, generate_password_hash(password))
+    return jsonify({"status": "ok"})
