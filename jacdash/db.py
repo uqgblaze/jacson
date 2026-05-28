@@ -13,6 +13,7 @@ import json
 import os
 from datetime import datetime
 from contextlib import contextmanager
+from werkzeug.security import generate_password_hash
 
 import config
 
@@ -42,7 +43,11 @@ def init_db():
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
                 uq_username TEXT    UNIQUE NOT NULL,
                 full_name   TEXT    NOT NULL,
-                created_at  TEXT    NOT NULL
+                created_at  TEXT    NOT NULL,
+                password_hash TEXT,
+                is_admin    INTEGER NOT NULL DEFAULT 0,
+                is_active   INTEGER NOT NULL DEFAULT 1,
+                last_login_at TEXT
             );
 
             CREATE TABLE IF NOT EXISTS settings (
@@ -65,6 +70,8 @@ def init_db():
             );
         """)
 
+        _ensure_users_columns(conn)
+
         # Seed settings row
         conn.execute("""
             INSERT OR IGNORE INTO settings (id, schedule_time, schedule_days)
@@ -85,6 +92,45 @@ def init_db():
                 VALUES (?, ?, ?)
             """, (username, full_name, datetime.utcnow().isoformat()))
 
+        if config.AUTH_MODE == "local":
+            _ensure_local_admin(conn)
+
+
+def _ensure_users_columns(conn):
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(users)").fetchall()}
+    if "password_hash" not in cols:
+        conn.execute("ALTER TABLE users ADD COLUMN password_hash TEXT")
+    if "is_admin" not in cols:
+        conn.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+    if "is_active" not in cols:
+        conn.execute("ALTER TABLE users ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1")
+    if "last_login_at" not in cols:
+        conn.execute("ALTER TABLE users ADD COLUMN last_login_at TEXT")
+
+
+def _ensure_local_admin(conn):
+    row = conn.execute("SELECT COUNT(*) FROM users WHERE is_admin = 1 AND is_active = 1").fetchone()
+    if row and row[0] > 0:
+        return
+    username, full_name = config.BOOTSTRAP_USER or ("admin", "Local Administrator")
+    username = username.strip().lower()
+    password = os.environ.get("JACDASH_BOOTSTRAP_PASSWORD", "admin123")
+    password_hash = generate_password_hash(password)
+    conn.execute(
+        """
+        INSERT OR IGNORE INTO users (uq_username, full_name, created_at, password_hash, is_admin, is_active)
+        VALUES (?, ?, ?, ?, 1, 1)
+        """,
+        (username, full_name, datetime.utcnow().isoformat(), password_hash),
+    )
+    conn.execute(
+        """
+        UPDATE users SET password_hash = COALESCE(password_hash, ?), is_admin = 1, is_active = 1
+        WHERE uq_username = ?
+        """,
+        (password_hash, username),
+    )
+
 
 # ── Users ──────────────────────────────────────────────────────────────────────
 
@@ -102,6 +148,22 @@ def user_exists(uq_username: str) -> bool:
             "SELECT 1 FROM users WHERE uq_username = ?", (uq_username,)
         ).fetchone()
     return row is not None
+
+
+def get_user_by_username(uq_username: str):
+    with get_db() as conn:
+        row = conn.execute(
+            "SELECT * FROM users WHERE uq_username = ?", (uq_username.strip().lower(),)
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def set_last_login(uq_username: str):
+    with get_db() as conn:
+        conn.execute(
+            "UPDATE users SET last_login_at = ? WHERE uq_username = ?",
+            (datetime.utcnow().isoformat(), uq_username.strip().lower()),
+        )
 
 
 def add_user(uq_username: str, full_name: str):

@@ -28,9 +28,10 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from app import create_app
+import config
 
 application = create_app()
 
 # For local development / testing without Apache:
 if __name__ == "__main__":
-    application.run(debug=True, port=5050)
+    application.run(host=config.HOST, port=config.PORT, debug=True)

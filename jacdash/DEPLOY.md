@@ -435,3 +435,43 @@ You do **not** need to restart the cron job — it re-reads the script every min
 | Save in nano | `Ctrl+O` then Enter |
 | Exit nano | `Ctrl+X` |
 | Disconnect SSH | `exit` |
+
+---
+
+## Part 10 — Raspberry Pi 3B deployment (LAN access on port 1909)
+
+Use this path if you are running JacDash directly on a Raspberry Pi 3B (Raspberry Pi OS), without Apache/mod_wsgi.
+
+1. SSH into the Pi and go to the project root:
+
+```bash
+cd /path/to/jacson
+```
+
+2. Create and activate a virtual environment (if not already done):
+
+```bash
+python3 -m venv venv
+venv/bin/pip install --upgrade pip
+venv/bin/pip install -r scripts/requirements.txt
+venv/bin/pip install -r jacdash/requirements.txt
+```
+
+3. Start JacDash bound to all network interfaces (LAN) on port **1909**:
+
+```bash
+cd jacdash
+../venv/bin/python wsgi.py
+```
+
+JacDash now listens on `0.0.0.0:1909`, so devices on the same LAN can access it at:
+
+```text
+http://<raspberry-pi-ip>:1909/
+```
+
+4. Manual runs from the dashboard:
+- The **Start Manual Run** button triggers `run_JacSON.py`.
+- Output from that run streams into the JacDash terminal panel in real time.
+
+> Optional: if you need a different host/port later, set `JACDASH_HOST` and `JACDASH_PORT` before starting `wsgi.py`.

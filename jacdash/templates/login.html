@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JacDash Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/jacdash.css') }}">
+</head>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#100015;color:#fff;">
+  <form method="post" style="width:360px;background:#1f0029;padding:1.2rem;border-radius:10px;border:1px solid #51247A;">
+    <h2 style="margin-top:0">JacDash Sign In</h2>
+    <label>Username</label>
+    <input name="username" type="text" autocomplete="username" required style="width:100%;margin:.4rem 0 1rem;"/>
+    <label>Password</label>
+    <input name="password" type="password" autocomplete="current-password" required style="width:100%;margin:.4rem 0 1rem;"/>
+    {% if error %}<div style="color:#ff9c9c;margin-bottom:.8rem;">{{ error }}</div>{% endif %}
+    <button class="jd-btn jd-btn--primary" type="submit" style="width:100%;">Sign in</button>
+  </form>
+</body>
+</html>

@@ -3,6 +3,7 @@ app/__init__.py — Flask application factory for JacDash.
 """
 
 from flask import Flask
+from datetime import timedelta
 import config
 import db
 
@@ -14,6 +15,11 @@ def create_app():
         static_folder="../static",
     )
     app.secret_key = config.SECRET_KEY
+    app.config.update(
+        SESSION_COOKIE_HTTPONLY=True,
+        SESSION_COOKIE_SAMESITE="Lax",
+        PERMANENT_SESSION_LIFETIME=timedelta(hours=12),
+    )
 
     # Initialise DB (creates tables + bootstrap user if needed)
     db.init_db()
