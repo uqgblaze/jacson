@@ -2,9 +2,7 @@
 app/views.py — Main page route for JacDash.
 """
 
-import flask
-from flask import Blueprint, render_template, redirect, url_for
-from werkzeug.security import check_password_hash
+from flask import Blueprint, render_template
 from app.auth import require_auth, get_current_user
 import config
 import db
@@ -30,14 +28,14 @@ def login():
         return redirect(url_for("views.index"))
 
     error = ""
-    if flask.request.method == "POST":
-        username = (flask.request.form.get("username") or "").strip().lower()
-        password = flask.request.form.get("password") or ""
+    if request.method == "POST":
+        username = (request.form.get("username") or "").strip().lower()
+        password = request.form.get("password") or ""
         user = db.get_user_by_username(username)
         if user and user.get("is_active") and user.get("password_hash") and check_password_hash(user["password_hash"], password):
-            flask.session.clear()
-            flask.session["username"] = username
-            flask.session["is_admin"] = bool(user.get("is_admin"))
+            session.clear()
+            session["username"] = username
+            session["is_admin"] = bool(user.get("is_admin"))
             db.set_last_login(username)
             return redirect(url_for("views.index"))
         error = "Invalid username or password."
@@ -47,5 +45,5 @@ def login():
 
 @views_bp.route("/logout", methods=["POST"])
 def logout():
-    flask.session.clear()
+    session.clear()
     return redirect(url_for("views.login"))

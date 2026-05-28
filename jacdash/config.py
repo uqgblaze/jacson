@@ -53,9 +53,11 @@ BOOTSTRAP_USER = ("uqgblaze", "Geoffrey Blazer")
 SECRET_KEY = os.environ.get("JACDASH_SECRET_KEY", "your-long-secret-key-here")
 
 # Authentication mode:
-# - "sso": trust REMOTE_USER from Shibboleth/reverse proxy
-# - "local": username/password login backed by JacDash SQLite
+#   - "sso"   : trust REMOTE_USER from Apache/Shibboleth (UQ deployment)
+#   - "local" : trust Flask session values set by local login flow
 AUTH_MODE = os.environ.get("JACDASH_AUTH_MODE", "local").strip().lower()
+if AUTH_MODE not in {"sso", "local"}:
+    AUTH_MODE = "local"
 
 # Local/LAN host + port (Raspberry Pi friendly default)
 HOST = os.environ.get("JACDASH_HOST", "0.0.0.0")
