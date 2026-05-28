@@ -126,18 +126,22 @@ def log():
 
 # ── Schedule ───────────────────────────────────────────────────────────────────
 
-@api_bp.route("/schedule", methods=["GET", "POST"])
+@api_bp.route("/schedule", methods=["GET"])
 @require_auth
-def schedule():
-    if request.method == "GET":
-        settings = db.get_settings()
-        state = db.get_job_state()
-        return jsonify({
-            "time": settings.get("schedule_time"),
-            "days": settings.get("schedule_days"),
-            "next_run_at": state.get("next_run_at"),
-        })
+def get_schedule():
+    settings = db.get_settings()
+    state = db.get_job_state()
+    return jsonify({
+        "time": settings.get("schedule_time"),
+        "days": settings.get("schedule_days"),
+        "next_run_at": state.get("next_run_at"),
+    })
 
+
+@api_bp.route("/schedule", methods=["POST"])
+@require_auth
+@require_admin
+def update_schedule():
     data = request.get_json(force=True)
     schedule_time = data.get("time", "").strip()
     schedule_days = data.get("days", "").strip()
@@ -208,6 +212,7 @@ def list_users():
 
 
 @api_bp.route("/users", methods=["POST"])
+@require_auth
 @require_admin
 def add_user():
     data = request.get_json(force=True)
@@ -232,6 +237,7 @@ def add_user():
 
 
 @api_bp.route("/users/<uq_username>", methods=["DELETE"])
+@require_auth
 @require_admin
 def delete_user(uq_username: str):
     current = get_current_user()

@@ -206,16 +206,3 @@ http://<pi-lan-ip>:1909/
 - Live output is streamed back into the dashboard terminal panel.
 
 This lets you run and monitor the scraper from any device on the same LAN.
-
-### Local authentication mode (for Raspberry Pi / home LAN)
-
-If you are not using UQ SSO/Shibboleth, set local auth mode before launching JacDash:
-
-```bash
-export JACDASH_AUTH_MODE=local
-export JACDASH_BOOTSTRAP_PASSWORD='change-this-now'
-cd jacdash
-../venv/bin/python wsgi.py
-```
-
-Then open `/login` and sign in with the bootstrap user from `jacdash/config.py` (`BOOTSTRAP_USER`).

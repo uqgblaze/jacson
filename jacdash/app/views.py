@@ -2,8 +2,7 @@
 app/views.py — Main page route for JacDash.
 """
 
-from flask import Blueprint, render_template, request, redirect, url_for, session
-from werkzeug.security import check_password_hash
+from flask import Blueprint, render_template
 from app.auth import require_auth, get_current_user
 import config
 import db
