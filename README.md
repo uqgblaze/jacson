@@ -77,7 +77,7 @@ If you want the scraper to upload the generated JSON to GitHub:
 
 1. Create a Personal Access Token on GitHub (Settings → Developer settings → Personal access tokens) with `repo` scope.
 2. Create a `secrets` folder in the project root.
-3. Create a file `secrets/github_token.txt` and paste the token (one line, no spaces).
+3. Set `JACSON_GITHUB_TOKEN` in your environment (service config or shell profile).
 
 If you skip this, the scraper will still run and save JSON under `profiles/`; only the upload step will be skipped or fail.
 
@@ -115,7 +115,7 @@ Edit `course-list.csv` in the project root (included / excluded course codes as 
 
 ### 4. (Optional) GitHub upload
 
-Same as Pi: create `secrets/github_token.txt` with your GitHub Personal Access Token if you want automatic upload to a repo.
+Same as Pi: set `JACSON_GITHUB_TOKEN` in your environment if you want automatic upload to a repo.
 
 ### 5. Run the scraper
 

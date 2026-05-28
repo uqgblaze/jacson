@@ -10,8 +10,8 @@ It is written for someone who is not regularly working with SSH or Linux servers
 - **UQCloud access** — a Linux virtual machine provisioned for your project. If you don't have one yet, raise a request through [UQ ITS](https://my.uq.edu.au/information-and-services/information-technology/information-technology-support).
 - **SSH access** — your UQ username and password (or an SSH key if ITS set one up for you).
 - **The JacSON project files** — the `v1.2.0` folder on your local machine.
-- **Your GitHub Personal Access Token** — stored in `secrets/github_token.txt`.
-- **Your Google service account credentials** — stored in `secrets/credentials.json`.
+- **Your GitHub Personal Access Token** — provided via the `JACSON_GITHUB_TOKEN` environment variable.
+- **Your Google service account credentials** — provided via `GOOGLE_APPLICATION_CREDENTIALS` (path in env var).
 
 > **Note on Shibboleth (UQ SSO):** JacDash sits behind UQ's Single Sign-On system. Configuring SSO requires ITS involvement — this guide covers everything you can do yourself, and flags clearly what needs an ITS request.
 

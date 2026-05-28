@@ -63,6 +63,16 @@ def init_db():
                 courses_skipped INTEGER,
                 next_run_at     TEXT
             );
+
+            CREATE TABLE IF NOT EXISTS auth_events (
+                id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                created_at  TEXT NOT NULL,
+                event_type  TEXT NOT NULL,
+                username    TEXT,
+                ip_address  TEXT,
+                outcome     TEXT NOT NULL,
+                details     TEXT
+            );
         """)
 
         # Seed settings row
@@ -222,3 +232,15 @@ def count_courses() -> int:
     except OSError:
         return 0
     return count
+
+
+def log_auth_event(event_type: str, outcome: str, username: str | None = None,
+                   ip_address: str | None = None, details: str | None = None):
+    with get_db() as conn:
+        conn.execute(
+            """
+            INSERT INTO auth_events (created_at, event_type, username, ip_address, outcome, details)
+            VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (datetime.utcnow().isoformat(), event_type, username, ip_address, outcome, details),
+        )

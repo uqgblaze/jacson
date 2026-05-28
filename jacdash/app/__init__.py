@@ -14,6 +14,10 @@ def create_app():
         static_folder="../static",
     )
     app.secret_key = config.SECRET_KEY
+    if app.debug:
+        app.logger.warning(
+            "WARNING: Running with debug=True and local auth fallback can bypass SSO expectations."
+        )
 
     # Initialise DB (creates tables + bootstrap user if needed)
     db.init_db()

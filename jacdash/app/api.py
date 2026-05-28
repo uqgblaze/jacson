@@ -227,6 +227,13 @@ def add_user():
         if "UNIQUE" in str(exc):
             return jsonify({"error": f"{username} is already a JacDash user"}), 409
         raise
+    db.log_auth_event(
+        "user_create",
+        "success",
+        username=get_remote_user(),
+        ip_address=request.remote_addr,
+        details=f"Created user {username}",
+    )
 
     return jsonify({"uq_username": username, "full_name": full_name}), 201
 
@@ -238,4 +245,11 @@ def delete_user(uq_username: str):
     if uq_username == current:
         return jsonify({"error": "You cannot remove yourself"}), 400
     db.remove_user(uq_username)
+    db.log_auth_event(
+        "user_deactivate",
+        "success",
+        username=current,
+        ip_address=request.remote_addr,
+        details=f"Removed user {uq_username}",
+    )
     return "", 204

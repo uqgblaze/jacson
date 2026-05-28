@@ -60,3 +60,15 @@ PORT = int(os.environ.get("JACDASH_PORT", "1909"))
 # Applied when the settings row is first created.
 DEFAULT_SCHEDULE_TIME = "03:00"
 DEFAULT_SCHEDULE_DAYS = "Mon,Tue,Wed,Thu,Fri,Sat,Sun"
+
+# ── Local auth hardening ─────────────────────────────────────────────────────
+PASSWORD_MIN_LENGTH = int(os.environ.get("JACDASH_PASSWORD_MIN_LENGTH", "12"))
+PASSWORD_REQUIRE_UPPER = os.environ.get("JACDASH_PASSWORD_REQUIRE_UPPER", "1") == "1"
+PASSWORD_REQUIRE_LOWER = os.environ.get("JACDASH_PASSWORD_REQUIRE_LOWER", "1") == "1"
+PASSWORD_REQUIRE_DIGIT = os.environ.get("JACDASH_PASSWORD_REQUIRE_DIGIT", "1") == "1"
+PASSWORD_REQUIRE_SPECIAL = os.environ.get("JACDASH_PASSWORD_REQUIRE_SPECIAL", "1") == "1"
+BOOTSTRAP_PASSWORD = os.environ.get("JACDASH_BOOTSTRAP_PASSWORD")
+
+AUTH_LOCKOUT_THRESHOLD = int(os.environ.get("JACDASH_AUTH_LOCKOUT_THRESHOLD", "5"))
+AUTH_LOCKOUT_WINDOW_SECONDS = int(os.environ.get("JACDASH_AUTH_LOCKOUT_WINDOW_SECONDS", "900"))
+AUTH_LOCKOUT_SECONDS = int(os.environ.get("JACDASH_AUTH_LOCKOUT_SECONDS", "900"))
