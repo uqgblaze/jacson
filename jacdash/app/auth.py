@@ -8,8 +8,9 @@ Every request is checked here: the user must exist in the users table.
 
 import os
 from functools import wraps
-from flask import request, render_template, current_app
+from flask import request, render_template, current_app, session
 import db
+import config
 
 
 def get_remote_user() -> str | None:
@@ -26,6 +27,29 @@ def get_remote_user() -> str | None:
     return user.strip() if user else None
 
 
+def get_current_user() -> str | None:
+    """Return active username based on configured auth mode."""
+    if config.AUTH_MODE == "sso":
+        return get_remote_user()
+    username = session.get("username")
+    return username.strip() if isinstance(username, str) and username.strip() else None
+
+
+def _local_session_valid() -> bool:
+    """Validate required local-auth session keys and user access."""
+    user_id = session.get("user_id")
+    username = get_current_user()
+    is_admin = session.get("is_admin")
+
+    if not isinstance(user_id, int):
+        return False
+    if not username:
+        return False
+    if not isinstance(is_admin, bool):
+        return False
+    return db.user_exists(username)
+
+
 def require_auth(f):
     """
     Decorator that enforces:
@@ -35,14 +59,31 @@ def require_auth(f):
     """
     @wraps(f)
     def decorated(*args, **kwargs):
-        username = get_remote_user()
-        if not username:
-            return render_template("403.html", reason="No authenticated session detected."), 403
-        if not db.user_exists(username):
-            return render_template(
-                "403.html",
-                reason=f"Your UQ account ({username}) is not authorised to use JacDash. "
-                        "Please ask an existing JacDash administrator to add you."
-            ), 403
+        if config.AUTH_MODE == "sso":
+            username = get_remote_user()
+            if not username:
+                return render_template("403.html", reason="No authenticated session detected."), 403
+            if not db.user_exists(username):
+                return render_template(
+                    "403.html",
+                    reason=f"Your UQ account ({username}) is not authorised to use JacDash. "
+                            "Please ask an existing JacDash administrator to add you."
+                ), 403
+        else:
+            if not _local_session_valid():
+                return render_template("403.html", reason="No authenticated session detected."), 403
+        return f(*args, **kwargs)
+    return decorated
+
+
+def require_admin(f):
+    """Decorator enforcing admin-only access where configured."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if config.AUTH_MODE == "sso":
+            # Backwards compatible: SSO deployment keeps existing behaviour.
+            return f(*args, **kwargs)
+        if not _local_session_valid() or not session.get("is_admin", False):
+            return render_template("403.html", reason="Administrator access is required."), 403
         return f(*args, **kwargs)
     return decorated
