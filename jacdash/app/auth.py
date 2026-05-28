@@ -97,3 +97,13 @@ def require_admin(f):
             return render_template("403.html", reason="Administrator access is required."), 403
         return f(*args, **kwargs)
     return decorated
+
+
+def require_admin(f):
+    @wraps(f)
+    @require_auth
+    def decorated(*args, **kwargs):
+        if not is_admin():
+            return render_template("403.html", reason="Administrator access is required."), 403
+        return f(*args, **kwargs)
+    return decorated
