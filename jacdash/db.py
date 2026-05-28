@@ -14,7 +14,25 @@ import os
 from datetime import datetime
 from contextlib import contextmanager
 
+from werkzeug.security import generate_password_hash
+
 import config
+
+
+def _normalize_username(username: str) -> str:
+    return username.strip().lower()
+
+
+def _ensure_user_auth_columns(conn: sqlite3.Connection):
+    existing_columns = {row["name"] for row in conn.execute("PRAGMA table_info(users)").fetchall()}
+    if "password_hash" not in existing_columns:
+        conn.execute("ALTER TABLE users ADD COLUMN password_hash TEXT")
+    if "is_admin" not in existing_columns:
+        conn.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+    if "is_active" not in existing_columns:
+        conn.execute("ALTER TABLE users ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1")
+    if "last_login_at" not in existing_columns:
+        conn.execute("ALTER TABLE users ADD COLUMN last_login_at TEXT")
 
 
 @contextmanager
@@ -39,10 +57,14 @@ def init_db():
     with get_db() as conn:
         conn.executescript("""
             CREATE TABLE IF NOT EXISTS users (
-                id          INTEGER PRIMARY KEY AUTOINCREMENT,
-                uq_username TEXT    UNIQUE NOT NULL,
-                full_name   TEXT    NOT NULL,
-                created_at  TEXT    NOT NULL
+                id            INTEGER PRIMARY KEY AUTOINCREMENT,
+                uq_username   TEXT    UNIQUE NOT NULL,
+                full_name     TEXT    NOT NULL,
+                password_hash TEXT,
+                is_admin      INTEGER NOT NULL DEFAULT 0,
+                is_active     INTEGER NOT NULL DEFAULT 1,
+                last_login_at TEXT,
+                created_at    TEXT    NOT NULL
             );
 
             CREATE TABLE IF NOT EXISTS settings (
@@ -65,6 +87,8 @@ def init_db():
             );
         """)
 
+        _ensure_user_auth_columns(conn)
+
         # Seed settings row
         conn.execute("""
             INSERT OR IGNORE INTO settings (id, schedule_time, schedule_days)
@@ -83,7 +107,16 @@ def init_db():
             conn.execute("""
                 INSERT OR IGNORE INTO users (uq_username, full_name, created_at)
                 VALUES (?, ?, ?)
-            """, (username, full_name, datetime.utcnow().isoformat()))
+            """, (_normalize_username(username), full_name, datetime.utcnow().isoformat()))
+
+            bootstrap_password = getattr(config, "BOOTSTRAP_ADMIN_PASSWORD", None) or os.environ.get("BOOTSTRAP_ADMIN_PASSWORD")
+            if bootstrap_password:
+                create_local_user(
+                    username=username,
+                    full_name=full_name,
+                    password_hash=generate_password_hash(bootstrap_password),
+                    is_admin=True,
+                )
 
 
 # ── Users ──────────────────────────────────────────────────────────────────────
@@ -99,7 +132,7 @@ def get_users():
 def user_exists(uq_username: str) -> bool:
     with get_db() as conn:
         row = conn.execute(
-            "SELECT 1 FROM users WHERE uq_username = ?", (uq_username,)
+            "SELECT 1 FROM users WHERE uq_username = ?", (_normalize_username(uq_username),)
         ).fetchone()
     return row is not None
 
@@ -115,7 +148,62 @@ def add_user(uq_username: str, full_name: str):
 
 def remove_user(uq_username: str):
     with get_db() as conn:
-        conn.execute("DELETE FROM users WHERE uq_username = ?", (uq_username,))
+        conn.execute("DELETE FROM users WHERE uq_username = ?", (_normalize_username(uq_username),))
+
+
+def get_user_by_username(username: str):
+    with get_db() as conn:
+        row = conn.execute(
+            "SELECT * FROM users WHERE uq_username = ?",
+            (_normalize_username(username),),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def create_local_user(username: str, full_name: str, password_hash: str, is_admin: bool = False):
+    normalized_username = _normalize_username(username)
+    now = datetime.utcnow().isoformat()
+    with get_db() as conn:
+        conn.execute(
+            """
+            INSERT INTO users (uq_username, full_name, password_hash, is_admin, is_active, created_at)
+            VALUES (?, ?, ?, ?, 1, ?)
+            ON CONFLICT(uq_username) DO UPDATE SET
+                full_name=excluded.full_name,
+                password_hash=excluded.password_hash,
+                is_admin=excluded.is_admin,
+                is_active=1
+            """,
+            (normalized_username, full_name.strip(), password_hash, 1 if is_admin else 0, now),
+        )
+
+
+def set_user_password(user_id: int, password_hash: str):
+    with get_db() as conn:
+        conn.execute(
+            "UPDATE users SET password_hash = ? WHERE id = ?",
+            (password_hash, user_id),
+        )
+
+
+def set_user_active(user_id: int, is_active: bool):
+    with get_db() as conn:
+        conn.execute(
+            "UPDATE users SET is_active = ? WHERE id = ?",
+            (1 if is_active else 0, user_id),
+        )
+
+
+def list_users_with_roles():
+    with get_db() as conn:
+        rows = conn.execute(
+            """
+            SELECT id, uq_username, full_name, is_admin, is_active, last_login_at, created_at
+            FROM users
+            ORDER BY full_name
+            """
+        ).fetchall()
+    return [dict(r) for r in rows]
 
 
 # ── Settings ───────────────────────────────────────────────────────────────────
