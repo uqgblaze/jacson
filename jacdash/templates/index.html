@@ -104,6 +104,10 @@
 
       <div class="jd-sidebar-user">Signed in as <strong>{{ username }}</strong></div>
 
+      <form method="post" action="{{ url_for('views.logout') }}" style="margin-top:0.5rem;">
+        <button class="jd-link-btn" type="submit">Logout</button>
+      </form>
+
     </div><!-- /jd-sidebar-nav -->
   </aside>
 
