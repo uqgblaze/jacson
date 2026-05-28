@@ -11,7 +11,7 @@ import pytz
 
 import db
 import config
-from app.auth import require_auth, get_remote_user
+from app.auth import require_auth, require_admin, get_current_user
 from app.runner import start_job, _calc_next_run
 
 api_bp = Blueprint("api", __name__)
@@ -50,7 +50,7 @@ def dashboard():
             "days": settings.get("schedule_days"),
         },
         "courses_count": courses_count,
-        "username": get_remote_user(),
+        "username": get_current_user(),
     })
 
 
@@ -60,7 +60,7 @@ def dashboard():
 @require_auth
 def run():
     """Start a manual JacSON run. Returns 409 if already running."""
-    username = get_remote_user()
+    username = get_current_user()
     try:
         result = start_job(triggered_by=username, is_scheduled=False)
     except RuntimeError as exc:
@@ -126,18 +126,22 @@ def log():
 
 # ── Schedule ───────────────────────────────────────────────────────────────────
 
-@api_bp.route("/schedule", methods=["GET", "POST"])
+@api_bp.route("/schedule", methods=["GET"])
 @require_auth
-def schedule():
-    if request.method == "GET":
-        settings = db.get_settings()
-        state = db.get_job_state()
-        return jsonify({
-            "time": settings.get("schedule_time"),
-            "days": settings.get("schedule_days"),
-            "next_run_at": state.get("next_run_at"),
-        })
+def get_schedule():
+    settings = db.get_settings()
+    state = db.get_job_state()
+    return jsonify({
+        "time": settings.get("schedule_time"),
+        "days": settings.get("schedule_days"),
+        "next_run_at": state.get("next_run_at"),
+    })
 
+
+@api_bp.route("/schedule", methods=["POST"])
+@require_auth
+@require_admin
+def update_schedule():
     data = request.get_json(force=True)
     schedule_time = data.get("time", "").strip()
     schedule_days = data.get("days", "").strip()
@@ -209,6 +213,7 @@ def list_users():
 
 @api_bp.route("/users", methods=["POST"])
 @require_auth
+@require_admin
 def add_user():
     data = request.get_json(force=True)
     username = (data.get("uq_username") or "").strip().lower()
@@ -233,8 +238,9 @@ def add_user():
 
 @api_bp.route("/users/<uq_username>", methods=["DELETE"])
 @require_auth
+@require_admin
 def delete_user(uq_username: str):
-    current = get_remote_user()
+    current = get_current_user()
     if uq_username == current:
         return jsonify({"error": "You cannot remove yourself"}), 400
     db.remove_user(uq_username)
