@@ -13,6 +13,7 @@ import json
 import os
 from datetime import datetime
 from contextlib import contextmanager
+from werkzeug.security import generate_password_hash
 
 import config
 
@@ -42,6 +43,7 @@ def init_db():
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
                 uq_username TEXT    UNIQUE NOT NULL,
                 full_name   TEXT    NOT NULL,
+                password_hash TEXT,
                 created_at  TEXT    NOT NULL
             );
 
@@ -66,6 +68,8 @@ def init_db():
         """)
 
         # Seed settings row
+        _ensure_user_password_hash_column(conn)
+
         conn.execute("""
             INSERT OR IGNORE INTO settings (id, schedule_time, schedule_days)
             VALUES (1, ?, ?)
@@ -85,6 +89,13 @@ def init_db():
                 VALUES (?, ?, ?)
             """, (username, full_name, datetime.utcnow().isoformat()))
 
+        bootstrap_password = os.environ.get("JACDASH_BOOTSTRAP_PASSWORD")
+        if bootstrap_password and config.BOOTSTRAP_USER:
+            conn.execute(
+                "UPDATE users SET password_hash = ? WHERE uq_username = ?",
+                (generate_password_hash(bootstrap_password), config.BOOTSTRAP_USER[0]),
+            )
+
 
 # ── Users ──────────────────────────────────────────────────────────────────────
 
@@ -96,12 +107,36 @@ def get_users():
     return [dict(r) for r in rows]
 
 
+def _ensure_user_password_hash_column(conn):
+    cols = conn.execute("PRAGMA table_info(users)").fetchall()
+    names = {c[1] for c in cols}
+    if "password_hash" not in names:
+        conn.execute("ALTER TABLE users ADD COLUMN password_hash TEXT")
+
+
 def user_exists(uq_username: str) -> bool:
     with get_db() as conn:
         row = conn.execute(
             "SELECT 1 FROM users WHERE uq_username = ?", (uq_username,)
         ).fetchone()
     return row is not None
+
+
+def get_user_by_username(uq_username: str) -> dict | None:
+    with get_db() as conn:
+        row = conn.execute(
+            "SELECT uq_username, full_name, password_hash FROM users WHERE uq_username = ?",
+            (uq_username.strip().lower(),),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def set_user_password(uq_username: str, password_hash: str):
+    with get_db() as conn:
+        conn.execute(
+            "UPDATE users SET password_hash = ? WHERE uq_username = ?",
+            (password_hash, uq_username.strip().lower()),
+        )
 
 
 def add_user(uq_username: str, full_name: str):

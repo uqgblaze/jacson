@@ -4,6 +4,7 @@ Edit these values before deploying to UQCloud.
 """
 
 import os
+from datetime import timedelta
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 # Root of the JacDash application (this file's directory)
@@ -51,6 +52,15 @@ BOOTSTRAP_USER = ("uqgblaze", "Geoffrey Blazer")
 # ── Flask ──────────────────────────────────────────────────────────────────────
 # Change this to a long random string in production.
 SECRET_KEY = os.environ.get("JACDASH_SECRET_KEY", "your-long-secret-key-here")
+LOCAL_AUTH_ENABLED = os.environ.get("JACDASH_LOCAL_AUTH", "0") == "1"
+
+# Session hardening
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_SECURE = os.environ.get("JACDASH_SESSION_COOKIE_SECURE", "0") == "1"
+PERMANENT_SESSION_LIFETIME = timedelta(
+    minutes=int(os.environ.get("JACDASH_SESSION_IDLE_TIMEOUT_MINUTES", "60"))
+)
 
 # Local/LAN host + port (Raspberry Pi friendly default)
 HOST = os.environ.get("JACDASH_HOST", "0.0.0.0")
