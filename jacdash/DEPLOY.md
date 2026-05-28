@@ -236,6 +236,36 @@ Press `Ctrl+C` to stop it. If you see any Python errors here, fix them before co
 
 ---
 
+
+## JacDash admin bootstrap and recovery (Pi/local + UQCloud)
+
+On startup, JacDash checks if any **active admin** exists in the database. If none exist, it can bootstrap one admin from environment variables:
+
+```bash
+export JACDASH_BOOTSTRAP_ADMIN_USER="uqusername:Full Name"
+export JACDASH_BOOTSTRAP_ADMIN_PASSWORD="Temp-Strong-Password"
+```
+
+Then start JacDash as normal. The startup logs will explicitly report one of these states:
+- bootstrap ran and created an admin
+- bootstrap skipped because an admin already exists
+- bootstrap could not run because env vars are missing
+
+### One-time-use safety guidance
+
+Bootstrap credentials are for emergency/first-run only:
+- use once to recover access,
+- then immediately rotate to your normal admin credential process,
+- and unset/remove both environment variables.
+
+### Lost admin password / no admin access recovery
+
+1. Stop the JacDash process.
+2. Set fresh temporary bootstrap env vars (above).
+3. Start JacDash and confirm log output says bootstrap ran.
+4. Sign in with the recovered admin account and complete immediate credential rotation.
+5. Remove bootstrap env vars from shell startup, systemd unit, or Apache env config.
+
 ## Part 7 — Configure Apache
 
 Apache serves JacDash to the web. You'll need **sudo access** for this section — if you don't have it, send the configuration snippet to ITS and ask them to apply it.

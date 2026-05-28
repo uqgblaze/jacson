@@ -199,6 +199,30 @@ By default, JacDash binds to `0.0.0.0` and port `1909`, so open:
 http://<pi-lan-ip>:1909/
 ```
 
+
+### JacDash first-run admin bootstrap (Raspberry Pi / local LAN)
+
+JacDash now checks startup for **active admin users**. If none exist, it can create one admin via environment variables:
+
+```bash
+export JACDASH_BOOTSTRAP_ADMIN_USER="uqusername:Your Name"
+export JACDASH_BOOTSTRAP_ADMIN_PASSWORD="Temp-Strong-Password"
+cd jacdash
+../venv/bin/python wsgi.py
+```
+
+Startup log output will clearly say whether bootstrap ran.
+
+- If bootstrap runs, remove/unset those env vars immediately after first successful login.
+- Treat bootstrap credentials as **one-time-use** and rotate to a new password process straight away.
+- If an active admin already exists, bootstrap is skipped.
+
+**Recovery when admin access is lost (Pi/local):**
+1. Stop JacDash.
+2. Re-export `JACDASH_BOOTSTRAP_ADMIN_USER` and `JACDASH_BOOTSTRAP_ADMIN_PASSWORD` with a new temporary pair.
+3. Start JacDash and confirm log: `Bootstrap admin created ...`.
+4. Log in with SSO account matching the bootstrap username, then clean up/rotate and unset the variables.
+
 ### Triggering JacSON from the web dashboard
 
 - Click **Start Manual Run** in JacDash.

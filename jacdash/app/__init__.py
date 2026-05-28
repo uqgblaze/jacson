@@ -15,8 +15,9 @@ def create_app():
     )
     app.secret_key = config.SECRET_KEY
 
-    # Initialise DB (creates tables + bootstrap user if needed)
-    db.init_db()
+    # Initialise DB (creates tables + optional bootstrap admin)
+    init_status = db.init_db()
+    app.logger.info("[JacDash Bootstrap] %s", init_status["message"])
 
     # Register blueprints
     from app.views import views_bp

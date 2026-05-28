@@ -11,6 +11,7 @@ job_state   — single-row current / most-recent job state
 import sqlite3
 import json
 import os
+import hashlib
 from datetime import datetime
 from contextlib import contextmanager
 
@@ -34,6 +35,19 @@ def get_db():
         conn.close()
 
 
+def _parse_bootstrap_admin_user(raw_user: str):
+    raw = (raw_user or "").strip()
+    if not raw:
+        return None, None
+    if ":" in raw:
+        username, full_name = raw.split(":", 1)
+    else:
+        username, full_name = raw, raw
+    username = username.strip().lower()
+    full_name = full_name.strip() or username
+    return username, full_name
+
+
 def init_db():
     """Create tables and seed bootstrap data if they don't exist yet."""
     with get_db() as conn:
@@ -42,7 +56,16 @@ def init_db():
                 id          INTEGER PRIMARY KEY AUTOINCREMENT,
                 uq_username TEXT    UNIQUE NOT NULL,
                 full_name   TEXT    NOT NULL,
+                is_admin    INTEGER NOT NULL DEFAULT 0,
+                is_active   INTEGER NOT NULL DEFAULT 1,
                 created_at  TEXT    NOT NULL
+            );
+
+            CREATE TABLE IF NOT EXISTS bootstrap_admin_secrets (
+                id                  INTEGER PRIMARY KEY CHECK (id = 1),
+                username            TEXT NOT NULL,
+                password_sha256     TEXT NOT NULL,
+                created_at          TEXT NOT NULL
             );
 
             CREATE TABLE IF NOT EXISTS settings (
@@ -77,13 +100,49 @@ def init_db():
             VALUES (1, 'idle', 0)
         """)
 
-        # Seed bootstrap user
-        if config.BOOTSTRAP_USER:
-            username, full_name = config.BOOTSTRAP_USER
-            conn.execute("""
-                INSERT OR IGNORE INTO users (uq_username, full_name, created_at)
-                VALUES (?, ?, ?)
-            """, (username, full_name, datetime.utcnow().isoformat()))
+        # Backfill older DBs that predate admin/active columns
+        columns = {
+            row[1] for row in conn.execute("PRAGMA table_info(users)").fetchall()
+        }
+        if "is_admin" not in columns:
+            conn.execute("ALTER TABLE users ADD COLUMN is_admin INTEGER NOT NULL DEFAULT 0")
+        if "is_active" not in columns:
+            conn.execute("ALTER TABLE users ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1")
+
+        # Ensure at least one active admin exists, optionally from env bootstrap vars
+        admin_count = conn.execute(
+            "SELECT COUNT(1) FROM users WHERE is_admin = 1 AND is_active = 1"
+        ).fetchone()[0]
+        bootstrap_ran = False
+        bootstrap_message = "Bootstrap skipped: active admin already exists."
+
+        if admin_count == 0:
+            username, full_name = _parse_bootstrap_admin_user(config.BOOTSTRAP_ADMIN_USER)
+            password = (config.BOOTSTRAP_ADMIN_PASSWORD or "").strip()
+            if username and password:
+                now = datetime.utcnow().isoformat()
+                conn.execute("""
+                    INSERT OR IGNORE INTO users
+                    (uq_username, full_name, is_admin, is_active, created_at)
+                    VALUES (?, ?, 1, 1, ?)
+                """, (username, full_name, now))
+                conn.execute("""
+                    INSERT OR REPLACE INTO bootstrap_admin_secrets
+                    (id, username, password_sha256, created_at)
+                    VALUES (1, ?, ?, ?)
+                """, (username, hashlib.sha256(password.encode("utf-8")).hexdigest(), now))
+                bootstrap_ran = True
+                bootstrap_message = (
+                    f"Bootstrap admin created for '{username}'. "
+                    "Treat credentials as one-time-use and rotate immediately."
+                )
+            else:
+                bootstrap_message = (
+                    "Bootstrap not run: no active admin exists and bootstrap env vars are missing. "
+                    "Set JACDASH_BOOTSTRAP_ADMIN_USER and JACDASH_BOOTSTRAP_ADMIN_PASSWORD."
+                )
+
+    return {"bootstrap_ran": bootstrap_ran, "message": bootstrap_message}
 
 
 # ── Users ──────────────────────────────────────────────────────────────────────
@@ -99,7 +158,7 @@ def get_users():
 def user_exists(uq_username: str) -> bool:
     with get_db() as conn:
         row = conn.execute(
-            "SELECT 1 FROM users WHERE uq_username = ?", (uq_username,)
+            "SELECT 1 FROM users WHERE uq_username = ? AND is_active = 1", (uq_username,)
         ).fetchone()
     return row is not None
 

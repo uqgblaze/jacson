@@ -42,11 +42,12 @@ ULTRA_BUILDER_URL = "https://uq-business-school.github.io/ibis/"
 # Replace with the canonical repo URL if it moves.
 GITHUB_URL = "https://github.com/uq-course-profiles/jacson"
 
-# ── Bootstrap user ────────────────────────────────────────────────────────────
-# This user is inserted into the DB on first run so that someone can log in
-# before any users have been added via the UI.
-# Set to None to disable automatic seeding.
-BOOTSTRAP_USER = ("uqgblaze", "Geoffrey Blazer")
+# ── Bootstrap admin (one-time, environment-driven) ──────────────────────────
+# Used only when no active admin users exist.
+# Expected format for JACDASH_BOOTSTRAP_ADMIN_USER:
+#   "uq_username:Full Name"  (full name optional)
+BOOTSTRAP_ADMIN_USER = os.environ.get("JACDASH_BOOTSTRAP_ADMIN_USER", "").strip()
+BOOTSTRAP_ADMIN_PASSWORD = os.environ.get("JACDASH_BOOTSTRAP_ADMIN_PASSWORD", "")
 
 # ── Flask ──────────────────────────────────────────────────────────────────────
 # Change this to a long random string in production.
