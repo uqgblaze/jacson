@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JacDash — Not Authorised</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --jacson-purple: #51247A;
+      --jacson-magenta: #962A8B;
+      --jacson-deep: #1F0029;
+      --terminal-bg: #100015;
+      --terminal-text: #97D49B;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      font-family: "Cascadia Code", Consolas, monospace;
+      background: var(--terminal-bg);
+      color: var(--terminal-text);
+      display: flex; align-items: center; justify-content: center;
+      text-shadow: 0 0 8px #17541B, 0 0 3px #17541B;
+    }
+    .box {
+      max-width: 540px;
+      padding: 2.5rem 3rem;
+      border: 1px solid rgba(150, 42, 139, 0.4);
+      border-radius: 12px;
+      background: rgba(31, 0, 41, 0.7);
+      text-align: center;
+    }
+    .logo { width: 120px; margin-bottom: 1.5rem; }
+    h1 {
+      font-size: 1.2rem;
+      color: #c66;
+      text-shadow: 0 0 8px #600, 0 0 3px #600;
+      margin: 0 0 1rem;
+    }
+    p { font-size: 0.85rem; line-height: 1.7; margin: 0 0 1.5rem; }
+    a {
+      color: var(--jacson-magenta);
+      text-decoration: none;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+    a:hover { opacity: 1; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img class="logo"
+         src="https://raw.githubusercontent.com/UQ-Business-School/jacson/main/assets/jacson-logo-small.svg"
+         alt="JacSON logo">
+    <h1>403 — Not Authorised</h1>
+    <p>{{ reason }}</p>
+    <a href="mailto:uqgblaze@uq.edu.au">Contact the JacDash administrator</a>
+  </div>
+</body>
+</html>
